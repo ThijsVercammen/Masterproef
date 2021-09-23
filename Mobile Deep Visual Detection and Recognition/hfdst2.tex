@@ -8,7 +8,7 @@
 
 \section{Deep learning-gebaseerde herkeningssystemen}
 Herkeningssytemen systemen voorspellen wat de klasse van een object is in een afbeelding. 
-Dus het herkennen van objecten in digitale afbeeldingen zonder deze te localiseren of aan te duiden. 
+Dus het herkennen van objecten in digitale afbeeldingen zonder deze te lokaliseren of aan te duiden. 
 Bij herkeningssystemen is er geen of weinig overlap tussen de trainingsafbeeldingen en de inputafbeeldingen.
 Bijvoorbeeld bij een gezichts herkenningssysteem wordt er een algemeen herkeningssystemen ontworpen dat gezichten herkent, en niet elk individueel gezicht herkent.
 Voor een herkenningssysteem is er een goed getraind netwerk nodig dat input afbeeldingen omzet in features. 
@@ -52,7 +52,7 @@ Een CNN bestaat uit een opeenvolging van een aantal convolutie lagen die steeds 
 \end{figure}
 
 Elke convolutie laag wordt gevolgd door een niet-lineare activatie functie, de meest gebruikt functie hiervoor is de rectified linear unit (ReLu) (figuur \ref{fig:relu}). 
-De ReLu wordt vaak gebruikt omdat deze eenvoudig is, kan exact 0 weergeven en ziet er linear uit. 
+De ReLu wordt vaak gebruikt omdat deze eenvoudig is, kan exact 0 weergeven en ziet er lineair uit. 
 Max(0,x) is de ReLu bewerking, dus er wordt verdergegaan met 0 of de input waarde. 
 Zonder een niet-lineare activatie functie kan het CNN herleid worden tot 1 convolultie laag die geen high-level features kan extraheren. 
 Andere mogelijkheden voor Lineare activatie functies zijn: Sigmoid en Tangens hyperbolicus maar deze functies vragen meer rekenwerk.
@@ -94,24 +94,24 @@ Maar als de learning rate te hoog is kan het resultaat een slecht getraind netwe
 %\subsubsection{Triplet loss}
 
 \section{Deep learning-gebaseerde detector}
-Object detectie is het localiseren en classificeren van objecten in een afbeelding, waarbij de objecten aangeduid worden met een Bounding box. 
+Object detectie is het lokaliseren en classificeren van objecten in een afbeelding, waarbij de objecten aangeduid worden met een Bounding box. 
 Door gebruik te maken van CNN kunnen er vrij nauwkeurige object detectoren ontworpen worden. 
 Object detectie maakt voornamelijk gebruik van twee methodes: de single-stage detector en de two-stage detector.
 
 \subsection{Two-stage detector}
 Zoals de naam zegt bestaat deze methode uit 2 niveaus. 
 het eerste deel worden er Regions of Intrest (RoIs) gecre\"eerd, dit is het filteren van regio's waarbij de kans groot is dat deze een object bevatten. 
-Het tweede deel classificeert en verfijnt de localisatie van de RoIs die in het eerste deel gecre\"eerd werden. 
+Het tweede deel classificeert en verfijnt de lokalisatie van de RoIs die in het eerste deel gecre\"eerd werden. 
 Dit gebeurt door elk van de RoIs door een CNN te voeren. 
 Region-based Convolutional Neural Network (R-CNN) is het basis principe van de two-stage detectoren weergegeven in figuur \ref{fig:r-cnn}. 
-Hierbij wordt met een region proposal algoritme regios uit de afbeelding gefilterd waar de kans groot is dat er objecten op staan.
+Hierbij wordt met een region proposal algoritme regio's uit de afbeelding gefilterd waar de kans groot is dat er objecten op staan.
 R-CNN bestaat uit 3 stappen:
  
 \begin{enumerate}
     \item Via een selective search algoritme worden er ongeveer 2000 mogelijke regio's met objecten geselecteerd.
     %selective search ref
     \item Elke mogelijke regio wordt omgezet naar een feature vector via een CNN.
-    \item Elke regio wordt vervolgens geclassifiseerd met een klas-specifieke SVMs.
+    \item Elke regio wordt vervolgens geclassificeerd met een klas-specifieke SVMs.
 \end{enumerate}
 
 \begin{figure}[!ht]
@@ -124,12 +124,12 @@ R-CNN bestaat uit 3 stappen:
 R-CNN is een trage detector vermits elke RoIs door een CNN moet gaan. 
 Deze methode is ge\"evolueerd tot de veel snellere methode Faster R-CNN (figuur \ref{fig:faster-r-cnn}). 
 Hierbij wordt de afbeelding door een CNN behandelt en vervolgens maakt men gebruik van een Region Proposal Network (RPN). 
-Het RPN gaat zoals bij R-CNN regios uit de afbeelding filteren waar de kans groot is dat er objecten opstaan.
+Het RPN gaat zoals bij R-CNN regio's uit de afbeelding filteren waar de kans groot is dat er objecten opstaan.
 Maar het RPN werkt sneller en levert betere resultaten dan het region proposal algoritme. 
 
-Het RPN is een deep fully convolutional network dat per input een set van regios als output geeft.
-Elk van deze regios heeft een objectness score wat een maat is voor het object t.o.v. de achtergrond in de afbeelding.
-Om een region proposal te genereren wordt het RPN over de feature map geschoven die gegenereert is door het voorgaande CNN.
+Het RPN is een deep fully convolutional network dat per input een set van regio's als output geeft.
+Elk van deze regio's heeft een objectness score wat een maat is voor het object t.o.v. de achtergrond in de afbeelding.
+Om een region proposal te genereren wordt het RPN over de feature map geschoven die gegenereerd is door het voorgaande CNN.
 Op elke sliding window locatie worden er meerdere regio voorspellingen gedaan.
 Deze voorspelling wordt gedaan door verschillende anchor boxen in de sliding window te evalueren.
 
@@ -174,7 +174,7 @@ SSD is een one-stage detector (figuur \ref{fig:ssd}) waarbij een afbeelding door
 Op elke locatie van deze feature mappen van verschillende schalen wordt een vaste set van bounding boxen ge\"evalueerd.
 Voor elk van deze boxen wordt de zekerheid dat het een object bevat voorspelt.
 Op het einde wordt non maximum suppression gebruikt om de finale voorspelling te maken.
-Het netwerk van een SSD bestaat uit een basis netwerk dat gevormt wordt door een standaard classificatie netwerk zonder de fully-connected lagen.
+Het netwerk van een SSD bestaat uit een basis netwerk dat gevormd wordt door een standaard classificatie netwerk zonder de fully-connected lagen.
 Vervolgens worden er extra convolutie lagen toegevoegd, wat het model toelaat om voorspellingen te doen op verschillende schalen.
 
 \begin{figure}[!ht]
@@ -185,3 +185,60 @@ Vervolgens worden er extra convolutie lagen toegevoegd, wat het model toelaat om
 \end{figure}
 
 \chapter{Herkenning en detectie implementatie op mobiel platform}
+
+Dit hoofdstuk zal gaan over het implementeren van deep learning herkeningssystemen en detectiesystemen op een mobiel platform.
+Hierbij zal het trainen van het CNN model nog steeds gebeuren op een computer.
+Bij het uitvoeren van een neuraal netwerk op een mobiel apparaat zal moet men rekening houden met de volgende zaken: 
+gelimiteerde rekenkracht, met de batterij en beschikbaar geheugen.
+In dit hoofdstuk zullen we een aantal state-of-the-art CNN architecturen voor mobiele platformen bespreken.
+
+\section{Implementatie op mobiele platformen}
+Voor de implementatie van neurale netwerken op een mobiel platform kan er gebruik gemaakt worden van een framework.
+Deze frameworken zijn een set van tools die de programeur helpen om een machine learning model te implementeren op een mobiel toestel.
+De twee meest gebruikte frameworks voor mobiele implementaties zijn: TenserflowLite en Pytorch mobiel.
+
+Tenserflow is ontworpen door Google en is een open source library voor machine learning implementaties.
+Door de introductie van de Keras API is Tenserflow gebruiksvriendelijk geworden.
+Zo heeft Tenserflow een gebruiksvriendelijk API voor eenvoudige projecten en meer uitgebreide tools voor complexe projecten.
+Zo is het met Tenserflow mogelijk om overzichtelijke en elegante code te schrijven.
+%Tenserflow kan  dynamisch zijn grafieken wanneer variabelen worden gedeclareerd.
+Door gebruik te maken van TensorBoard kan data op een flexibele manier gevisualiseerd worden. 
+Tenserflow biedt ook betere ondersteuning op gebied van deployment van een productie model.
+
+Pytorch is ontworpen door facebook en wordt zoals Tenserflow ook gebruikt voor machine learning implementaties.
+Dit is een python gebaseerd framework dat focust op flexibiliteit, maar deze extra flexibiliteit zorgt voor meer lijnen code.
+Door zijn flexibiliteit is het gemakkelijk om nieuwe functionaliteiten toe te voegen door bestaande code aan te passen of nieuwe code toe te voegen.
+Pytorch maakt gebruik van externe tools zoals TensorBoard om data te visualiseren.
+
+\section{CNN architecturen voor mobiele platformen}
+
+\subsection{Mobilenet}
+
+\subsection{EfficientNet}
+
+\subsection{TinyYOLO}
+
+\section{Optimalisaties van neurale netwerken voor mobiele platformen}
+In deze paragraaf wordt er onderzocht welke optimalisaties er kunnen worden toegepast om de accuraatheid, snelheid en gebruikt geheugen te verbeteren.
+Maar het optimaliseren van een bepaalde factor zal vaak negatieve gevolgen hebben voor een andere factor, dit zal meestal de accuraatheid zijn.
+Dus er zal een goede belans gevonden moeten worden tussen de optimalisatie en de negatieve gevolgen op de andere factoren.
+
+\subsection{Vermijd fully connected lagen}
+Fully connected lagen zijn een basis component van neurale netwerken.
+Maar fully connected lagen genereren veel parameters, dus gebruiken ook veel geheugen.
+Ook voeren fully connected lagen veel berekening uit waardoor zij ook een vertragende factor zijn.
+Dus voor mobiele implementaties is het beter om geen of weinig fully connected lagen te gebruiken.
+
+\subsection{Wijzigen van de Kernel}
+Door met meer kernels te werken kan men meer informatie uit de data halen, maar dan worden er ook meer feature mappen gegenereerd.
+Deze feature mappen beschikken over veel informatie maar nemen meer geheugen in beslag.
+Een groter aantal feature maps is meer data dus ook meer berekeningen en meer berekeningen maakt het systeem trager.
+Dus door het aantal kernels te verminderen worden er ook minder feature maps gegenereert.
+Dit zorgt voor een snelheids winst en meer vrij geheugen, maar er is dan wel een verlies aan informatie.
+
+De grootte van de kernel kan ook woorden aangepast zo kan men i.p.v. een 3x3 kernel met een 2x2 kernel werken.
+Door de kernelgrootte te verkleinen moeten er minder berekeningen worden uitgevoerd wat zorgt voor een snelheidswinst en meer vrij geheugen.
+Maar de door de kernelgrootte te verkleinen is er terug een verlies aan informatie.
+
+\subsection{Pooling laag optimalisatie}
+

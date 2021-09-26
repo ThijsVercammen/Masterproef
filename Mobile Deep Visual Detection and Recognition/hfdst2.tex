@@ -7,7 +7,7 @@
 \chapter{Herkenning en Detectie Algemeen}
 
 \section{Deep learning-gebaseerde herkeningssystemen}
-Herkeningssytemen systemen voorspellen wat de klasse van een object is in een afbeelding. 
+Herkeningssystemen systemen voorspellen wat de klasse van een object is in een afbeelding. 
 Dus het herkennen van objecten in digitale afbeeldingen zonder deze te lokaliseren of aan te duiden. 
 Bij herkeningssystemen is er geen of weinig overlap tussen de trainingsafbeeldingen en de inputafbeeldingen.
 Bijvoorbeeld bij een gezichts herkenningssysteem wordt er een algemeen herkeningssystemen ontworpen dat gezichten herkent, en niet elk individueel gezicht herkent.
@@ -18,7 +18,7 @@ Vervolgens hebben is er ook een methode nodig om features van het neuraal netwer
 \subsection{Herkenning}
 Eens dat er een getraind CNN is kunnen we verdergaan met de effectieve herkenning. 
 Als men bepaald objecten in een afbeelding wil ontdekken gaat men met behulp van het CNN de afbeelding omzetten in een embedding. 
-Embeddings zijn vector representaties die kunnen worden vergeleken in een embedding space, waar gelijkaardige objecten dichter bij elkaar liggen. De embedding van de input afbeelding wordt vergeleken met de embeddings die zich in een gallerij bevinden. 
+Embeddings \cite{koehrsen_neural_2018} zijn vector representaties die kunnen worden vergeleken in een embedding space, waar gelijkaardige objecten dichter bij elkaar liggen. De embedding van de input afbeelding wordt vergeleken met de embeddings die zich in een gallerij bevinden. 
 De gallerij is een database/verzameling met gekende embeddings/ID's van de objecten die men wilt herkennen.
 Met behulp van een query kunnen we gelijkaardige objecten uit de gallerij halen om deze te gaan vergelijken in een embedding space. 
 Een query is een embedding van de input waarvan het label niet gekend is.
@@ -34,7 +34,8 @@ Gelijkaardige embeddings kunnen gezocht worden via de nearest neighbour techniek
  	\label{fig:cnn}
 \end{figure}
 
-De belankrijkste bouwsteen van een herkenningssysteem is een goed getrainde CNN (figuur \ref{fig:cnn}). 
+De belankrijkste bouwsteen van een herkenningssysteem is een goed getrainde CNN beschreven door \cite{jiang_deep_2019}.
+Het algemeen model van een CNN is weergegeven in figuur \ref{fig:cnn}. 
 In tegenstelling tot fully connected netwerken wordt bij een CNN de gewichten gedeeld over verschillende locaties om zo het aantal parameters te verminderen.
  
 Het belangrijkste deel van een CNN zijn de convolutielagen (figuur \ref{fig:conv_laag}) waarbij men een kernel/filter over de input laat gaan wat als output een feature map genereerd. 
@@ -51,11 +52,13 @@ Een CNN bestaat uit een opeenvolging van een aantal convolutie lagen die steeds 
 	\label{fig:conv_laag}
 \end{figure}
 
-Elke convolutie laag wordt gevolgd door een niet-lineare activatie functie, de meest gebruikt functie hiervoor is de rectified linear unit (ReLu) (figuur \ref{fig:relu}). 
+Elke convolutie laag wordt gevolgd door een niet-lineare activatie functie %lin act citaat
+, de meest gebruikt functie hiervoor is de rectified linear unit (ReLu) (figuur \ref{fig:relu}). 
 De ReLu wordt vaak gebruikt omdat deze eenvoudig is, kan exact 0 weergeven en ziet er lineair uit. 
 Max(0,x) is de ReLu bewerking, dus er wordt verdergegaan met 0 of de input waarde. 
 Zonder een niet-lineare activatie functie kan het CNN herleid worden tot 1 convolultie laag die geen high-level features kan extraheren. 
 Andere mogelijkheden voor Lineare activatie functies zijn: Sigmoid en Tangens hyperbolicus maar deze functies vragen meer rekenwerk.
+%sigmoid en tanh sitaat
 
 \begin{figure}[!ht]
  	\centering
@@ -100,15 +103,15 @@ Object detectie maakt voornamelijk gebruik van twee methodes: de single-stage de
 
 \subsection{Two-stage detector}
 Zoals de naam zegt bestaat deze methode uit 2 niveaus. 
-het eerste deel worden er Regions of Intrest (RoIs) gecre\"eerd, dit is het filteren van regio's waarbij de kans groot is dat deze een object bevatten. 
+Het eerste deel worden er Regions of Intrest (RoIs) gecre\"eerd, dit is het filteren van regio's waarbij de kans groot is dat deze een object bevatten. 
 Het tweede deel classificeert en verfijnt de lokalisatie van de RoIs die in het eerste deel gecre\"eerd werden. 
 Dit gebeurt door elk van de RoIs door een CNN te voeren. 
-Region-based Convolutional Neural Network (R-CNN) is het basis principe van de two-stage detectoren weergegeven in figuur \ref{fig:r-cnn}. 
+Region-based Convolutional Neural Network (R-CNN) \cite{girshick_fast_2015} is het basis principe van de two-stage detectoren weergegeven in figuur \ref{fig:r-cnn}. 
 Hierbij wordt met een region proposal algoritme regio's uit de afbeelding gefilterd waar de kans groot is dat er objecten op staan.
 R-CNN bestaat uit 3 stappen:
  
 \begin{enumerate}
-    \item Via een selective search algoritme worden er ongeveer 2000 mogelijke regio's met objecten geselecteerd.
+    \item Via een selective search algoritme \cite{uijlings_selective_2013} worden er ongeveer 2000 mogelijke regio's met objecten geselecteerd.
     %selective search ref
     \item Elke mogelijke regio wordt omgezet naar een feature vector via een CNN.
     \item Elke regio wordt vervolgens geclassificeerd met een klas-specifieke SVMs.
@@ -122,8 +125,8 @@ R-CNN bestaat uit 3 stappen:
 \end{figure}
 
 R-CNN is een trage detector vermits elke RoIs door een CNN moet gaan. 
-Deze methode is ge\"evolueerd tot de veel snellere methode Faster R-CNN (figuur \ref{fig:faster-r-cnn}). 
-Hierbij wordt de afbeelding door een CNN behandelt en vervolgens maakt men gebruik van een Region Proposal Network (RPN). 
+Deze methode is ge\"evolueerd tot de veel snellere methode Faster R-CNN \cite{ren_faster_2016}. 
+Hierbij wordt de afbeelding door een CNN behandelt en vervolgens maakt men gebruik van een Region Proposal Network (RPN) dit wordt weergegeven in figuur \ref{fig:faster-r-cnn}. 
 Het RPN gaat zoals bij R-CNN regio's uit de afbeelding filteren waar de kans groot is dat er objecten opstaan.
 Maar het RPN werkt sneller en levert betere resultaten dan het region proposal algoritme. 
 
@@ -149,7 +152,7 @@ een softmax laag die de klasse voorspelt, en een bounding box regressie laag die
 Bij one-stage detectoren gebeurt object detectie in \'e\'en keer met \'e\'en neuraal netwerk. 
 Dus er is geen region proposal niveau meer zoals bij de two-stage detector. 
 Deze detector gebruiken minder geheugen en rekenkracht t.o.v. two-stage detectoren.
-One-stage detectoren zijn sneller dan two-stage detectoren omdat ze alles in \'e\'en keer doen, maar kunnen wat in nauwkeurigheid verliezen t.o.v. two-stage detectroren.
+One-stage detectoren zijn sneller dan two-stage detectoren omdat ze alles in \'e\'en keer doen, maar kunnen wat in nauwkeurigheid verliezen t.o.v. two-stage detectoren.
 De twee meest gebruikte technieken van one-stage detectie zijn: You Only Look Once (YOLO) en Single Shot Detection (SSD).
 
 \begin{figure}[!ht]
@@ -160,7 +163,7 @@ De twee meest gebruikte technieken van one-stage detectie zijn: You Only Look On
 	\label{fig:yolo}
 \end{figure}
 
-YOLO verdeelt de afbeelding in een S x S rooster (figuur \ref{fig:yolo}). 
+YOLO \cite{redmon_you_2016} verdeelt de afbeelding in een S x S rooster zoals in figuur \ref{fig:yolo} te zien is. 
 De cel waarin het middelpunt van het object valt is verantwoordelijk voor de object detectie.
 Elke cel voorspelt K aantal bounding boxes en een score die aangeeft hoe zeker het model is dat een bepaalde bounding box een object bevat.
 deze score wordt bepaalt met de Intersection Of Union (IOU) tussen de voorspelde box en de ground truth box.
@@ -170,7 +173,7 @@ Een eerste mogelijkheid is door enkel bounding boxen te tekenen waarvan de voors
 Een andere methode is non-maxima supression deze methode zorgt ervoor dat elk object maar \'e\'en bounding box heeft. 
 Deze techniek houdt enkel de bounding box over met de beste voorspelling en onderdrukt de rest van de bounding boxen. 
 
-SSD is een one-stage detector (figuur \ref{fig:ssd}) waarbij een afbeelding door verschillende convolutielagen gaat, wat als resultaat feature mappen op verschillende schalen oplevert.
+SSD \cite{liu_ssd_2016} is een one-stage detector (figuur \ref{fig:ssd}) waarbij een afbeelding door verschillende convolutielagen gaat, wat als resultaat feature mappen op verschillende schalen oplevert.
 Op elke locatie van deze feature mappen van verschillende schalen wordt een vaste set van bounding boxen ge\"evalueerd.
 Voor elk van deze boxen wordt de zekerheid dat het een object bevat voorspelt.
 Op het einde wordt non maximum suppression gebruikt om de finale voorspelling te maken.
@@ -189,7 +192,8 @@ Vervolgens worden er extra convolutie lagen toegevoegd, wat het model toelaat om
 Dit hoofdstuk zal gaan over het implementeren van deep learning herkeningssystemen en detectiesystemen op een mobiel platform.
 Hierbij zal het trainen van het CNN model nog steeds gebeuren op een computer.
 Bij het uitvoeren van een neuraal netwerk op een mobiel apparaat zal moet men rekening houden met de volgende zaken: 
-gelimiteerde rekenkracht, met de batterij en beschikbaar geheugen.
+gelimiteerde rekenkracht en beschikbaar geheugen.
+Ook moet er rekening gehouden worden met een beperkte batterij, want CNN's gebruiken veel bandbreedte en voeren veel berekeningen uit wat meer energie verbruikt.
 In dit hoofdstuk zullen we een aantal state-of-the-art CNN architecturen voor mobiele platformen bespreken.
 
 \section{Implementatie op mobiele platformen}
@@ -223,6 +227,44 @@ In deze paragraaf wordt er onderzocht welke optimalisaties er kunnen worden toeg
 Maar het optimaliseren van een bepaalde factor zal vaak negatieve gevolgen hebben voor een andere factor, dit zal meestal de accuraatheid zijn.
 Dus er zal een goede belans gevonden moeten worden tussen de optimalisatie en de negatieve gevolgen op de andere factoren.
 
+%\subsection{Deep compression}
+%De Deep compression methode voorgesteld door \cite{han_deep_2016} gebruikt 3 technieken om een model te verkleinen zodat het bruikbaar is op een mobiel apparaat.
+%De 3 technieken zijn pruning, trained quantization en Huffman coding.
+%Het doel van deze 3 technieken is om de opslag vereisten te verkleinen, met zo weinig mogelijk effect op de accuraatheid.
+
+\subsection{Pruning}
+Pruning is de eerste stap van de Deep comression methode voorgesteld door \cite{han_deep_2016}.
+Bij het trainen van een CNN hebben bepaalde gewichten een grotere invloed op het resultaat.
+Andere gewichten hebben weinig tot geen invloed op het resultaat.
+Maar alle gewichten worden steeds berekend ongeacht hun invloed op het resultaat.
+Bij pruning worden de gewichten met een kleine invloed op het resultaat verwijderd. 
+Waardoor er geen berekeningen meer moeten uitgevoerd worden voor de verwijderde gewichten.
+Eerst wordt het CNN op een normale manier getraind zonder pruning.
+Vervolgens worden al de kleine gewichten onder een bepaalde treshold verwijderd.
+volgens \cite{han_deep_2016} wordt voor VGG-16 het aantal parameters met factor 13 verminderd, voor AlexNet met een factor 9.
+Deze methode heeft zeer weinig tot geen effect op de accuraatheid.
+
+\subsection{Parameter quantisatie}
+Het quantiseren en delen van gewichten is een tweede stap van de deep compression methode.
+Een CNN bestaat uit miljoenen gewichten, en de waarde van elke van deze gewichten moeten op het systeem worden opgeslagen.
+De default representatie van een waarde wordt opgeslagen als een floating point nummer wat 4 bytes in beslag neemt.
+Dus voor mijoenen parameters hebben de gewichten veel schijfruimte nodig.
+Een mogelijke oplossing hiervoor is quantiseren van gewichten, waarbij de getal representatie van de gewichten wordt verandert naar fixed point.
+Hierbij worden het waarden van gewichten beperkt tot een set van beschikbare waardes.
+Waarbij de waardes \"e\"enmalig worden opgeslagen en al de gewichten refereren naar een waarde van de vaste set met waardes.
+Hoe kleiner de set met waardes is hoe minder geheugen er in beslag wordt genomen, maar een kleinere set van waardes zorgt ook voor een mindere accuratie.
+Dus de grootte van de set moet goed worden gekozen zodat er niet te veel geheugen wordt gebruikt met een accepteerbare daling in accuratie.
+\cite{han_deep_2016} past vervolgens Huffman encoding toe die een compressie uitvoerd op de gequantiseerde parameters.
+%hashed net gebruikt hashes
+
+\subsection{Convolutionele filter compresies}
+een andere methode voorgesteld is Compressed Convolutional Filters.
+Hierbij wordt de grootte van de kernel verkleind om het aantal parameters en rekenwerk te verminderen.
+Maar door de kernels te verkleinen daalt de accuraatheid van het CNN.
+
+\subsection{Matrix factorisatie}
+
+
 \subsection{Vermijd fully connected lagen}
 Fully connected lagen zijn een basis component van neurale netwerken.
 Maar fully connected lagen genereren veel parameters, dus gebruiken ook veel geheugen.
@@ -232,13 +274,24 @@ Dus voor mobiele implementaties is het beter om geen of weinig fully connected l
 \subsection{Wijzigen van de Kernel}
 Door met meer kernels te werken kan men meer informatie uit de data halen, maar dan worden er ook meer feature mappen gegenereerd.
 Deze feature mappen beschikken over veel informatie maar nemen meer geheugen in beslag.
-Een groter aantal feature maps is meer data dus ook meer berekeningen en meer berekeningen maakt het systeem trager.
-Dus door het aantal kernels te verminderen worden er ook minder feature maps gegenereert.
+Een groter aantal feature mappen is meer data dus ook meer berekeningen en meer berekeningen maakt het systeem trager.
+Dus door het aantal kernels te verminderen worden er ook minder feature mappen gegenereerd.
 Dit zorgt voor een snelheids winst en meer vrij geheugen, maar er is dan wel een verlies aan informatie.
 
 De grootte van de kernel kan ook woorden aangepast zo kan men i.p.v. een 3x3 kernel met een 2x2 kernel werken.
 Door de kernelgrootte te verkleinen moeten er minder berekeningen worden uitgevoerd wat zorgt voor een snelheidswinst en meer vrij geheugen.
 Maar de door de kernelgrootte te verkleinen is er terug een verlies aan informatie.
 
-\subsection{Pooling laag optimalisatie}
+%stride
 
+\subsection{Pooling laag optimalisatie}
+De pooling laag zorgt voor een vermindering in de dimensie van de feature map.
+deze vermindering van dimensie zorgt ervoor dat er minder parameters zijn, maar minder parameters betekent ook verlies aan informatie.
+Dus door wijzigingen aan te brengen aan de pooling laag kan de hoeveelheid data en rekenwerk verbeterd worden.
+
+De pooling laag kan naar voor worden geschoven in het CNN waardoor de dimensie van de feature map sneller kleiner wordt.
+Dit heeft als gevolg dat er met minder parameters verdergegaan moet worden, waardoor het model sneller wordt.
+Maar dit zorgt er ook voor dat bepaalde informatie sneller verloren gaat wat zorgt voor een lagere accuratie.
+Een andere vorm van pooling optimalisatie is gewoonweg meer pooling lagen toevoegen waardoor de dimensie van de feature mappen vaker verkleint wordt.
+Maar dit heeft ook een negatieve invloed op de accuraatheid.
+%kernel vergroten

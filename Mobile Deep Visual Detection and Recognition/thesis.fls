@@ -1016,6 +1016,7 @@ INPUT .\thesis.bbl
 INPUT thesis.bbl
 INPUT .\thesis.bbl
 INPUT thesis.bbl
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro7t.tfm
 INPUT .\bijlage1.tex
 INPUT .\bijlage1.tex
 INPUT .\bijlage1.tex
@@ -1023,6 +1024,8 @@ INPUT bijlage1.tex
 INPUT .\bijlage1.tex
 INPUT .\bijlage1.tex
 INPUT bijlage1.tex
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\private\back_fiiw_denayer.pdf
 INPUT private\back_fiiw_denayer.pdf
 INPUT .\private\back_fiiw_denayer.pdf
@@ -1073,6 +1076,8 @@ INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\hel
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvr8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvr8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvro8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvro8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmri8a.pfb

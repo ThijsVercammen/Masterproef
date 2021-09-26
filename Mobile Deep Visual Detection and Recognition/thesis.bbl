@@ -1,3 +1,57 @@
 \begin{thebibliography}{}
 
+\bibitem[Girshick, 2015]{girshick_fast_2015}
+Girshick, R. (2015).
+\newblock Fast {R}-{CNN}.
+\newblock {\em arXiv:1504.08083 [cs]}.
+\newblock arXiv: 1504.08083.
+
+\bibitem[Han et~al., 2016]{han_deep_2016}
+Han, S., Mao, H., and Dally, W.~J. (2016).
+\newblock Deep {Compression}: {Compressing} {Deep} {Neural} {Networks} with
+  {Pruning}, {Trained} {Quantization} and {Huffman} {Coding}.
+\newblock {\em arXiv:1510.00149 [cs]}.
+\newblock arXiv: 1510.00149.
+
+\bibitem[Jiang et~al., 2019]{jiang_deep_2019}
+Jiang, X., Hadid, A., Pang, Y., Granger, E., and Feng, X. (2019).
+\newblock {\em Deep {Learning} in {Object} {Detection} and {Recognition},
+  edited by {Xiaoyue} {Jiang}, {Abdenour} {Hadid}, {Yanwei} {Pang}, {Eric}
+  {Granger}, {Xiaoyi} {Feng}.}
+\newblock Springer Singapore : Imprint: Springer, Singapore, 1st ed. 2019.
+  edition.
+
+\bibitem[Koehrsen, 2018]{koehrsen_neural_2018}
+Koehrsen, W. (2018).
+\newblock Neural {Network} {Embeddings} {Explained}.
+
+\bibitem[Liu et~al., 2016]{liu_ssd_2016}
+Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C.-Y., and Berg,
+  A. (2016).
+\newblock {SSD}: {Single} {Shot} {MultiBox} {Detector}.
+\newblock volume 9905, pages 21--37.
+
+\bibitem[Redmon et~al., 2016]{redmon_you_2016}
+Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016).
+\newblock You {Only} {Look} {Once}: {Unified}, {Real}-{Time} {Object}
+  {Detection}.
+\newblock In {\em 2016 {IEEE} {Conference} on {Computer} {Vision} and {Pattern}
+  {Recognition} ({CVPR})}, pages 779--788.
+\newblock ISSN: 1063-6919.
+
+\bibitem[Ren et~al., 2016]{ren_faster_2016}
+Ren, S., He, K., Girshick, R., and Sun, J. (2016).
+\newblock Faster {R}-{CNN}: {Towards} {Real}-{Time} {Object} {Detection} with
+  {Region} {Proposal} {Networks}.
+\newblock {\em arXiv:1506.01497 [cs]}.
+\newblock arXiv: 1506.01497.
+
+\bibitem[Uijlings et~al., 2013]{uijlings_selective_2013}
+Uijlings, J.~R., R, van~de Sande, K.~E., A, Gevers, T., Smeulders, A.~W., and M
+  (2013).
+\newblock Selective {Search} for {Object} {Recognition}.
+\newblock {\em International Journal of Computer Vision}, 104(2):154--171.
+\newblock Num Pages: 154-171 Place: New York, Netherlands Publisher: Springer
+  Nature B.V.
+
 \end{thebibliography}

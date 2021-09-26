@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces ReLu, waarbij het maximum wordt genomen van 0 en de input waarde.\relax }}{5}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces R-CNN\relax }}{6}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Faster R-CNN\relax }}{7}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{7}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{8}{figure.caption.15}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces One-stage detector met VGG net backbone\relax }}{8}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

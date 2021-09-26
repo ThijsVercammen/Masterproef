@@ -27,11 +27,15 @@
 \contentsline {subsection}{\numberline {3.2.2}EfficientNet}{10}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}TinyYOLO}{10}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Optimalisaties van neurale netwerken voor mobiele platformen}{10}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Vermijd fully connected lagen}{10}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Wijzigen van de Kernel}{10}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Pooling laag optimalisatie}{10}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Specificaties}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Algemene richtlijnen}{11}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Richtlijnen voor formules}{12}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Richtlijnen voor referenties}{13}{chapter.6}%
-\contentsline {chapter}{\numberline {A}Uitleg over de appendices}{15}{appendix.A}%
+\contentsline {subsection}{\numberline {3.3.1}Pruning}{10}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Parameter quantisatie}{10}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Convolutionele filter compresies}{11}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Matrix factorisatie}{11}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Vermijd fully connected lagen}{11}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Wijzigen van de Kernel}{11}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Pooling laag optimalisatie}{11}{subsection.3.3.7}%
+\contentsline {chapter}{\numberline {4}Specificaties}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Algemene richtlijnen}{13}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Richtlijnen voor formules}{14}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Richtlijnen voor referenties}{15}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Uitleg over de appendices}{17}{appendix.A}%

@@ -790,17 +790,11 @@ INPUT .\private\cover_fiiw_denayer.pdf
 INPUT .\private\cover_fiiw_denayer.pdf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\MiKTeX\pdftex\config\pdftex.map
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
@@ -944,6 +938,7 @@ INPUT .\fig\CNN.png
 INPUT .\fig\CNN.png
 INPUT .\fig\CNN.png
 INPUT .\fig\CNN.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb8r.tfm
@@ -956,6 +951,8 @@ INPUT .\fig\convolution layer.png
 INPUT .\fig\convolution layer.png
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb8r.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT .\fig\ReLu.png
 INPUT .\fig\ReLu.png
 INPUT fig\ReLu.png
@@ -998,6 +995,31 @@ INPUT hfdst3.tex
 INPUT .\hfdst3.tex
 INPUT .\hfdst3.tex
 INPUT hfdst3.tex
+INPUT .\fig\TFLite.jpg
+INPUT .\fig\TFLite.jpg
+INPUT fig\TFLite.jpg
+INPUT .\fig\TFLite.jpg
+INPUT .\fig\TFLite.jpg
+INPUT .\fig\TFLite.jpg
+INPUT .\fig\TFLite.jpg
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT .\fig\PyTorch-mobile.png
+INPUT .\fig\PyTorch-mobile.png
+INPUT fig\PyTorch-mobile.png
+INPUT .\fig\PyTorch-mobile.png
+INPUT .\fig\PyTorch-mobile.png
+INPUT .\fig\PyTorch-mobile.png
+INPUT .\fig\PyTorch-mobile.png
+INPUT .\fig\pruning.jpg
+INPUT .\fig\pruning.jpg
+INPUT fig\pruning.jpg
+INPUT .\fig\pruning.jpg
+INPUT .\fig\pruning.jpg
+INPUT .\fig\pruning.jpg
+INPUT .\fig\pruning.jpg
 INPUT .\hfdst4.tex
 INPUT .\hfdst4.tex
 INPUT .\hfdst4.tex
@@ -1017,15 +1039,15 @@ INPUT thesis.bbl
 INPUT .\thesis.bbl
 INPUT thesis.bbl
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro7t.tfm
-INPUT .\bijlage1.tex
-INPUT .\bijlage1.tex
-INPUT .\bijlage1.tex
-INPUT bijlage1.tex
-INPUT .\bijlage1.tex
-INPUT .\bijlage1.tex
-INPUT bijlage1.tex
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
+INPUT .\bijlage1.tex
+INPUT .\bijlage1.tex
+INPUT .\bijlage1.tex
+INPUT bijlage1.tex
+INPUT .\bijlage1.tex
+INPUT .\bijlage1.tex
+INPUT bijlage1.tex
 INPUT .\private\back_fiiw_denayer.pdf
 INPUT private\back_fiiw_denayer.pdf
 INPUT .\private\back_fiiw_denayer.pdf

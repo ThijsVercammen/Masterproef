@@ -1,5 +1,21 @@
 \begin{thebibliography}{}
 
+\bibitem[Abadi et~al., 2016]{abadi_tensorflow_2016}
+Abadi, M., Barham, P., Chen, J., Chen, Z., Davis, A., Dean, J., Devin, M.,
+  Ghemawat, S., Irving, G., Isard, M., Kudlur, M., Levenberg, J., Monga, R.,
+  Moore, S., Murray, D.~G., Steiner, B., Tucker, P., Vasudevan, V., Warden, P.,
+  Wicke, M., Yu, Y., and Zheng, X. (2016).
+\newblock {TensorFlow}: {A} system for large-scale machine learning.
+\newblock {\em arXiv:1605.08695 [cs]}.
+\newblock arXiv: 1605.08695.
+
+\bibitem[Febvay, 2020]{febvay_low-level_2020}
+Febvay, M. (2020).
+\newblock Low-level {Optimizations} for {Faster} {Mobile} {Deep} {Learning}
+  {Inference} {Frameworks}.
+\newblock In {\em Proceedings of the 28th {ACM} {International} {Conference} on
+  {Multimedia}}, pages 4738--4742, Seattle WA USA. ACM.
+
 \bibitem[Girshick, 2015]{girshick_fast_2015}
 Girshick, R. (2015).
 \newblock Fast {R}-{CNN}.
@@ -25,11 +41,30 @@ Jiang, X., Hadid, A., Pang, Y., Granger, E., and Feng, X. (2019).
 Koehrsen, W. (2018).
 \newblock Neural {Network} {Embeddings} {Explained}.
 
+\bibitem[Li et~al., 2020]{li_PyTorch_2020}
+Li, S., Zhao, Y., Varma, R., Salpekar, O., Noordhuis, P., Li, T., Paszke, A.,
+  Smith, J., Vaughan, B., Damania, P., and Chintala, S. (2020).
+\newblock {PyTorch} distributed: experiences on accelerating data parallel
+  training.
+\newblock {\em Proceedings of the VLDB Endowment}, 13(12):3005--3018.
+
 \bibitem[Liu et~al., 2016]{liu_ssd_2016}
 Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C.-Y., and Berg,
   A. (2016).
 \newblock {SSD}: {Single} {Shot} {MultiBox} {Detector}.
 \newblock volume 9905, pages 21--37.
+
+\bibitem[Luo et~al., 2020]{luo_comparison_2020}
+Luo, C., He, X., Zhan, J., Wang, L., Gao, W., and Dai, J. (2020).
+\newblock Comparison and {Benchmarking} of {AI} {Models} and {Frameworks} on
+  {Mobile} {Devices}.
+\newblock {\em arXiv:2005.05085 [cs, eess]}.
+\newblock arXiv: 2005.05085.
+
+\bibitem[ONNX, 2017]{onnx_onnx_2017}
+ONNX (2017).
+\newblock {ONNX} {Tutorials}.
+\newblock original-date: 2017-11-15T18:59:18Z.
 
 \bibitem[Redmon et~al., 2016]{redmon_you_2016}
 Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016).

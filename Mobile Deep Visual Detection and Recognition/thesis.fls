@@ -1013,6 +1013,13 @@ INPUT .\fig\PyTorch-mobile.png
 INPUT .\fig\PyTorch-mobile.png
 INPUT .\fig\PyTorch-mobile.png
 INPUT .\fig\PyTorch-mobile.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omlphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\fig\pruning.jpg
 INPUT .\fig\pruning.jpg
 INPUT fig\pruning.jpg
@@ -1038,9 +1045,6 @@ INPUT .\thesis.bbl
 INPUT thesis.bbl
 INPUT .\thesis.bbl
 INPUT thesis.bbl
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro7t.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\bijlage1.tex
 INPUT .\bijlage1.tex
 INPUT .\bijlage1.tex

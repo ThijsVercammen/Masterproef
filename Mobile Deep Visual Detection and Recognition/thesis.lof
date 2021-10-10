@@ -10,7 +10,9 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{8}{figure.caption.15}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces One-stage detector met VGG net backbone\relax }}{8}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Implementatie flow van een getraind TensorFlow model naar de applicatie\relax }}{11}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Implementatie flow van een getraind PyTorch model naar de applicatie met code\relax }}{12}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces CNN voor en na pruning\relax }}{15}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Implementatie flow van een getraind TensorFlow model naar de applicatie\relax }}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Implementatie flow van een getraind PyTorch model naar de applicatie met code\relax }}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces CNN voor en na pruning\relax }}{18}{figure.caption.19}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }

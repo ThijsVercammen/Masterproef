@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.22)  4 OCT 2021 14:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.22)  10 OCT 2021 20:03
 entering extended mode
 **"d:/Desktop/Masterproef/Mobile Deep Visual Detection and Recognition/thesis.tex"
 (d:/Desktop/Masterproef/Mobile Deep Visual Detection and Recognition/thesis.tex
@@ -524,7 +524,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 
 pdfTeX warning: pdflatex (file ./private/cover_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/cover_fiiw_denayer.pdf, id=171, 597.55246pt x 845.07718pt>
+<private/cover_fiiw_denayer.pdf, id=207, 597.55246pt x 845.07718pt>
 File: private/cover_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/cover_fiiw_denayer.pdf>
 Package pdftex.def Info: private/cover_fiiw_denayer.pdf  used on input line 96.
@@ -638,7 +638,7 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 Hoofdstuk 2.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 18.
-<fig/CNN.png, id=313, 643.40375pt x 219.82124pt>
+<fig/CNN.png, id=358, 643.40375pt x 219.82124pt>
 File: fig/CNN.png Graphic file (type png)
 <use fig/CNN.png>
 Package pdftex.def Info: fig/CNN.png  used on input line 34.
@@ -650,36 +650,36 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 [3
 
 ]
-<fig/convolution layer.png, id=325, 333.245pt x 281.05pt>
+<fig/convolution layer.png, id=370, 333.245pt x 281.05pt>
 File: fig/convolution layer.png Graphic file (type png)
 <use fig/convolution layer.png>
 Package pdftex.def Info: fig/convolution layer.png  used on input line 53.
 (pdftex.def)             Requested size: 149.37958pt x 125.98244pt.
  [4 <./fig/CNN.png> <./fig/convolution layer.png>]
-<fig/ReLu.png, id=333, 358.33875pt x 279.0425pt>
+<fig/ReLu.png, id=378, 358.33875pt x 279.0425pt>
 File: fig/ReLu.png Graphic file (type png)
 <use fig/ReLu.png>
 Package pdftex.def Info: fig/ReLu.png  used on input line 68.
 (pdftex.def)             Requested size: 149.37958pt x 116.32419pt.
  [5 <./fig/ReLu.png (PNG copy)>]
-<fig/R-CNN.jpg, id=343, 4516.875pt x 1589.94pt>
+<fig/R-CNN.jpg, id=388, 4516.875pt x 1589.94pt>
 File: fig/R-CNN.jpg Graphic file (type jpg)
 <use fig/R-CNN.jpg>
 Package pdftex.def Info: fig/R-CNN.jpg  used on input line 125.
 (pdftex.def)             Requested size: 298.75264pt x 105.145pt.
  [6 <./fig/R-CNN.jpg (PNG copy)>]
-<fig/Faster-R-CNN.png, id=357, 853.1875pt x 861.2175pt>
+<fig/Faster-R-CNN.png, id=402, 853.1875pt x 861.2175pt>
 File: fig/Faster-R-CNN.png Graphic file (type png)
 <use fig/Faster-R-CNN.png>
 Package pdftex.def Info: fig/Faster-R-CNN.png  used on input line 149.
 (pdftex.def)             Requested size: 128.0387pt x 129.24275pt.
-<fig/YOLO.jpg, id=358, 602.25pt x 382.42876pt>
+<fig/YOLO.jpg, id=403, 602.25pt x 382.42876pt>
 File: fig/YOLO.jpg Graphic file (type jpg)
 <use fig/YOLO.jpg>
 Package pdftex.def Info: fig/YOLO.jpg  used on input line 163.
 (pdftex.def)             Requested size: 256.07741pt x 162.61467pt.
  [7 <./fig/Faster-R-CNN.png>]
-<fig/SSD.png, id=372, 1609.01125pt x 524.96124pt>
+<fig/SSD.png, id=417, 1609.01125pt x 524.96124pt>
 File: fig/SSD.png Graphic file (type png)
 <use fig/SSD.png>
 Package pdftex.def Info: fig/SSD.png  used on input line 188.
@@ -688,34 +688,63 @@ Package pdftex.def Info: fig/SSD.png  used on input line 188.
 Hoofdstuk 3.
 [9
 
-]
-<fig/TFLite.jpg, id=385, 455.45157pt x 447.17062pt>
+] [10] [11]
+<fig/TFLite.jpg, id=442, 455.45157pt x 447.17062pt>
 File: fig/TFLite.jpg Graphic file (type jpg)
 <use fig/TFLite.jpg>
-Package pdftex.def Info: fig/TFLite.jpg  used on input line 60.
+Package pdftex.def Info: fig/TFLite.jpg  used on input line 112.
 (pdftex.def)             Requested size: 213.39568pt x 209.51518pt.
  (C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [10]
-<fig/PyTorch-mobile.png, id=395, 610.28pt x 727.71875pt>
+) [12 <./fig/TFLite.jpg>]
+<fig/PyTorch-mobile.png, id=449, 610.28pt x 727.71875pt>
 File: fig/PyTorch-mobile.png Graphic file (type png)
 <use fig/PyTorch-mobile.png>
-Package pdftex.def Info: fig/PyTorch-mobile.png  used on input line 93.
+Package pdftex.def Info: fig/PyTorch-mobile.png  used on input line 137.
 (pdftex.def)             Requested size: 213.39568pt x 254.46107pt.
- [11 <./fig/TFLite.jpg>] [12 <./fig/PyTorch-mobile.png>] [13] [14]
-<fig/pruning.jpg, id=436, 751.80875pt x 375.4025pt>
+ [13 <./fig/PyTorch-mobile.png>] [14]
+Overfull \hbox (10.77136pt too wide) in paragraph at lines 197--198
+[][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+phv on input line 213.
+(C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlphv.fd
+File: omlphv.fd 
+)
+LaTeX Font Info:    Font shape `OML/phv/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 213.
+
+Overfull \hbox (10.77136pt too wide) in paragraph at lines 213--214
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[15]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 233.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 9.85492pt on input line 233.
+
+Overfull \hbox (16.68437pt too wide) in paragraph at lines 236--238
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[16] [17]
+<fig/pruning.jpg, id=529, 751.80875pt x 375.4025pt>
 File: fig/pruning.jpg Graphic file (type jpg)
 <use fig/pruning.jpg>
-Package pdftex.def Info: fig/pruning.jpg  used on input line 208.
+Package pdftex.def Info: fig/pruning.jpg  used on input line 323.
 (pdftex.def)             Requested size: 277.41176pt x 138.52441pt.
- [15 <./fig/pruning.jpg>]) (hfdst4.tex) (hfdst5.tex) (thesis.bbl [16]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 9.
-LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 9.85492pt on input line 9.
- [17
+) (hfdst4.tex [18 <./fig/pruning.jpg>] [19]
+Hoofdstuk 4.
+) (hfdst5.tex [20
 
-]) (bijlage1.tex [18]
+]
+Hoofdstuk 5.
+) (thesis.bbl [21
+
+] [22
+
+]) (bijlage1.tex [23]
 B\ij lage A.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--10
@@ -725,7 +754,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--10
 )
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=460, 597.55246pt x 845.07718pt>
+<private/back_fiiw_denayer.pdf, id=560, 597.55246pt x 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 116.
@@ -743,7 +772,7 @@ pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: 
 
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=463, page=1, 597.55246pt x 845.07718pt>
+<private/back_fiiw_denayer.pdf, id=563, page=1, 597.55246pt x 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 116.
@@ -752,7 +781,7 @@ File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 116.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
-[19
+[24
 
 ]
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
@@ -767,22 +796,22 @@ File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 116.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
- [20 <./private/back_fiiw_denayer.pdf>] (thesis.aux)
+ [25 <./private/back_fiiw_denayer.pdf>] (thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1CC2D2DA3BBFAA8C7B12EFBAAA0B28C8;6704.
+(rerunfilecheck)             Checksum: 2F26FF3F273C7422944A898BDD73A98E;9252.
  ) 
 Here is how much of TeX's memory you used:
- 15586 strings out of 478927
- 246733 string characters out of 2847759
- 846311 words of memory out of 3000000
- 33026 multiletter control sequences out of 15000+600000
+ 15700 strings out of 478927
+ 248457 string characters out of 2847759
+ 867888 words of memory out of 3000000
+ 33089 multiletter control sequences out of 15000+600000
  444511 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,17n,81p,1123b,1213s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,17n,81p,1123b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (31 pages, 3802918 bytes).
+Output written on thesis.pdf (36 pages, 3826266 bytes).
 PDF statistics:
- 536 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 412 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 155 named destinations out of 1000 (max. 500000)
+ 484 words of extra memory for PDF output out of 10000 (max. 10000000)
 

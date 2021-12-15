@@ -1,0 +1,5 @@
+include ':ops', ':test_app'
+
+project(':ops').projectDir = file('ops')
+project(':test_app').projectDir = file('test_app/app')
+//rootProject.name = "test_app"

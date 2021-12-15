@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "D:\\Desktop\\test\\vision\\android\\ops\\CMakeLists.txt",
+    "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\debug\\x86\" clean"
+  ],
+  "buildTargetsCommand": "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\debug\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "torchvision_ops-Debug-x86": {
+      "artifactName": "torchvision_ops",
+      "buildCommand": "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\debug\\x86\" torchvision_ops",
+      "abi": "x86",
+      "output": "D:\\Desktop\\test\\vision\\android\\ops\\build\\intermediates\\cmake\\debug\\obj\\x86\\libtorchvision_ops.so",
+      "runtimeFiles": []
+    }
+  }
+}

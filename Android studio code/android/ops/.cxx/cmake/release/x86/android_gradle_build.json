@@ -1,0 +1,131 @@
+{
+  "stringTable": {
+    "0": "D:/Desktop/test/vision/android/ops/.cxx/cmake/release/x86",
+    "1": "--target=i686-none-linux-android21 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DMOBILE -O2 -DNDEBUG -fPIC -fexceptions -std=gnu++14"
+  },
+  "buildFiles": [
+    "D:\\Desktop\\test\\vision\\android\\ops\\CMakeLists.txt",
+    "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\release\\x86\" clean"
+  ],
+  "buildTargetsCommand": "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\release\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "torchvision_ops-Release-x86": {
+      "buildCommand": "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\release\\x86\" torchvision_ops",
+      "buildType": "release",
+      "toolchain": "2437419038",
+      "abi": "x86",
+      "artifactName": "torchvision_ops",
+      "files": [
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\deform_conv2d_kernel.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\nms_kernel.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_align_kernel.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_pool_kernel.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_align_kernel.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_pool_kernel.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\deform_conv2d.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\nms.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_align.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_pool.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_align.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_pool.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_align_common.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\deform_conv2d.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\nms.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ops.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_align.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_pool.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_align.h",
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "header": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_pool.h",
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "D:\\Desktop\\test\\vision\\android\\ops\\build\\intermediates\\cmake\\release\\obj\\x86\\libtorchvision_ops.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "2437419038": {
+      "cppCompilerExecutable": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

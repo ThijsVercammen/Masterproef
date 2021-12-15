@@ -3,4 +3,108 @@
 %                            CHAPTER                              %
 %                                                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%\chapter{Richtlijnen voor formules}
+\chapter{Experimenten}
+\section{Converteren naar framework voor mobiele implementatie}
+Het doel van deze masterproef is om een bestaand netwerk op een mobiel platform te krijgen.
+Dus zullen de detectoren die ontworpen zijn in TensorFlow en PyTorch geconverteerd moeten worden naar een framework voor mobiele implementatie.
+Voor het ontwerpen van detectoren kan er gebruik gemaakt worden van bibliotheken: Detectron2, MMDetection, ImagAI en GluonCV die vermeld zijn in paragraaf \ref{lib}.
+Maar dit kan het converteren meer complex maken.
+Omdat deze bibliotheken gebruik kunnen maken van operaties die niet compatibel zijn met het gewenste framework.
+Detectoren zijn complexe systemen waarbij het converteren naar een ander framework complex of zelfs niet mogelijk zal worden.
+In deze paragraaf zal er voor de MMDetection bibliotheek gekeken worden wat de mogelijkheden zijn om van een detector model naar een mobiele implementatie te gaan.
+De eerste stap zal zijn om te kijken welke mogelijkheden er zijn zonder te converteren naar een ander framework.
+Een tweede stap is via ONNX het huidige detectiemodel converteren naar een andere framework.
+Een derde stap is verder zoeken naar een alternatief als de eerste twee methodes niet lukken.
+
+Voor het testen van MMDetection nemen we de Kitty dataset \cite{Geiger_IJRR_2013} die bestaat uit auto's en voetgangers waarmee we een detector trainen via transfer learning.
+Voor de basisdetector nemen we een voorgetraind Faster-RCNN detector.
+
+\subsection{Van MMDetection model naar PyTorch Mobile model} \label{pmob}
+Vermits MMDetection bovenop PyTorch werkt is de meest voor de hand liggende techniek om via PyTorch Mobile een model te genereren.
+Voordat het model kan geoptimaliseerd worden moet het pythonafhankelijk model worden omgezet in TorchScript. 
+Deze TorchScript module kan dan verder geoptimaliseerd worden voor mobiel gebruik.
+Het omzetten naar de scriptmodule geeft de volgende Error: \newline
+\textcolor{red}{TypeError: forward() missing 1 required positional argument: 'img\_metas'} \newline
+Dit probleem is mogelijks op te lossen door de 'example' input aan te passen naar een gepaste input Tensor.
+Op deze manier kan de jit.trace functie het model uitvoeren met de correcte input.
+
+\subsection{Van MMDetection model naar ONNX model}
+Voor gebruik te maken van andere frameworks voor mobiele implementatie zal het model eerst geconverteerd moeten worden naar ONNX formaat.
+MMDetection ondersteunt de conversie naar ONNX, dit zit nog in zijn experimentele fase en MMDetection ondersteund momenteel enkel opset-versie 11 van ONNX.
+In de documentatie van MMDetection kan er een lijst gevonden worden met detectiemodellen die ondersteuning hebben voor het exporteren naar ONNX.
+MMDetection gebruikt een eigen script om een model te exporteren naar ONNX.
+Via de volgende lijn code is het mogelijk om het MMDetection model om te zetten naar een ONNX model.
+
+\begin{python}
+python ./tools/deployment/pytorch2onnx.py <config_file> <checkpiont_file> 
+	--output-file <output file>
+\end{python}
+
+pytorch2onnx.py is het MMDetection script om een model te converteren naar ONNX formaat.
+De config file is het bestand dat het neuraal netwerk beschrijft.
+En de checkpoint file is het model zelf dat tijdens het trainen wordt aangemaakt.
+Het finale model is normaal gezien terug te vinden als latest.pth, dit is het laatste checkpoint dat tijdens het trainen wordt aangemaakt.
+Op het einde van deze lijn code is het mogelijk om nog extra opties toe te voegen die in de MMDetection documentatie terug te vinden zijn.
+Dit script gebruikt geen nieuwe methode om naar ONNX te converteren, maar maakt gebruik van de ONNX export functie van pytorch.
+Bovenstaande lijn code converteert het Faster-RCNN model succesvol naar een ONNX model.
+Wel moet er bij vermeld worden dat dit MMDetection model een standaardmodel is waarbij geen specifieke aanpassingen zijn gedaan.
+Dus bij complexere modellen zou het resultaat anders kunnen zijn.
+Doordat we nu een ONNX model hebben zijn er een aantal nieuwe mogelijkheden om het model te implementeren op een mobiel apparaat.
+
+\subsection{Van ONNX model naar mobiele implementatie}
+We kunnen het ONNX model omzetten naar een onnxruntime model, maar bij het implementeren van onnxrunime model in Android studio krijgen we de volgende error: \newline
+\textcolor{red}{'java.lang.UnsatisfiedLinkError: No implementation found for long ai.onnxruntime.\newline
+.createOptions(long) tried Java\_ai\_onnxruntime\_OrtSession\_00024SessionOptions\newline
+\_createOptions and Java\_ai\_onnxruntime\_OrtSession\_00024SessionOptions\_createOptions\_J'} \newline
+Deze error onststaat wanneer de applicatie een bibliotheek probeert in te laden, maar deze bibliotheek bestaat niet.
+Zowel de standaardbibliotheek als de onxxruntime-mobile bibliotheek geven deze fout.
+Een mogelijke oplossing zou zijn om de correcte bibliotheek handmatig toe te voegen aan Android studio.
+
+Het ONNX model implementeren in javascript werd daarentegen wel uitgevoerd zonder fouten.
+
+\subsection{Van ONNX model naar TensorFlow model}
+Met het gegenereerde ONNX model is het mogelijk om het model om te zetten naar een TensorFlow model en vervolgens naar een TFLite model om te zetten.
+Hierbij komen al 3 conversies aan te pas en met elke conversie dus is de kans groter dat het uiteindelijke model een error geeft.
+Het converteren van een .onnx bestand naar een TensorFlow Lite model kan met behulp van de volgende lijnen code.
+
+\begin{python}
+import tensorflow as tf
+import onnx
+from onnx_tf.backend import prepare
+	
+#ONNX model inladen 
+onnx_model = onnx.load("model.onnx")  # inladen onnx model
+output = prepare(onnx_model)
+output.export_graph('tf_model.pb') # model exporteren naar TensorFlow model
+
+#Ingeladen model omzetten naar TensorFlow Lite model
+converter = tf.lite.TFLiteConverter.from_saved_model('tf_model.pb')
+converter.target_spec.supported_ops = [
+	tf.lite.OpsSet.TFLITE_BUILTINS, # enable TensorFlow Lite ops.
+	tf.lite.OpsSet.SELECT_TF_OPS # enable TensorFlow ops.
+]
+tflite_model = converter.convert() # converteer model
+\end{python}
+
+Eerst moet het ONNX model ingeladen worden als een standaard TensorFlow model.
+Vervolgens moet bij het converteren naar een TensorFlow Lite model eerst vermeld worden welke TensorFlow operaties ondersteund moeten worden.
+Het effectief converteren naar een TensorFlow Lite model duurde ongeveer 30 minuten voor dit testmodel.
+bij het uitvoeren van dit model in Android studio krijgen we de volgende error: \newline
+\textcolor{red}{'java.lang.AssertionError: Error occurred when initializing ObjectDetector: Didn't find op for builtin opcode 'MUL' version '5'. An older version of this builtin might be supported. are you using an old TFLite binary with a newer model.'}\newline
+Deze fout geeft aan dat de 'MUL' operatie niet ondersteund wordt door TensorFlow.
+Om dit probleem op te lossen zouden we kunnen zoeken naar een TFLite versie die deze operatie wel ondersteund.
+We zouden ook kunnen proberen om deze opperatie te vervangen door een opperatie die wel ondersteund wordt.
+
+\subsection{Converteren naar CoreML model}
+Bij het converteren naar CoreML vanuit PyTorch stoten we op hetzelfde probleem als bij het converteren naar PyTorch Mobile in paragraaf \ref{pmob}.
+De tweede manier om naar CoreML te gaan is vanuit TensorFlow, maar dit is een vrij omslachtige manier omdat we dan de volgende conversies moeten maken MMDetection \textrightarrow ONNX \textrightarrow TensorFlow \textrightarrow CoreML. 
+Maar om van TensorFlow naar CoreML te gaan verwacht de converter een Keras model, maar dit is er niet vermits het model in MMDetection is ontworpen.
+
+\subsection{Conclusie}
+Om van een MMDetection model naar een mobiele implementatie te gaan is een complex process dat op een aantal problemen stoot.
+Geen enkel model werd na het converteren succesvol uitgevoerd.
+De enige methode waarbij het model werd uitgevoerd is de onnxruntime implementatie in javascript.
+We zijn hier vertrokken vanuit een complex geval en we zijn op heel wat problemen gestoten.
+Voor toekomstige experimenten gaan we vertrekken vanuit een eenvoudig geval.
+En we gaan dit steeds verder uitbreiden zodat we kunnen zien waar we exact op een probleem stoten.
+Op deze manier kunnen we het probleem dan eenvoudiger oplossen.

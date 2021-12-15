@@ -24,6 +24,8 @@
 \usepackage{sectsty}					% aanpassen van de fonts van sections en chapters
 %\usepackage[nottoc,numbib]{tocbibind}	% Bibliography mee in de ToC
 \usepackage{wrapfig}
+%\usepackage{minted}
+\usepackage{pythonhighlight}
 \allsectionsfont{\sffamily}
 \chapterfont{\raggedleft\sffamily}
 
@@ -34,7 +36,15 @@
 %\usepackage{latexsym}
 %\usepackage{amsmath}
 %\usepackage{amssymb}
-
+\hyphenation{TensorFlow}
+\hyphenation{PyTorch}
+\hyphenation{FlatBuffer}
+\hyphenation{MXNet}
+%\hyphenation{Detectron2}
+\hyphenation{ONNX}
+\hyphenation{GluonCV}
+\hyphenation{ImageAI}
+\hyphenation{MMDetection}
 % MFA: zet zoekpad voor figure
 \graphicspath{{fig/}}
 
@@ -78,7 +88,7 @@
 \embargo{}
 
 \title{Mobile Deep Visual Detection and Recognition}
-\subtitle{Ondertitel (facultatief)}
+\subtitle{}
 % \author{naam student}
 \forenameA{Thijs}
 \surnameA{Vercammen}
@@ -87,7 +97,7 @@
 
 \academicyear{2021 - 2022}
 
-\promotorA[Promotor(en)]{Prof. dr. ir. Toon Goed\'eme}
+\promotorA[Promotor(en)]{Prof. dr. ir. Toon Goedem\'e}
 \promotorB[Co-promotor(en)]{Ing. Floris De Feyter}
 
 \begin{document}
@@ -98,8 +108,10 @@
 \input{hfdst1}
 \input{hfdst2}
 \input{hfdst3}
-\input{hfdst4}
-\input{hfdst5}
+%\input{hfdst4}
+%\input{hfdst5}
+\input{hfdst6}
+\input{hfdst7}
 % Bibliografie: referenties. De items zitten in bibliografie.bib
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Indien je ook de niet geciteerde werken in je bibliografie wil opnemen, commentarieer dan onderstaande regel uit!

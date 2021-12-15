@@ -1,0 +1,135 @@
+\chapter{Compatibiliteit van detectie systemen}
+Voor detectiesysteem bestuderen we uitgebreid de Faster-RCNN architectuur met een ResNet50 backbone en de YOLO architectuur.
+We gaan voor deze modellen vertrekken vanuit het PyTorch en TensorFlow framework.
+Om vervolgens de mogelijke paden te bestuderen naar een mobiele implementatie.
+
+\section{faster rcnn}
+met een resnet50 backbone
+
+\section{Van TensorFlow naar mobiel mobiele implementatie}
+Om van een TensorFlow object detectie model te gaan naar een mobiele implementatie kunnen we een TFlite of een ONNX model implementeren in Android Studio.
+Het model dat we willen converteren is een voorgetrained Faster-RCNN object detectie model van de TensorFlow object detection API.
+Dit Faster-RCNN model gaan we vervolgens converteren naar een TFLite of ONNX formaat.
+
+\subsection{TFLite implementatie}
+
+De TensorFlow object detection api stelt zelf een manier voor om een model te converteren naar het TFLite formaat.
+Via de volgende lijnen code kunnen we een model converteren.
+.....
+Tijdens het converteren krijgen we de volgende error: ValueError: Only ssd or center\_net models are supported in tflite. Found faster\_rcnn in config.
+Dit komt doordat de TFLite converter van de tensorflow object detection api enkel de conversie voor SSD en Centernet ondersteund.
+
+Voor een object detectie model te converteren kan er ook gebruik gemaakt worden van de standaard TFLiteConverter.
+Bij het converteren naar TFLite kan de ConcatV2 opperatie niet geconverteerd worden naar de TFLite concatenation opperatie.
+%in het huidig model zijn er 2 gevallen waarbij de tf.ConcatV2 niet wordt geconverteerd naar tfl.concatenation.
+%wat deze 2 gevallen van tf.ConcatV2 gemeenschappelijk hebben is dat zij een input krijgen van de tfl.div opperatie die is geconverteerd van tf.Realdiv.
+Door het toevoegen van TensorFlow Flex opperaties kan het model zonder problemen geconverteerd worden naar een TFLite model.
+Omdat we gebruik maken van Flex opperaties moet de TensorFlow core bibliotheek mee ge\"implementeerd worden in Android studio.
+
+Als we het TFLite model willen implementeren in Android studio via de TensorFlow Lite Task Library dan moeten we Metadata aan het model toevoegen.
+We moeten Metadata toevoegen aan het TFLite model zodat bij het uitvoeren van het model de TFLite API weet wat het input en output types zijn van het model.
+Maar bij het toevoegen van Metadata aan het TFLite model krijgen we de volgende fout: Keyerror 2708.
+Deze fout geeft weinig informatie, maar de oorzaak is dat de methode die de Metadat aan het model toevoegt maximaal 4 outputs verwacht.
+Het geconverteerd Faster-RCNN model heeft 8 outputs.
+Door het aantal outputs te reduceren tot 4 outputs kunnen we succesvol Metadata aan het model toevoegen.
+Bij het uitvoeren van het het model met metadata krijgen we de volgende error: ....
+Deze fout onstaat doordat tijdens het converteren naar TFLite de output vorm van [1, 300, 4] naar [1, 1, 1] verandert voor de bounding box co\"ordinaten.
+Het model zal nog steeds meerdere bounding boxen voorspellen, dus het model verwacht een output buffer van [1, 300, 4].
+Maar de outputbuffer die de TensorFlow Lite Task Library aanmaakt is van grootte [1, 1, 1].
+
+We kunnen het TFLite model ook implementeren via de TensorFlow Lite Inerpreter API, hierbij is er geen Metadata nodig.
+Door gebruik te maken van de TensorFlow Lite Inerpreter API moeten we zelf de input en output buffers defini\"eren.
+De vereiste informatie om de correcte buffers te defini\"eren kan uit het het TFLite model gehaald worden.
+Het TFLite model bevat de juiste informatie voor de inputbuffer, dus deze kan eenvoudig aangemaakt worden.
+Bij het aanmaken van de outputbuffers krijgen we terug een fout dat onze outputbuffer van de verkeerde grootte is.
+Dit komt doordat de output vorm volgens het TFLite model [1, 1, 1] is, maar het model levert meer resultaten.
+De TensorFlow Lite Inerpreter API geeft ons de mogelijkheid om de outputbuffers aan te passen zodat deze de gewenste grootte hebben.
+Op deze manier kunnen we succesvol een Faster-RCNN model uitvoeren op een mobiel apparaat.
+
+%Bij het converteren naar een TFLite model via de concrete\_function methode kunnen we de conversie uitvoeren zonder TensorFlow flex ops.
+
+\subsection{ONNX implementatie}
+In het Faster-RCNN model wordt er gebruik gemaakt van de Round opperatie die pas beschikbaar is sinds opset versie 11.
+Al de andere opperaties van het Faster-RCNN model worden ondersteund in eerdere opset versies.
+De round operatie zal ervoor zorgen dat bij het converteren naar onnx formaat minstens een opset versie 11 nodig is.
+
+
+%de fasterrcnn model heeft een ouput type int32 wat niet ondersteund wordt door tensorflow.
+%bij het uitvoeren van het onnx model 
+
+\begin{table}[!ht]
+    \caption{Alle operaties die terug te vinden zijn in het ResNet50 model en hun compatibiliteit met andere frameworks}
+\begin{tabular}{cccc}
+    \hline
+    Operaties & TensorFlow \textrightarrow TFLite & ONNX Opset & MACE \\
+    \hline
+    % All & / & 1 & / \\
+    % Assert & / & / & / \\
+    % BroadcastArgs & / & / & / \\
+    BroadcastTo & ond & 8 & / \\
+    ConcatV2 & / & 1 & ond \\
+    Equal & ond & 1 & / \\
+    Exp & ond & 1 & / \\
+    ExpandDims & ond & 1 & / \\
+    Fill & ond & 7 & / \\
+    Floor & ond & 1 & ond \\
+    GatherV2 & ond & 1 & / \\
+    Greater & ond & 1 & / \\
+    Less & ond & 1 & / \\
+    LogicalAnd & ond & 1 & / \\
+    Maximum & const,verw,fus & 1 & / \\
+    Minimum & const,verw,fus & 1 & / \\
+    NonMaxSuppressionV5 & ond & 10 & / \\
+    Range & ond & 7 & / \\
+    RealDiv & / & 1 & / \\
+    Relu6 & const,verw,fus & 1 & ond \\
+    Reshape & ond & 1 & ond \\
+    ResizeBilinear & ond & 7 & / \\
+    Round & ond & 11 & / \\
+    SelectV2 & ond & 7 & / \\
+    %Size & / & 1 & / \\
+    Slice & ond & 1 & ond \\
+    Softmax & ond & 1 & ond \\
+    Split & ond & 1 & / \\
+    Sqrt & const,verw,fus & 1 & / \\
+    Square & const,verw,fus & 1 & / \\
+    Squeeze & ond & 1 & / \\
+    %StatelessIf & / & 1 & / \\
+    Sub & const,verw,fus & 1 & / \\
+    Sum & ond & 1 & / \\
+    Tile & const,verw,fus & 1 & / \\
+    TopKV2 & ond & 1 & / \\
+    Transpose & ond & 1 & / \\
+    Unpack & ond & 1 & / \\
+    Where & ond & 9 & / \\
+    ZerosLike & ond & 1 & / \\
+    \hline
+\end{tabular}
+\label{tab:TFop}
+\end{table}
+
+\section{Van PyTorch naar mobiele implementatie}
+Om van een PyTorch object detectie model te gaan naar een mobiele implementatie kunnen we een Pytorch of een ONNX model implementeren in Android Studio.
+Het model dat we willen converteren is een voorgetrained Faster-RCNN uit de Torchvision bibliotheek.
+Dit model gaan we vervolgens converteren naar een TorchScript model een ONNX model
+
+\subsection{TorchScript implementatie}
+
+Bij het converteren naar een Torchscript module dat verder ge\"optimaliseerd kan worden voor mobiel gebruik ondersteund PyTorch enkel jit.script voor Faster-RCNN.
+Na het converteren kunnen we het model verder optimaliseren voor mobiel gebruik.
+Bij het opslaan van deze ge\"optimaliseerde scriptmodule voor mobiel gebruik crasht Google Colaborate zonder een boodschap.
+In plaats van het model op te slaan met de \_save\_for\_lite\_interpreter methode moeten we het model opslaan voor script gebruik.
+Hiervoor moet ook de android\_pytorch bibliotheek worden ge\"implementeerd in plaats van de android\_pytorch\_lite bibliotheek.
+bij het uitvoeren van het script model krijgen we een fout dat de .nms opperatie niet wordt ondersteund.
+PyTorch geeft de mogelijkheid om de torchvision\_ops bibliotheek te implementeren die ervoor zorgt dat alle faster rcnn operaties worden ge\"implementeerd.
+Maar na het implementeren van deze bibliotheek krijgen we de volgende error ....
+We kunnen de Torchvision\_ops bibliotheek die terug te vinden is in de Github repositorie van Torchvision handmatig te implementeren in het Android studio project.
+Op deze manier kunnen de Torchvision opperaties wel implementeren in Android studio.
+Wel moet het PyTorch model volledig onder CPU runtime worden geconverteerd naar een TorchScript model.
+anders krijgen we de volgende fout: .... %empty strided.
+Op deze manier kunnen we succesvol een PyTorch Faster-RCNN model uitvoeren op een mobiel toestel.
+
+\subsection{ONNX implementatie}
+Zoals bij TensorFlow is hier ook een minimale opset versie van 11 vereist.
+Al de andere opperaties van het Faster-RCNN model worden ondersteund in eerdere opset versies.
+hjhjdghjdgh

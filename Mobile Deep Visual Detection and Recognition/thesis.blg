@@ -5,46 +5,58 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografie.bib
+Warning--entry type for "chollet2015keras" isn't style-file defined
+--line 389 of file bibliografie.bib
+Warning--empty journal in abadi_tensorflow_2016
+Warning--empty journal in chen_mmdetection_2019
+Warning--empty journal in duan_centernet_2019
+Warning--empty journal in guo_gluoncv_2020
+Warning--empty journal in han_deep_2016
+Warning--empty journal in lin_focal_2018
 Warning--empty booktitle in liu_ssd_2016
-You've used 13 entries,
+Warning--empty journal in luo_comparison_2020
+Warning--empty journal in ren_faster_2016
+Warning--empty journal in sandler_mobilenetv2_2019
+Warning--empty journal in tan_efficientdet_2020
+You've used 40 entries,
             1935 wiz_defined-function locations,
-            551 strings with 6801 characters,
-and the built_in function-call counts, 6298 in all, are:
-= -- 589
-> -- 400
-< -- 8
-+ -- 146
-- -- 146
-* -- 548
-:= -- 1126
-add.period$ -- 46
-call.type$ -- 13
-change.case$ -- 138
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 207
-empty$ -- 340
-format.name$ -- 159
-if$ -- 1200
+            662 strings with 12711 characters,
+and the built_in function-call counts, 17693 in all, are:
+= -- 1585
+> -- 1316
+< -- 19
++ -- 485
+- -- 481
+* -- 1599
+:= -- 3309
+add.period$ -- 110
+call.type$ -- 40
+change.case$ -- 437
+chr.to.int$ -- 40
+cite$ -- 51
+duplicate$ -- 518
+empty$ -- 813
+format.name$ -- 526
+if$ -- 3227
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 12
-newline$ -- 74
-num.names$ -- 39
-pop$ -- 131
+missing$ -- 21
+newline$ -- 191
+num.names$ -- 122
+pop$ -- 408
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 437
 quote$ -- 0
-skip$ -- 164
+skip$ -- 423
 stack$ -- 0
-substring$ -- 308
-swap$ -- 38
-text.length$ -- 4
+substring$ -- 664
+swap$ -- 46
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
-warning$ -- 1
-while$ -- 39
+type$ -- 238
+warning$ -- 11
+while$ -- 96
 width$ -- 0
-write$ -- 179
-(There was 1 warning)
+write$ -- 473
+(There were 12 warnings)

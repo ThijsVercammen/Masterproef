@@ -6,61 +6,77 @@
 %\chapter{Structuur van de masterproeftekst}
 \chapter{Herkenning en Detectie Algemeen}
 
-\section{Deep learning-gebaseerde herkeningssystemen}
-Herkeningssystemen systemen voorspellen wat de klasse van een object is in een afbeelding. 
-Dus het herkennen van objecten in digitale afbeeldingen zonder deze te lokaliseren of aan te duiden. 
-Bij herkeningssystemen is er geen of weinig overlap tussen de trainingsafbeeldingen en de inputafbeeldingen.
-Bijvoorbeeld bij een gezichts herkenningssysteem wordt er een algemeen herkeningssystemen ontworpen dat gezichten herkent, en niet elk individueel gezicht herkent.
-Voor een herkenningssysteem is er een goed getraind netwerk nodig dat input afbeeldingen omzet in features. 
-Er moet een database zijn met daarin de gegevens van de objecten die men wilt herkennen. 
+\section{Deep learning-gebaseerde herkenningssystemen}
+Herkenningssystemen voorspellen wat de identiteit is van een afbeelding. 
+Dit is het herkennen van objecten in digitale afbeeldingen zonder deze te lokaliseren of aan te duiden. 
+Bij herkenningssystemen is er geen of weinig overlap tussen de trainingsafbeeldingen en de inputafbeeldingen.
+Bijvoorbeeld bij gezichtsherkenning wordt er een algemeen herkenningssysteem ontworpen dat gezichten herkent, en niet een systeem dat elk individueel gezicht herkent.
+Voor een herkenningssysteem is er een goed getraind neuraal netwerk nodig dat een input afbeeldingen omzet in features. 
+Er moet een database zijn met daarin de gegevens van de objecten die men wil herkennen. 
 Vervolgens hebben is er ook een methode nodig om features van het neuraal netwerk te vergelijken met de gegevens in de database om het juiste object te herkennen.
 
 \subsection{Herkenning}
-Wanneer er een getraind CNN is kan er een herkenningssysteem ontwikkeld worden. 
-Als men bepaalde objecten in een afbeelding wil ontdekken gaat men met behulp van een CNN de afbeelding omzetten in een embedding. 
-Embeddings \cite{koehrsen_neural_2018} zijn vector representaties die kunnen worden vergeleken in een embedding space, waar gelijkaardige objecten dichter bij elkaar liggen. 
-De embedding van de input afbeelding wordt vergeleken met de embeddings die zich in een gallerij bevinden. 
-\cite{jiang_deep_2019} geeft aan dat met behulp van een query kunnen er gelijkaardige objecten uit de gallerij gehaald worden om deze te gaan vergelijken in een embedding space. 
-De gallerij is een database/verzameling met gekende embeddings/ID's van de objecten die men wilt herkennen.
+Wanneer er een getraind neuraal netwerk is kan er een herkenningssysteem ontwikkeld worden. 
+Als men een bepaald object in een afbeelding wil herkennen gaat men met behulp van een neuraal netwerk de afbeelding omzetten in een embedding. 
+Volgens \cite{koehrsen_neural_2018} zijn embeddings vectoren die kunnen worden vergeleken in een embedding space, waar gelijkaardige objecten dichter bij elkaar liggen. 
+De embedding van de input afbeelding wordt vergeleken met de embeddings die zich in een galerij bevinden. 
+\cite{jiang_deep_2019} vermeldt dat met behulp van een query er gelijkaardige objecten uit de galerij gehaald kunnen worden om deze vervolgens te gaan vergelijken in een embedding space. 
+De galerij is een database/verzameling met gekende embeddings/ID's van de objecten die men wil herkennen.
 Een query is een embedding van de input waarvan het label niet gekend is.
-Gelijkaardige embeddings kunnen gezocht worden via de nearest neighbour techniek, waar we naar de klasse van de dichtsbijzijnde buur gaan kijken.
-%refereren naar nearest neighbour
+Gelijkaardige embeddings kunnen gezocht worden via de nearest neighbour techniek.
+De nearest neighbour techniek vermeld in \cite{8010421} gaat in de embedding space kijken naar het K-aantal dichtste buren van een query.
+Het label dat het meest voorkomt tussen het K-aantal buren, zal dan ook het meest waarschijnlijke label zijn voor de query.
+Figuur \ref{fig:embedding} is een voorbeeld van een embedding space, een query is een punt in deze grafiek dat nog geen label heeft.
+Voor het herkennen van een afbeelding gaan we in de grafiek naar de K dichtsbijzijnde buren kijken van de query.
 
-%meer uitleg over embedding space en nearest neighbour techniek
-
-\subsection{convolutioneel neuraal netwerk (CNN) }
 \begin{figure}[!ht]
     \centering
- 	\includegraphics[width=0.80\linewidth]{fig/CNN.png}
- 	\caption{CNN met 2 convolutie lagen en 2 pooling lagen en een fully-connected layer}
- 	\label{fig:cnn}
+ 	\includegraphics[width=0.7\linewidth]{fig/embedding.png}
+ 	\caption{Voorbeeld van embedding space voor boek genres.}
+	\cite{koehrsen_neural_2018}
+ 	\label{fig:embedding}
 \end{figure}
 
-De belankrijkste bouwsteen van een herkenningssysteem is een goed getrainde CNN, in dit hoofdstuk wordt het CNN besproken dat beschreven wordt door \cite{jiang_deep_2019}.
-Het algemeen model van een CNN is weergegeven in figuur \ref{fig:cnn}. 
-In tegenstelling tot fully connected netwerken wordt bij een CNN de gewichten gedeeld over verschillende locaties om zo het aantal parameters te verminderen.
+\subsection{Convolutioneel neuraal netwerk (CNN) }
+De belangrijkste bouwsteen van een herkenningssysteem is een getraind CNN.
+In deze paragraaf bespreken we het CNN en zijn verschillende bouwstenen beschreven door \cite{jiang_deep_2019}.
+Figuur \ref{fig:cnn} is een voorbeeld van een CNN en zijn verschillende onderdelen.
+
+\begin{figure}[!ht]
+    \centering
+ 	\includegraphics[width=0.85\linewidth]{fig/cnn_2.png}
+ 	\caption{CNN met twee convolutie lagen en twee pooling lagen en \'e\'en fully-connected laag}
+ 	\label{fig:cnn}
+\end{figure}
  
-Het belangrijkste deel van een CNN zijn de convolutielagen (figuur \ref{fig:conv_laag}) waarbij men een kernel/filter over de input laat gaan wat als output een feature map genereerd. 
-Een kernel bestaat uit set van gewichten die met de input worden vermenigvuldigd, deze kernel wordt over de input afbeelding geschoven. 
-Al de pixels binnen het veld van de kernel worden gereduceert tot een enkele waarde. 
-CNN leren verschillende features met verschillende kernels in parallel. 
-Waardoor de matrices met feature mappen steeds kleiner worden maar ook dieper worden. Een andere factor van een convolutie laag is de stride, deze waarde geeft aan met hoeveel pixels de kernel telkens moet doorschuiven. 
-Een CNN bestaat uit een opeenvolging van een aantal convolutie lagen die steeds meer high-level features extraheren. 
+Het belangrijkste deel van een CNN zijn de convolutielagen (figuur \ref{fig:conv_laag}). 
+Bij een convolutielaag wordt een kernel/filter over de input geschoven om features te bepalen. 
+Een kernel bestaat uit een set van gewichten die met de input worden vermenigvuldigd.
+Deze actie wordt de convolutie genoemd.
+Al de pixels binnen het veld van de kernel worden gereduceerd tot een enkele waarde. 
+De convoluties zijn zeer effici\"ent om visuele informatie uit de input te halen.
+Convolutielagen leren verschillende features door meerdere kernels in parallel uit te voeren per convolutielaag. 
+Dit zorgt ervoor dat de matrices met featuremappen per kernel steeds kleiner worden maar ook dieper worden. 
+Een andere factor van een convolutie laag is de stride.
+Deze waarde geeft aan met hoeveel pixels de kernel telkens moet doorschuiven. 
+Als de stride \'e\'en is dan schuift de kernel steeds op met \'e\'en pixel en als de stride drie is dan schuift de kernel op met drie pixels.
+Stride \'e\'en zorgt voor meer features per featuremap, maar maakt het CNN trager omdat er meer bewerkingen moeten worden uitgevoerd.
+Een CNN bestaat uit een opeenvolging van een aantal convolutielagen die steeds meer high-level features extraheren. 
 Hoe meer convolutielagen een netwerk telt hoe meer features er uit de input worden gehaald, maar hoe trager het netwerk is. 
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.35\linewidth]{fig/convolution layer.png}
-	\caption{Convolutie laag waarbij een filter wordt herleid tot een output feature.}
+	\caption{Convolutielaag waarbij een filter wordt herleid tot een output feature.}
 	\label{fig:conv_laag}
 \end{figure}
 
-Elke convolutie laag wordt gevolgd door een niet-lineare activatie functie %lin act citaat
-, de meest gebruikt functie hiervoor is de rectified linear unit (ReLu) (figuur \ref{fig:relu}). 
-De ReLu wordt vaak gebruikt omdat deze eenvoudig is, kan exact 0 weergeven en ziet er lineair uit. 
+Na elke convolutielaag komt een niet lineaire activatie functie.
+De niet lineare activatie functie zorgt ervoor dat het CNN niet herleid kan worden tot \'e\'en convolultielaag die geen high-level features kan extraheren. 
+De meest gebruikte functie hiervoor is de rectified linear unit (ReLu) (figuur \ref{fig:relu}). 
+De ReLu wordt vaak gebruikt omdat deze veel sneller wordt uitgevoerd dan andere activatie functies zoals Sigmoid en Tangens hyperbolicus (\cite{Krizhevsky_act_2017}).
+De ReLu kan exact 0 weergeven en ziet er lineair uit. 
 Max(0,x) is de ReLu bewerking, dus er wordt verdergegaan met 0 of de input waarde. 
-Zonder een niet-lineare activatie functie kan het CNN herleid worden tot 1 convolultie laag die geen high-level features kan extraheren. 
-Andere mogelijkheden voor Lineare activatie functies zijn: Sigmoid en Tangens hyperbolicus maar deze functies vragen meer rekenwerk.
 %sigmoid en tanh sitaat
 
 \begin{figure}[!ht]
@@ -70,93 +86,123 @@ Andere mogelijkheden voor Lineare activatie functies zijn: Sigmoid en Tangens hy
  	\label{fig:relu}
 \end{figure}
 
-Een volgende bouwsteen is de pooling laag waarbij het aantal samples in de feature map wordt verlaagt. 
-De meest voorkomende methode is max-pooling waarbij er verder wordt gegaan met de maximum waarde in een bepaalde regio. 
-Het doel van een pooling laag is om het aantal parameters te verminderen en zo ook het rekenwerk te verminderen. 
+Een volgende bouwsteen is de poolinglaag.
+Deze laag verminderd het aantal features per feature map. 
+De meest voorkomende methode is max-pooling weergegeven in figuur \ref{fig:maxpool} waarbij er verder wordt gegaan met de maximum waarde in een bepaalde regio. 
+Het doel van een poolinglaag is om het aantal parameters te verminderen en zo ook het rekenwerk te verminderen. 
 Er kan ook gebruik gemaakt worden van avarage pooling waarbij er verder wordt gegaan met de gemiddelde waarde van een regio. 
 Er is ook minimal pooling waarbij er verder wordt gegaan met de minimum waarde.
 
-Op het einde van elk CNN volgen er meestal 1 of meerdere fully connected lagen. 
-Deze lagen connecteren elke input van \'e\'en laag met elke activatie eenheid van de volgende laag. 
-Dit zorgt voor meer parameters en meer rekenwerk waardoor deze lagen een vertragende factor vormen. 
-%De fully connected lagen gaan niet-lineare combinaties leren van de features van de convolutie lagen. 
-De fully connected lagen zorgen voor een classificatie op basis van de features van de convolutie lagen.
-
-\subsection{Trainen van een CNN}
-Het trainen van een CNN bestaat uit het leveren van veel voorbeelden aan het netwerk. 
-Op basis van het resultaat van deze voorbeelden worden telkens de gewichten van de kernels aangepast, zodat er steeds een beter resultaat wordt geleverd. 
-
-De loss functie geeft de error van de voorspelling weer tijdens het trainen van een neuraal netwerk. 
-Op basis van de loss functie gaat men via de stochastic gradi\"ent decent de gewichten van het netwerken bijstellen zodat bij een volgende trainingsinput de loss functie een beter resultaat geeft. 
-Bij de stochastic gradi\"ent decent wordt er per batch/group trainingsvoorbeelden de gewichten bijgesteld. 
-De gradienten worden berekend door de loss af te leiden naar de gewichten via de ketting regel, en de gewichten worden bijgesteld volgens de tegengestelde gradi\"ent. 
-
-De learning rate bij het trainen van een CNN be\"invloed de grootte van de stap waarmee de gewichten worden bijgesteld.
-Hoe kleiner de learning rate hoe langer het trainen van een CNN duurt.
-Maar als de learning rate te hoog is kan het resultaat een slecht getraind netwerk zijn, omdat de veranderingen op de gewichten te groot is om een beter resultaat te verkrijgen.
-%kan nog verder worden uitgebreid met back propagation, Loss, epochs, ...
-
-%embeddings worden getraind met triplet loss of autoencoder
-%\subsubsection{Triplet loss}
-
-\section{Deep learning-gebaseerde detector}
-Object detectie is het lokaliseren en classificeren van objecten in een afbeelding, waarbij de objecten aangeduid worden met een Bounding box. 
-Door gebruik te maken van CNN kunnen er vrij nauwkeurige object detectoren ontworpen worden. 
-Object detectie maakt voornamelijk gebruik van twee methodes: de single-stage detector en de two-stage detector.
-
-\subsection{Two-stage detector}
-Zoals de naam zegt bestaat deze methode uit 2 niveaus. 
-Het eerste deel worden er Regions of Intrest (RoIs) gecre\"eerd, dit is het filteren van regio's waarbij de kans groot is dat deze een object bevatten. 
-Het tweede deel classificeert en verfijnt de lokalisatie van de RoIs die in het eerste deel gecre\"eerd werden. 
-Dit gebeurt door elk van de RoIs door een CNN te voeren. 
-Region-based Convolutional Neural Network (R-CNN) \cite{girshick_fast_2015} is het basis principe van de two-stage detectoren weergegeven in figuur \ref{fig:r-cnn}. 
-Hierbij wordt met een region proposal algoritme regio's uit de afbeelding gefilterd waar de kans groot is dat er objecten op staan.
-R-CNN bestaat uit 3 stappen:
- 
-\begin{enumerate}
-    \item Via een selective search algoritme \cite{uijlings_selective_2013} worden er ongeveer 2000 mogelijke regio's met objecten geselecteerd.
-    \item Elke mogelijke regio wordt omgezet naar een feature vector via een CNN.
-    \item Elke regio wordt vervolgens geclassificeerd met een klas-specifieke SVMs.
-    %svm refereren
-\end{enumerate}
-
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.70\linewidth]{fig/R-CNN.jpg}
-	\caption{R-CNN}
-	\label{fig:r-cnn}
+	\includegraphics[width=0.5\linewidth]{fig/Maxpool.png}
+	\caption{Max pooling waarbij er verder wordt gegaan met de maximum waarde in een 2x2 regio.}
+	\label{fig:maxpool}
 \end{figure}
 
-R-CNN is een trage detector vermits elke RoIs door een CNN moet gaan. 
-Deze methode is ge\"evolueerd tot de veel snellere methode Faster R-CNN \cite{ren_faster_2016}. 
-Hierbij wordt de afbeelding door een CNN behandelt en vervolgens wordt er gebruik gemaakt van een Region Proposal Network (RPN) dit is weergegeven in figuur \ref{fig:faster-r-cnn}. 
-Het RPN gaat zoals bij R-CNN regio's uit de afbeelding filteren waar de kans groot is dat er objecten opstaan.
-Maar het RPN werkt sneller en levert betere resultaten dan het region proposal algoritme. 
+Op het einde van elk CNN volgen er meestal \'e\'en of meerdere fully connected lagen. 
+Deze lagen connecteren elke input van \'e\'en laag met elke activatie eenheid van de volgende laag, dit is weergegeven in het classificatie gedeelte van figuur \ref{fig:cnn}. 
+Dit zorgt voor meer parameters en meer rekenwerk, maar ook voor meer features.
+Door het extra rekenwerk vormen deze lagen een vertragende factor. 
+De fully connected lagen zorgen voor een classificatie op basis van de features van de convolutie lagen.
 
-Het RPN is een deep fully convolutional network dat per input een set van regio's als output geeft.
-Elk van deze regio's heeft een objectness score wat een maat is voor het object t.o.v. de achtergrond in de afbeelding.
-Om een region proposal te genereren wordt het RPN over de feature map geschoven die gegenereerd is door het voorgaande CNN.
-Op elke sliding window locatie worden er meerdere regio voorspellingen gedaan.
-Deze voorspelling wordt gedaan door verschillende anchor boxen in een sliding window te evalueren.
+\subsection{Trainen van een CNN} \label{train}
+Het trainen van een CNN bestaat uit het leveren van veel afbeeldingen met labels aan het netwerk. 
+Op basis van het resultaat van deze voorbeelden worden de gewichten van de kernels telkens aangepast.
+Zo levert het CNN steeds een beter resultaat. 
 
-Vervolgens worden RoIs omgezet naar een feature vector met vaste lengte door RoI pooling.
-Elk van deze features gaat door een set van fully-connected lagen die 2 lagen als output heeft.
-een softmax laag die de klasse voorspelt, en een bounding box regressie laag die de bounding box voorspelt.
+Tijdens het trainen van een CNN nemen we een groep met trainingsafbeeldingen en geven we deze als input aan het CNN.
+Het CNN geeft een voorspelling van deze trainingsafbeelding.
+Vervolgens vergelijken we de voorspelling met de label van de trainingsafbeelding.
+Per groep trainingsafbeeldingen wordt er via een loss functie het verschil tussen de voorspelde waarde en de werkelijke waarde berekend.
+De loss functie geeft de error van de voorspelling weer tijdens het trainen van een neuraal netwerk. 
+Als al de groepen met trainingsafbeeldingen \'e\'en keer zijn gebruikt als trainingsinput dan is er \'e\'en epoch voltooid.
+Zo kan het CNN X-aantal epochs uitvoeren waarbij de trainingsafbeelding X-aantal keer door het CNN worden verwerkt.
+
+De stochastic gradient descent is een techniek die men gebruikt om de loss van het CNN te minimaliseren.
+Hierbij wordt op basis van de loss functie de gradi\"ent voor elk gewicht berekend door de afgeleide te nemen van de loss naar dit gewicht.
+\begin{equation}
+	gradient = d(loss)/d(gewicht)
+\end{equation}
+Via de berekende gradi\"enten kunnen we nu de gewichten aanpassen zodat de loss geminimaliseerd wordt.
+We kunnen de factor waarmee we de gewichten aanpassen be\"invloeden met de learning rate.
+De learning rate is een factor die aangeeft hoe groot de stap moet zijn waarmee de gewichten worden aangepast.
+\begin{equation}
+	gewicht = oud\_gewicht - (learning rate * gradient)
+\end{equation}
+Hoe kleiner de learning rate hoe langer het trainen van een CNN duurt.
+Een te grote learning rate kan echter resulteren in een slecht getraind netwerk, omdat de veranderingen op de gewichten dan te groot zijn om een beter resultaat te krijgen.
+
+\subsection{Transfer Learning}
+Bij transfer learning (\cite{Geiger_IJRR_2013}) wordt er verder gebouwd op een model dat reeds getrained is.
+Hierbij maakt men gebruik van een basismodel waarvan de toepassing gerelateerd is aan de gewenste toepassing.
+Bijvoorbeeld een model waarmee we dieren dieren kunnen herkennen gebruiken we als basis voor een model dat hondenrassen herkent.
+Op dit basismodel kan er verdergetraind worden met een dataset specifiek voor de gewenste toepassing.
+Deze dataset kan veel kleiner zijn dan een dataset die nodig is om een nieuw model te trainen.
+Het trainen van een nieuw CNN kan soms weken duren.
+Via transfer learning kan de trainingsperiode met een grote factor gereduceerd worden.
+Deze methode gebruiken we voornamelijk om een 'nieuw' model te trainen vanwege de kleinere trainingsdataset en kortere trainingstijd.
+
+\subsection{ResNet50}
+Het herkenningnetwerk dat we willen implementeren in deze masterproef is de ResNet50 architectuur.
+\cite{he2015deep} heeft vastgesteld dat als het aantal lagen van een CNN toeneemt dat op een bepaald moment de training accuraatheid daalt.
+Dit verschijnsel noemt men de vanishing gradient.
+In paragraaf \ref{train} hebben we besproken hoe we de gradient kunnen berekenden tijdens het trainen van een CNN.
+Voor elke laag in het CNN moet de gradient opnieuw berekend worden door telkens opnieuw de afgeleide te berekenen.
+Hierdoor wordt de gradient steeds kleiner en kleiner tot deze een minimum bereikt.
+Waardoor de gewichten in de eerste lagen heel traag aanpassen of zelfs niet meer veranderen.
+\cite{he2015deep} die dit probleem hebben vastgesteld hebben dit opgelost door gebruik te maken van skip connections.
+Hierbij wordt de input van een laag rechtstreeks met een volgende laag geconecteerd die x aantal lagen verder ligt.
+Op deze manier worden de gradienten per laag niet meer kleiner.
+ResNet50 bestaat uit 50 convolutie lagen waarbij er een skip connection plaatsvindt per 3 lagen.
+De resnet50 architectuur is opgebouwd uit ResNet blokken die bestaan uit 3 convolutie lagen en 1 skip connection.
+
+\section{Deep learning-gebaseerde detector}
+Objectdetectie is het lokaliseren en classificeren van objecten in een afbeelding, waarbij de objecten aangeduid worden met een Bounding box.
+Een bounding box is een kader die rond een object wordt getekend. 
+De klassieke versie van objectdetectie is de sliding window benadering.
+Waarbij een venster met vaste grootte over de afbeelding schuift en telkens de gegevens binnen het venster analyseert.
+Momenteel kan objectdetectie worden opgedeeld in twee methodes: de single-stage detector en de two-stage detector.
+
+\subsection{Two-stage detector}
+Two stage detectoren focussen op accuraatheid ten koste van de uitvoeringssnelheid.
+Zoals de naam zegt bestaat deze methode uit 2 niveaus. 
+In het eerste niveau worden er Regions of Intrest (RoIs) gecre\"eerd.
+Dit is het filteren van regio's waarbij de kans groot is dat deze een object bevatten. 
+Het tweede deel classificeert en verfijnt de lokalisatie van de RoIs die in het eerste deel gecre\"eerd werden. 
+
+De voornaamste two-stage detector is de Faster R-CNN detector \cite{ren_faster_2016}. 
+Hierbij verwerkt een CNN eerst de inputafbeeldingen en vervolgens wordt er gebruik gemaakt van een Region Proposal Network (RPN) weergegeven in figuur \ref{fig:faster-r-cnn}. 
+Het RPN is een volledig convolutioneel netwerk dat regio's uit de afbeelding filtert waar de kans groot is dat er objecten opstaan.
+Per input geeft het RPN een set van regio's als output.
+Elk van deze regio's heeft een objectness score wat aangeeft in welke mate de regio een object bevat.
+Om een region proposal te genereren wordt het RPN over de feature map geschoven dat gegenereerd is door het voorgaande CNN.
+Op elke sliding window locatie van het RPN worden er meerdere regio voorspellingen gedaan.
+Deze voorspelling doet het RPN door verschillende anchor boxes te evalueren per sliding window locatie.
+Anchor boxes zijn een voorgedefini\"eerde set van bounding boxes met drie verschillende vormen in drie verschillende schalen.
+Via de non-maxima supression methode zorgen we ervoor dat er maar \'e\'en anchor box overblijft van de overlappende anchor boxes. 
+Deze techniek houdt enkel de anchor box over met de beste voorspelling en onderdrukt de rest van de anchor boxes.
+
+Na het RPN komt de RoI Pooling laag.
+Deze laag gebruikt max pooling om de feature map van elke RoI om te zetten naar een feature map met vaste grootte.
+Elk van deze features gaat door een set van fully connected lagen die twee lagen als output heeft.
+Een softmax laag die de klasse voorspelt, en een bounding box regressie laag die de bounding box voorspelt.
 %dieper ingaan op softmax en bbox voorspelling
 
 \begin{figure}[!ht]
     \centering
- 	\includegraphics[width=0.3\linewidth]{fig/Faster-R-CNN.png}
+ 	\includegraphics[width=0.35\linewidth]{fig/Faster-R-CNN.png}
  	\caption{Faster R-CNN}
  	\label{fig:faster-r-cnn}
 \end{figure}
 
 \subsection{One-stage detector}
-Bij one-stage detectoren gebeurt object detectie in \'e\'en keer met \'e\'en neuraal netwerk. 
+Bij one-stage detectoren gebeurt objectdetectie in \'e\'en keer. 
 Dus er is geen region proposal niveau meer zoals bij de two-stage detector. 
-Deze detector gebruiken minder geheugen en rekenkracht t.o.v. two-stage detectoren.
-One-stage detectoren zijn sneller dan two-stage detectoren omdat ze alles in \'e\'en keer doen, maar kunnen wat in nauwkeurigheid verliezen t.o.v. two-stage detectoren.
-De twee veel gebruikte technieken van one-stage detectie zijn: You Only Look Once (YOLO) en Single Shot Detection (SSD).
+Deze detectoren gebruiken minder geheugen en rekenkracht dan two-stage detectoren.
+Maar deze detectoren kunnen wat in nauwkeurigheid verliezen t.o.v. two-stage detectoren.
+Deze detectoren zijn zeer geschikt om gebruikt te worden op mobiele apparaten, omdat deze detectoren sneller zijn en minder geheugen nodig hebben.
+Twee veel gebruikte technieken van one-stage detectie zijn: You Only Look Once (YOLO) en Single Shot Detection (SSD).
 
 \begin{figure}[!ht]
 	\centering
@@ -167,25 +213,28 @@ De twee veel gebruikte technieken van one-stage detectie zijn: You Only Look Onc
 \end{figure}
 
 YOLO \cite{redmon_you_2016} verdeelt de afbeelding in een S x S rooster zoals in figuur \ref{fig:yolo} te zien is. 
-De cel waarin het middelpunt van het object valt is verantwoordelijk voor de object detectie.
-Elke cel voorspelt K aantal bounding boxes en een score die aangeeft hoe zeker het model is dat een bepaalde bounding box een object bevat.
-Deze score wordt bepaalt met de Intersection Of Union (IOU) tussen de voorspelde box en de ground truth box.
+%De cel waarin het middelpunt van het object valt is verantwoordelijk voor de object detectie.
+Elke cel kan meerdere bounding boxes voorspellen.
+Per bounding box wordt er een score bepaald die aangeeft hoe zeker het model is dat een bepaalde bounding box een object bevat.
+%Deze score wordt bepaalt met de Intersection Of Union (IOU) tussen de voorspelde box en de ground truth box.
 %IOU
 Vervolgens is er nog een methode nodig om de overbodige bounding boxen te verwijderen. 
-Een eerste mogelijkheid is door enkel bounding boxen te tekenen waarvan de voorspelling boven een treshold ligt. 
-Een andere methode is non-maxima supression deze methode zorgt ervoor dat elk object maar \'e\'en bounding box heeft. 
-Deze techniek houdt enkel de bounding box over met de beste voorspelling en onderdrukt de rest van de bounding boxen. 
+Een eerste mogelijkheid is door enkel bounding boxen te bepalen waarvan de voorspelling boven een zekere treshold ligt. 
+Een andere methode is non-maxima supression, een methode die ervoor zorgt dat elk object maar \'e\'en bounding box heeft. 
+Deze techniek houdt enkel de bounding box over met de beste voorspelling en onderdrukt de rest van de bounding boxes. 
 
-SSD \cite{liu_ssd_2016} is een one-stage detector (figuur \ref{fig:ssd}) waarbij een afbeelding door verschillende convolutielagen gaat, wat als resultaat feature mappen op verschillende schalen oplevert.
-Op elke locatie van deze feature mappen van verschillende schalen wordt een vaste set van bounding boxen ge\"evalueerd.
-Voor elk van deze boxen wordt de zekerheid dat het een object bevat voorspelt.
+SSD \cite{liu_ssd_2016} is een one-stage detector waarbij een afbeelding door verschillende convolutielagen gaat.
+Dit resulteert in feature mappen met verschillende schalen.
+Op elke locatie van deze feature mappen wordt een vaste set van bounding boxen ge\"evalueerd.
+Voor elk van deze boxen wordt de zekerheid dat het een object bevat voorspeld.
 Op het einde wordt non maximum suppression gebruikt om de finale voorspelling te maken.
-Het netwerk van een SSD bestaat uit een basis netwerk dat gevormd wordt door een standaard classificatie netwerk zonder de fully-connected lagen.
-Vervolgens worden er extra convolutie lagen toegevoegd, wat het model toelaat om voorspellingen te doen op verschillende schalen.
+In figuur \ref{fig:ssd} is te zien dat een SSD bestaat uit drie delen.
+De eerste twee delen bestaan uit een standaard classificatie netwerk zonder de fully-connected lagen en een set van extra convolutielagen.
+Het derde deel doet de effectieve detectie voor elke feature map met een verschillende schaal. 
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.80\linewidth]{fig/SSD.png}
-	\caption{One-stage detector met VGG net backbone}
+	\caption{One-stage detector met VGG als backbone, elke feature map met een verschillende schaal wordt ge\"evalueerd.}
 	\label{fig:ssd}
 \end{figure}

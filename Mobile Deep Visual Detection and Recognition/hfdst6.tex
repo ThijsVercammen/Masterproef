@@ -1,0 +1,86 @@
+\chapter{Compatibiliteit van herkenningssystemen}
+Voor het herkenningssysteem bestuderen we uitgebreid de ResNet50 architectuur.
+We gaan dit model trainen in het PyTorch en TensorFlow framework.
+Om vervolgens de mogelijke paden te bestuderen naar een mobiele implementatie.
+
+\section{ResNet50}
+\cite{he2015deep} heeft vastgesteld dat als het aantal lagen van een CNN toeneemt dat op een bepaald moment de training accuraatheid daalt.
+Dit verschijnsel noemt men de vanishing gradient.
+In paragraaf \ref{train} hebben we besproken hoe we de gradient kunnen berekenden tijdens het trainen van een CNN.
+Voor elke laag in het CNN moet de gradient opnieuw berekend worden door telkens opnieuw de afgeleide te berekenen.
+Hierdoor wordt de gradient steeds kleiner en kleiner tot deze een minimum bereikt.
+Waardoor de gewichten in de eerste lagen heel traag aanpassen of zelfs niet meer veranderen.
+\cite{he2015deep} die dit probleem hebben vastgesteld hebben dit opgelost door gebruik te maken van skip connections.
+Hierbij wordt de input van een laag rechtstreeks met een volgende laag die x aantal lagen verder ligt.
+Op deze manier worden de gradienten per laag niet meer kleiner.
+ResNet50 bestaat uit 50 convolutie lagen waarbij er een skip connection plaatsvindt per 3 lagen.
+De resnet50 architectuur is opgebouwd uit ResNet blokken die bestaan uit 3 convolutie lagen en 1 skip connection.
+
+%https://github.com/tensorflow/models/blob/master/official/vision/image_classification/resnet/resnet_model.py
+%https://github.com/priya-dwivedi/Deep-Learning/blob/master/resnet_keras/Residual_Networks_yourself.ipynb
+
+\section{Van TensorFlow naar mobiel framework}
+In figuur ... is het standaard ResNet50 netwerk dat in TensorFlow ge\"implenteerd kan worden vanuit Keras te zien.
+In deze figuur kunnen we de voornaamste opperaties terug vinden die in het netwerk gebruikt worden.
+Ook vinden we in deze architectuur 2 verschillende ResNet blokken terug: de ID-blok en de convolutie blok.
+In figuur ... worden de 2 verschillende blokken en hun opperaties weergegeven.
+Hierbij is te zien dat in het convolutieblok 2 extra opperaties worden uitgevoerd tijdens de skip connection.
+
+Voor het experiment van ResNet50 maken we gebruik van het standaard ResNet50 netwerk dat in TensorFlow ge\"implenteerd kan worden vanuit Keras.
+Dit netwerk is vervolgens hertrained met een katten en honden dataset ... .
+Al de code code is uitgevoerd in Google Colaberate met een GPU runtime.
+
+in tabel \ref{tab:TFop} is te zien welke operaties er zijn terug te vinden in het ResNet50 model dat zonet getrained is.
+Ook kunnen we in deze tabel terug vinden welke opereraties TfLite ondersteund en met welke ONNX opset versie deze opperaties compatibel zijn.
+%We moeten er wel bij vermelden dat TFLite enkel variabelen van het type float32 en int8 ondersteund.
+Tijdens het converteren van TensorFlow naar TFLite worden optimalisaties uitgevoerd waarbij enkele operaties worden verwijderd, constant gemaakt of samengevoegd met een voorgaande laag.
+De tf2onnx converter maakt standaard gebruik van ONNX opset versie 9.
+Bij het converterent van TensorFlow naar ONNX onder standaard omstandigheden krijgen we de volgende fout 
+\textcolor{red}{ValueError: StridedSlice: only strides=1 is supported}.  
+Voor het converteren van TensorFlow naar ONNX is minstens opset versie 10 nodig.
+
+\begin{table}[!ht]
+    \caption{Alle operaties die terug te vinden zijn in het ResNet50 model en hun compatibiliteit met andere frameworks}
+\begin{tabular}{cccc}
+    \hline
+    Operaties & TensorFlow \textrightarrow TFLite & ONNX Opset & MACE \\
+    \hline
+    AddV2 & fused/ond & 1,6,7,13,14 & / \\
+%   AssignVariableOp & Ondersteund & /  & / \\
+    AveragePooling & ondersteund & 1 & ond \\
+    BiasAdd & ond & 1  & ond \\
+    Cast & Ondersteund & 1,6,9,13  & / \\
+    Const & const & 1,9,11,12,13  & / \\
+    Conv2D & Ondersteund & 1,11  & ond \\
+    FusedBatchNormV3 & fused/ond & 6 & /\\
+    GreaterEqual & Ondersteund & 7  & / \\
+    Identity & ver, fused, const & 1,13,14,16  & / \\
+    MatMul & Ondersteund & 1,9,11  & ond \\
+    MaxPool & Ondersteund & 1,8,10,11,12  & ond \\
+    Mean & Ondersteund & 1,6,8,13  & / \\
+%    MergeV2Checkpoints & ? & /  & / \\
+    Mul & Ondersteund & 1,6,7,13,14  & / \\
+    NoOp & ver & /  & / \\
+    Pack & Ondersteund & 1,4,11,13  & / \\
+    Pad & Ondersteund & 1,2,11,13  & ond \\
+ %  PartitionedCall & ? & /  & / \\
+    Placeholder & const/verw & 1  & / \\
+    RandomUniform & const/verw & 1  & / \\
+ %  ReadVariableOp & Ondersteund & /  & / \\
+    Relu & fused & 1,6,13,14  & ond \\
+ %  RestoreV2 & ? & /  & / \\
+ %  SaveV2 & ? & /  & / \\
+    Select & const/verw & 7  & / \\
+    Shape & ver/const & 1,13,15  & / \\
+%   ShardedFilename & ? & /  & / \\
+    StatefulPartitionedCall & ond & /  & / \\
+%   StaticRegexFullMatch & ? & /  & / \\
+    StridedSlice & Ondersteund & 1, 10  & / \\
+%   StringJoin & ? & /  & / \\
+    VarHandleOp & verw & /  & / \\
+    \hline
+\end{tabular}
+\label{tab:TFop}
+\end{table}
+
+\subsection{Van PyTorch naar mobiele implementatie}

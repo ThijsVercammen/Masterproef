@@ -1,13 +1,54 @@
 \begin{thebibliography}{}
 
+\bibitem[Abadi et~al., 2015]{tensorflow2015-whitepaper}
+Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado,
+  G.~S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp,
+  A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L., Kudlur, M.,
+  Levenberg, J., Man\'{e}, D., Monga, R., Moore, S., Murray, D., Olah, C.,
+  Schuster, M., Shlens, J., Steiner, B., Sutskever, I., Talwar, K., Tucker, P.,
+  Vanhoucke, V., Vasudevan, V., Vi\'{e}gas, F., Vinyals, O., Warden, P.,
+  Wattenberg, M., Wicke, M., Yu, Y., and Zheng, X. (2015).
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems.
+\newblock Software available from tensorflow.org.
+
 \bibitem[Abadi et~al., 2016]{abadi_tensorflow_2016}
 Abadi, M., Barham, P., Chen, J., Chen, Z., Davis, A., Dean, J., Devin, M.,
   Ghemawat, S., Irving, G., Isard, M., Kudlur, M., Levenberg, J., Monga, R.,
   Moore, S., Murray, D.~G., Steiner, B., Tucker, P., Vasudevan, V., Warden, P.,
   Wicke, M., Yu, Y., and Zheng, X. (2016).
 \newblock {TensorFlow}: {A} system for large-scale machine learning.
-\newblock {\em arXiv:1605.08695 [cs]}.
-\newblock arXiv: 1605.08695.
+
+\bibitem[Android, 2021]{Android_NNAPI_2021}
+Android (2021).
+\newblock Neural {Networks} {API} {\textbar} {Android} {NDK}.
+\newblock \url{https://developer.android.com/ndk/guides/neuralnetworks?hl=nl}.
+
+\bibitem[Apple, 2018]{Apple_CoreML_2018}
+Apple (2018).
+\newblock Core {ML} {\textbar} {Apple} {Developer} {Documentation}.
+\newblock \url{https://developer.apple.com/documentation/coreml}.
+
+\bibitem[Chen et~al., 2019]{chen_mmdetection_2019}
+Chen, K., Wang, J., Pang, J., Cao, Y., Xiong, Y., Li, X., Sun, S., Feng, W.,
+  Liu, Z., Xu, J., Zhang, Z., Cheng, D., Zhu, C., Cheng, T., Zhao, Q., Li, B.,
+  Lu, X., Zhu, R., Wu, Y., Dai, J., Wang, J., Shi, J., Ouyang, W., Loy, C.~C.,
+  and Lin, D. (2019).
+\newblock {MMDetection}: {Open} {MMLab} {Detection} {Toolbox} and {Benchmark}.
+
+\bibitem[Chen et~al., 2015]{chen_mxnet_2015}
+Chen, T., Li, M., Li, Y., Lin, M., Wang, N., Wang, M., Xiao, T., Xu, B., Zhang,
+  C., and Zhang, Z. (2015).
+\newblock Mxnet: A flexible and efficient machine learning library for
+  heterogeneous distributed systems.
+
+\bibitem[Chollet et~al., 2015]{chollet2015keras}
+Chollet, F. et~al. (2015).
+\newblock Keras.
+\newblock \url{https://github.com/fchollet/keras}.
+
+\bibitem[Duan et~al., 2019]{duan_centernet_2019}
+Duan, K., Bai, S., Xie, L., Qi, H., Huang, Q., and Tian, Q. (2019).
+\newblock {CenterNet}: {Keypoint} {Triplets} for {Object} {Detection}.
 
 \bibitem[Febvay, 2020]{febvay_low-level_2020}
 Febvay, M. (2020).
@@ -16,18 +57,45 @@ Febvay, M. (2020).
 \newblock In {\em Proceedings of the 28th {ACM} {International} {Conference} on
   {Multimedia}}, pages 4738--4742, Seattle WA USA. ACM.
 
-\bibitem[Girshick, 2015]{girshick_fast_2015}
-Girshick, R. (2015).
-\newblock Fast {R}-{CNN}.
-\newblock {\em arXiv:1504.08083 [cs]}.
-\newblock arXiv: 1504.08083.
+\bibitem[Gai et~al., 2021]{Gai_TinyV3_2021}
+Gai, W., Liu, Y., Zhang, J., and Jing, G. (2021).
+\newblock An improved tiny yolov3 for real-time object detection.
+\newblock {\em Systems Science \& Control Engineering}, 9(1):314--321.
+
+\bibitem[Geiger et~al., 2013]{Geiger_IJRR_2013}
+Geiger, A., Lenz, P., Stiller, C., and Urtasun, R. (2013).
+\newblock Vision meets robotics: The kitti dataset.
+\newblock {\em International Journal of Robotics Research (IJRR)}.
+
+\bibitem[Goel et~al., 2020]{goel_survey_2020}
+Goel, A., Tung, C., Lu, Y.-H., and Thiruvathukal, G.~K. (2020).
+\newblock A survey of methods for low-power deep learning and computer vision.
+
+\bibitem[Google, 2014]{Google_flatbuffers_2014}
+Google (2014).
+\newblock {FlatBuffers}: Memory efficient {Serialization} {Library}.
+\newblock \url{https://google.github.io/flatbuffers/}.
+
+\bibitem[Google, 2021]{Google_protocol_2014}
+Google (2021).
+\newblock Protocol {Buffers} - {Google}'s data interchange format.
+\newblock \url{https://github.com/protocolbuffers/protobuf}.
+
+\bibitem[Guo et~al., 2020]{guo_gluoncv_2020}
+Guo, J., He, H., He, T., Lausen, L., Li, M., Lin, H., Shi, X., Wang, C., Xie,
+  J., Zha, S., Zhang, A., Zhang, H., Zhang, Z., Zhang, Z., Zheng, S., and Zhu,
+  Y. (2020).
+\newblock {GluonCV} and {GluonNLP}: {Deep} {Learning} in {Computer} {Vision}
+  and {Natural} {Language} {Processing}.
 
 \bibitem[Han et~al., 2016]{han_deep_2016}
 Han, S., Mao, H., and Dally, W.~J. (2016).
 \newblock Deep {Compression}: {Compressing} {Deep} {Neural} {Networks} with
   {Pruning}, {Trained} {Quantization} and {Huffman} {Coding}.
-\newblock {\em arXiv:1510.00149 [cs]}.
-\newblock arXiv: 1510.00149.
+
+\bibitem[He et~al., 2015]{he2015deep}
+He, K., Zhang, X., Ren, S., and Sun, J. (2015).
+\newblock Deep residual learning for image recognition.
 
 \bibitem[Jiang et~al., 2019]{jiang_deep_2019}
 Jiang, X., Hadid, A., Pang, Y., Granger, E., and Feng, X. (2019).
@@ -37,9 +105,22 @@ Jiang, X., Hadid, A., Pang, Y., Granger, E., and Feng, X. (2019).
 \newblock Springer Singapore : Imprint: Springer, Singapore, 1st ed. 2019.
   edition.
 
+\bibitem[Khan, 2020]{khan_mace_2020}
+Khan, J. (2020).
+\newblock {MACE}: {Deep} learning optimized for mobile and edge devices.
+\newblock
+  \url{https://heartbeat.comet.ml/mace-deep-learning-optimized-for-mobile-and-edge-devices-5e6941cc0533}.
+
 \bibitem[Koehrsen, 2018]{koehrsen_neural_2018}
 Koehrsen, W. (2018).
 \newblock Neural {Network} {Embeddings} {Explained}.
+\newblock
+  \url{https://towardsdatascience.com/neural-network-embeddings-explained-4d028e6f0526}.
+
+\bibitem[Krizhevsky et~al., 2017]{Krizhevsky_act_2017}
+Krizhevsky, A., Sutskever, I., and Hinton, G.~E. (2017).
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock {\em Commun. ACM}, 60.
 
 \bibitem[Li et~al., 2020]{li_PyTorch_2020}
 Li, S., Zhao, Y., Varma, R., Salpekar, O., Noordhuis, P., Li, T., Paszke, A.,
@@ -47,6 +128,15 @@ Li, S., Zhao, Y., Varma, R., Salpekar, O., Noordhuis, P., Li, T., Paszke, A.,
 \newblock {PyTorch} distributed: experiences on accelerating data parallel
   training.
 \newblock {\em Proceedings of the VLDB Endowment}, 13(12):3005--3018.
+
+\bibitem[Lin et~al., 2018]{lin_focal_2018}
+Lin, T.-Y., Goyal, P., Girshick, R., He, K., and Dollár, P. (2018).
+\newblock Focal {Loss} for {Dense} {Object} {Detection}.
+
+\bibitem[Lin et~al., 2015]{lin2015microsoft}
+Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J.,
+  Perona, P., Ramanan, D., Zitnick, C.~L., and Dollár, P. (2015).
+\newblock Microsoft coco: Common objects in context.
 
 \bibitem[Liu et~al., 2016]{liu_ssd_2016}
 Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C.-Y., and Berg,
@@ -58,13 +148,49 @@ Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C.-Y., and Berg,
 Luo, C., He, X., Zhan, J., Wang, L., Gao, W., and Dai, J. (2020).
 \newblock Comparison and {Benchmarking} of {AI} {Models} and {Frameworks} on
   {Mobile} {Devices}.
-\newblock {\em arXiv:2005.05085 [cs, eess]}.
-\newblock arXiv: 2005.05085.
+
+\bibitem[Ma et~al., 2017]{8010421}
+Ma, H., Gou, J., Wang, X., Ke, J., and Zeng, S. (2017).
+\newblock Sparse coefficient-based ${k}$ -nearest neighbor classification.
+\newblock {\em IEEE Access}, 5.
+
+\bibitem[Martins et~al., 2021]{martins_imageai_2021}
+Martins, M., Mota, D., Morgado, F., Wanzeller, C., Martins, P., and Abbasi, M.
+  (2021).
+\newblock {ImageAI}: {Comparison} {Study} on {Different} {Custom} {Image}
+  {Recognition} {Algorithms}.
+\newblock In Rocha, l., Adeli, H., Dzemyda, G., Moreira, F., and
+  Ramalho~Correia, A.~M., editors, {\em Trends and {Applications} in
+  {Information} {Systems} and {Technologies}}, Advances in {Intelligent}
+  {Systems} and {Computing}, pages 602--610, Cham. Springer International
+  Publishing.
 
 \bibitem[ONNX, 2017]{onnx_onnx_2017}
 ONNX (2017).
 \newblock {ONNX} {Tutorials}.
-\newblock original-date: 2017-11-15T18:59:18Z.
+\newblock \url{https://github.com/onnx/tutorials}.
+
+\bibitem[ONNX, 2019]{onnx_onnxruntime_2019}
+ONNX (2019).
+\newblock {ONNX} {Runtime} ({ORT}).
+\newblock \url{https://onnxruntime.ai/docs/}.
+
+\bibitem[ONNX, 2021]{onnx_tf2onnx_2021}
+ONNX (2021).
+\newblock tf2onnx - {Convert} {TensorFlow}, {Keras}, {Tensorflow}.js and
+  {Tflite} models to {ONNX}.
+\newblock
+  \url{https://github.com/onnx/tensorflow-onnx/blob/42e800dc2945e5cadb9df4f09670f2e20eb6d222/support_status.md}.
+
+\bibitem[Paszke et~al., 2017]{Facebook_PyTorch_2017}
+Paszke, A., Gross, S., Chintala, S., and Chanan, G. (2017).
+\newblock {PyTorch}.
+\newblock \url{https://www.PyTorch.org}.
+
+\bibitem[PyTorch, 2021]{pytorch_atensrcatennative_2021}
+PyTorch (2021).
+\newblock pytorch/aten/src/{ATen}/native at master · pytorch/pytorch.
+\newblock \url{https://github.com/pytorch/pytorch}.
 
 \bibitem[Redmon et~al., 2016]{redmon_you_2016}
 Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016).
@@ -74,19 +200,33 @@ Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016).
   {Recognition} ({CVPR})}, pages 779--788.
 \newblock ISSN: 1063-6919.
 
+\bibitem[Redmon and Farhadi, 2018]{redmon_yolov3_2018}
+Redmon, J. and Farhadi, A. (2018).
+\newblock Yolov3: An incremental improvement.
+\newblock \url{https://arxiv.org/abs/1804.02767}.
+
 \bibitem[Ren et~al., 2016]{ren_faster_2016}
 Ren, S., He, K., Girshick, R., and Sun, J. (2016).
 \newblock Faster {R}-{CNN}: {Towards} {Real}-{Time} {Object} {Detection} with
   {Region} {Proposal} {Networks}.
-\newblock {\em arXiv:1506.01497 [cs]}.
-\newblock arXiv: 1506.01497.
+\newblock \url{http://arxiv.org/abs/1506.01497}.
 
-\bibitem[Uijlings et~al., 2013]{uijlings_selective_2013}
-Uijlings, J.~R., R, van~de Sande, K.~E., A, Gevers, T., Smeulders, A.~W., and M
-  (2013).
-\newblock Selective {Search} for {Object} {Recognition}.
-\newblock {\em International Journal of Computer Vision}, 104(2):154--171.
-\newblock Num Pages: 154-171 Place: New York, Netherlands Publisher: Springer
-  Nature B.V.
+\bibitem[Sandler et~al., 2019]{sandler_mobilenetv2_2019}
+Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., and Chen, L.-C. (2019).
+\newblock {MobileNetV2}: {Inverted} {Residuals} and {Linear} {Bottlenecks}.
+
+\bibitem[Simonyan and Zisserman, 2015]{simonyan2015deep}
+Simonyan, K. and Zisserman, A. (2015).
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock \url{https://arxiv.org/abs/1409.1556}.
+
+\bibitem[Tan et~al., 2020]{tan_efficientdet_2020}
+Tan, M., Pang, R., and Le, Q.~V. (2020).
+\newblock {EfficientDet}: {Scalable} and {Efficient} {Object} {Detection}.
+
+\bibitem[Wu et~al., 2019]{wu2019detectron2}
+Wu, Y., Kirillov, A., Massa, F., Lo, W.-Y., and Girshick, R. (2019).
+\newblock Detectron2.
+\newblock \url{https://github.com/facebookresearch/detectron2}.
 
 \end{thebibliography}

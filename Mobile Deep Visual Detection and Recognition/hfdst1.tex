@@ -8,19 +8,53 @@
 \chapter{Situering en doelstelling}
 
 \section{Situering}
-Tegenwoordig wordt deep learning steeds meer en meer gebruikt om beeldverwerking problemen op te lossen. Via neurale netwerken kunnen we met meer en betere features werken om de afbeeldingen te analiseren. Maar veel van deze modelen hebben behoorlijk wat rekenkracht en geheugen nodig om te werken. Ook is er steeds meer intresse naar real-time toepassingen waarvan het resultaat zo snel mogelijk beschikbaar moet zijn. Dit wordt moeilijk bij veel hedendaagse systemen waarbij de foto eerst genomen moet worden en vervolgens door een computer geanaliseerd moet worden, omdat hedendaagse systemen veel rekenwerk en geheugen vragen. In deze masterproef wordt er onderzocht of de computer kan weggelaten worden en de afbeelding meteen door het mobiel apparaat geanaliseerd kan worden. Dus er moet onderzocht worden hoe een bestaand model aangepast kan worden om effici\"ent te werken op een mobiel apparaat. Hierbij moet vooral rekening gehouden worden met de rekenkracht en geheugen van het mobiele apparaat.
+Tegenwoordig wordt deep learning steeds meer en meer gebruikt om beeldverwerkingsproblemen op te lossen. 
+Via neurale netwerken kunnen we met meer en betere features werken om de afbeeldingen te analyseren. 
+Veel van deze modellen hebben echter behoorlijk wat rekenkracht en geheugen nodig om te werken.
+Bovendien is er steeds meer interesse naar real-time toepassingen waarvan het resultaat zo snel mogelijk beschikbaar moet zijn.
+Een voorbeeld hiervan zijn zelfrijdende auto's.
+Een zelfrijdende auto moet kunnen stoppen voor een persoon die de weg oversteekt.
+Hierbij moet zo snel en accuraat mogelijk een persoon herkend worden zodat de auto op tijd kan stoppen.
+Dit wordt moeilijk bij een aantal toepassingen waarbij de foto eerst genomen moet worden en vervolgens door een computer geanalyseerd moet worden.
+Dit is omdat huidige herkenningsystemen en detectiesystemen veel rekenwerk en geheugen vragen, het volgende voorbeeld is een mogelijke use-case. 
+
+Het automatisch detecteren en herkennen van producten in de rekken van een supermarkt heeft veel interessante real-time toepassingen.
+Het kan slechtzienden helpen om snel de producten te vinden die ze nodig hebben. 
+Het winkelmanagement kan zo een real-time status krijgen van de inventaris op de winkelrekken.
+Er kan ook nagekeken worden of de producten staan waar ze horen te staan in de rekken.
+Eerdere studies hebben reeds het potentieel van diep neurale netwerken laten zien voor deze taken.
+Achter het neuraal netwerk van deze toepassing zit echter veel complex rekenwerk en vereisten voor het geheugen.
+Deze beperkingen zorgen voor een groot struikelblok voor real-life toepassingen.
+Het zou namelijk handig zijn dat het neuraal netwerk kan worden uitgevoerd op een smartphone.
+De voornaamste manier om zware neurale netwerken uit te voeren op een smartphone is door het neuraal netwerk uit te voeren op een server zoals de cloud.
+Een internet connectie is nodig om data naar de cloud te sturen en van de cloud te ontvangen.
+Door het neuraal netwerk op een smartphone uit te voeren is er geen nood meer aan een internet connectie.
+Dit zorgt ook voor een lagere response tijd omdat de applicatie niet meer moet wachten op het antwoord van het neuraal netwerk dat in de cloud wordt uitgevoerd.
+De data blijft dan op de smartphone en wordt niet over het internet gecommuniceerd wat zorgt voor een betere privacy en veiligheid. 
+In deze masterproef onderzoeken we hoe een bestaand neuraal netwerk kan worden aangepast, zodat dit bruikbaar is voor een mobiele implementatie.
 
 \section{Probleemstelling}
-Mobiele apparaten zijn kleine toestellen met beperkt geheugen en beperkte rekenkracht. In deze masterproef wordt er onderzocht hoe het rekenwerk beperkt kan worden zodat het resultaat real-time geleverd kan worden. Er gaat ook onderzocht worden hoe alle data effici\"ent kan worden opgeslagen op het toestel. 
+Mobiele apparaten zijn kleine toestellen met beperkt geheugen en beperkte rekenkracht. 
+In deze masterproef wordt er onderzocht hoe het rekenwerk beperkt kan worden, zodat het resultaat real-time geleverd kan worden. 
+We gaan ook onderzoeken hoe alle data effici\"ent kan worden opgeslagen op het toestel. 
+
+Bij deze masterproef willen we van een neuraal netwerk dat in een bepaald framework gemodelleerd en getraind is gaan naar een mobiele implementatie.
+Zo wordt er voor een aantal verschillende frameworks onderzocht op welke manieren deze naar een mobiele implementatie kunnen gaan.
+Bovendien zullen we per framework de omzetting naar mobiele implementatie voor verschillende CNN-architecturen onderzoeken. 
+Vervolgens zal er ook gekeken worden naar verdere optimalisaties voor herkenningssystemen en detectiesystemen. 
+Het uiteindelijke doel is een prototype ontwikkelen dat een bestaand herkenningnetwerk en detectienetwerk implementeert op een mobiel apparaat. 
+Bij dit prototype is dan het rekenwerk en de geheugen vereisten geminimaliseerd zonder een groot effect te hebben op de accuraatheid van het model.
+
+In deze masterproef zal het vooral gaan over het optimaliseren van een bestaand neuraal netwerk en het model omzetten naar een mobiele implementatie.
+We gaan ervan uit dat in deze masterproef het model van het neuraal netwerk reeds gemodelleerd en getraind is.
+
 
 \section{Doelstellingen}
-Het uiteindelijke doel van deze masterproef is er voor zorgen dat een bestaand deep learning model aangepast kan worden zodat dit real-time resultaten kan geven op een mobiel apparaat. Dit gebeurt aan de hand van de volgende stappen:
+Het uiteindelijke doel van deze masterproef is er voor zorgen dat een bestaand deep learning model aangepast kan worden, zodat dit real-time resultaten kan geven op een mobiel apparaat. 
+Dit gebeurt aan de hand van de volgende stappen:
 \begin{itemize}
-    \item grondig begrijpen van een deep learning herkenningssysteem
-    \item grondig begrijpen van een deep learning detectiesysteem
-    \item Onderzoeken welke technieken er gebruikt kunnen worden om bestaande systemen op een mobiel apparaat te implementeren.
-    \item onderzoeken voor optimalisaties voor een herkenningssysteem
-    \item onderzoeken voor optimalisaties voor een detectiesysteem
-    \item gevonden technieken testen en analiseren
-    \item werkend prototype applicatie ontwerpen voor een mobiel apparaat
+    \item Het bespreken van een deep learning herkenningssysteem en detectiesysteem.
+    \item Bespreken van frameworks/bibliotheken waarin het basismodel ontwikkeld kan worden.
+    \item Bespreken van frameworks en optimalisatietechnieken die ervoor kunnen zorgen dat bestaande modellen mogelijk kunnen uitgevoerd worden op een mobiel apparaat.
+    \item gevonden technieken testen en analyseren voor verschillende frameworks en neurale netwerken met als uiteindelijke resultaat een werkend prototype te ontwikkelen.
 \end{itemize}

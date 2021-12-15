@@ -2,15 +2,20 @@
 \babel@toc {dutch}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces CNN met 2 convolutie lagen en 2 pooling lagen en een fully-connected layer\relax }}{4}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Convolutie laag waarbij een filter wordt herleid tot een output feature.\relax }}{4}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces ReLu, waarbij het maximum wordt genomen van 0 en de input waarde.\relax }}{5}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces R-CNN\relax }}{6}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Faster R-CNN\relax }}{7}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{8}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces One-stage detector met VGG net backbone\relax }}{8}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Voorbeeld van embedding space voor boek genres.\relax }}{4}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces CNN met twee convolutie lagen en twee pooling lagen en \'e\'en fully-connected laag\relax }}{4}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Convolutielaag waarbij een filter wordt herleid tot een output feature.\relax }}{5}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces ReLu, waarbij het maximum wordt genomen van 0 en de input waarde.\relax }}{5}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Max pooling waarbij er verder wordt gegaan met de maximum waarde in een 2x2 regio.\relax }}{6}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Faster R-CNN\relax }}{8}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{9}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces One-stage detector met VGG als backbone, elke feature map met een verschillende schaal wordt ge\"evalueerd.\relax }}{10}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Implementatie flow van een getraind TensorFlow model naar de applicatie\relax }}{11}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Implementatie flow van een getraind PyTorch model naar de applicatie met code\relax }}{12}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces CNN voor en na pruning\relax }}{15}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Een weergave van de voornaamste frameworks die naar ONNX kunnen exporten en die een ONNX model kunnen importeren.\relax }}{15}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Implementatieflow van een TensorFlow model naar een mobiele implementatie. Aan de linker kant is te zien dat een TensorFlow model via de TFLite converter wordt omgezet in TFLite flatbuffer model. Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een client toestel waar er gebruik gemaakt kan worden van verschillende hardware componenten\relax }}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces CNN voor en na pruning\relax }}{24}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces kwantisatie van twee floating piont variabelen die worden omgezet naar twee fixed point variabelen met een gemeenschappelijke exponent.\relax }}{24}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Weight clustering: links zijn allemaal verschillende gewichten en na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen kunnen wijzen naar vier verschilende waarden.\relax }}{25}{figure.caption.22}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }

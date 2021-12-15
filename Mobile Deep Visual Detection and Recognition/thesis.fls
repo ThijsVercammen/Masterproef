@@ -77,7 +77,6 @@ INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\generic\babel\b
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.sty
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\generic\babel\babel.def
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\generic\babel\txtbabel.def
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
@@ -623,6 +622,19 @@ INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\wrapfig\w
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\wrapfig\wrapfig.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\wrapfig\wrapfig.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\wrapfig\wrapfig.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\pythonhighlight\pythonhighlight.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
@@ -795,8 +807,6 @@ INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\hel
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\MiKTeX\pdftex\config\pdftex.map
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb8r.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
@@ -931,17 +941,28 @@ INPUT .\hfdst2.tex
 INPUT .\hfdst2.tex
 INPUT hfdst2.tex
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
-INPUT .\fig\CNN.png
-INPUT .\fig\CNN.png
-INPUT fig\CNN.png
-INPUT .\fig\CNN.png
-INPUT .\fig\CNN.png
-INPUT .\fig\CNN.png
-INPUT .\fig\CNN.png
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb8r.tfm
+INPUT .\fig\embedding.png
+INPUT .\fig\embedding.png
+INPUT fig\embedding.png
+INPUT .\fig\embedding.png
+INPUT .\fig\embedding.png
+INPUT .\fig\embedding.png
+INPUT .\fig\embedding.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb7t.tfm
+INPUT .\fig\cnn_2.png
+INPUT .\fig\cnn_2.png
+INPUT fig\cnn_2.png
+INPUT .\fig\cnn_2.png
+INPUT .\fig\cnn_2.png
+INPUT .\fig\cnn_2.png
+INPUT .\fig\cnn_2.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb8r.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT .\fig\convolution layer.png
 INPUT .\fig\convolution layer.png
 INPUT fig\convolution layer.png
@@ -949,10 +970,6 @@ INPUT .\fig\convolution layer.png
 INPUT .\fig\convolution layer.png
 INPUT .\fig\convolution layer.png
 INPUT .\fig\convolution layer.png
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvb7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvb8r.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvr7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr8r.tfm
 INPUT .\fig\ReLu.png
 INPUT .\fig\ReLu.png
 INPUT fig\ReLu.png
@@ -960,13 +977,16 @@ INPUT .\fig\ReLu.png
 INPUT .\fig\ReLu.png
 INPUT .\fig\ReLu.png
 INPUT .\fig\ReLu.png
-INPUT .\fig\R-CNN.jpg
-INPUT .\fig\R-CNN.jpg
-INPUT fig\R-CNN.jpg
-INPUT .\fig\R-CNN.jpg
-INPUT .\fig\R-CNN.jpg
-INPUT .\fig\R-CNN.jpg
-INPUT .\fig\R-CNN.jpg
+INPUT .\fig\Maxpool.png
+INPUT .\fig\Maxpool.png
+INPUT fig\Maxpool.png
+INPUT .\fig\Maxpool.png
+INPUT .\fig\Maxpool.png
+INPUT .\fig\Maxpool.png
+INPUT .\fig\Maxpool.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zpzccmry.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfchan\pzcmi8r.tfm
 INPUT .\fig\Faster-R-CNN.png
 INPUT .\fig\Faster-R-CNN.png
 INPUT fig\Faster-R-CNN.png
@@ -995,24 +1015,35 @@ INPUT hfdst3.tex
 INPUT .\hfdst3.tex
 INPUT .\hfdst3.tex
 INPUT hfdst3.tex
-INPUT .\fig\TFLite.jpg
-INPUT .\fig\TFLite.jpg
-INPUT fig\TFLite.jpg
-INPUT .\fig\TFLite.jpg
-INPUT .\fig\TFLite.jpg
-INPUT .\fig\TFLite.jpg
-INPUT .\fig\TFLite.jpg
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT .\fig\PyTorch-mobile.png
-INPUT .\fig\PyTorch-mobile.png
-INPUT fig\PyTorch-mobile.png
-INPUT .\fig\PyTorch-mobile.png
-INPUT .\fig\PyTorch-mobile.png
-INPUT .\fig\PyTorch-mobile.png
-INPUT .\fig\PyTorch-mobile.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr7tn.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr7tn.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrro7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrb7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\public\pslatex\pcrr7tn.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr8rn.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrro7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrro8r.tfm
+INPUT .\fig\onnx.jpeg
+INPUT .\fig\onnx.jpeg
+INPUT fig\onnx.jpeg
+INPUT .\fig\onnx.jpeg
+INPUT .\fig\onnx.jpeg
+INPUT .\fig\onnx.jpeg
+INPUT .\fig\onnx.jpeg
+INPUT .\fig\TFLite_workflow.png
+INPUT .\fig\TFLite_workflow.png
+INPUT fig\TFLite_workflow.png
+INPUT .\fig\TFLite_workflow.png
+INPUT .\fig\TFLite_workflow.png
+INPUT .\fig\TFLite_workflow.png
+INPUT .\fig\TFLite_workflow.png
 INPUT .\fig\pruning.jpg
 INPUT .\fig\pruning.jpg
 INPUT fig\pruning.jpg
@@ -1020,25 +1051,51 @@ INPUT .\fig\pruning.jpg
 INPUT .\fig\pruning.jpg
 INPUT .\fig\pruning.jpg
 INPUT .\fig\pruning.jpg
-INPUT .\hfdst4.tex
-INPUT .\hfdst4.tex
-INPUT .\hfdst4.tex
-INPUT hfdst4.tex
-INPUT .\hfdst4.tex
-INPUT .\hfdst4.tex
-INPUT hfdst4.tex
-INPUT .\hfdst5.tex
-INPUT .\hfdst5.tex
-INPUT .\hfdst5.tex
-INPUT hfdst5.tex
-INPUT .\hfdst5.tex
-INPUT .\hfdst5.tex
-INPUT hfdst5.tex
+INPUT .\fig\kwantization.png
+INPUT .\fig\kwantization.png
+INPUT fig\kwantization.png
+INPUT .\fig\kwantization.png
+INPUT .\fig\kwantization.png
+INPUT .\fig\kwantization.png
+INPUT .\fig\kwantization.png
+INPUT .\fig\clus.jpg
+INPUT .\fig\clus.jpg
+INPUT fig\clus.jpg
+INPUT .\fig\clus.jpg
+INPUT .\fig\clus.jpg
+INPUT .\fig\clus.jpg
+INPUT .\fig\clus.jpg
+INPUT .\hfdst6.tex
+INPUT .\hfdst6.tex
+INPUT .\hfdst6.tex
+INPUT hfdst6.tex
+INPUT .\hfdst6.tex
+INPUT .\hfdst6.tex
+INPUT hfdst6.tex
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss10.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1cmss.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1cmss.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1cmss.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1cmss.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcss1095.tfm
+INPUT .\hfdst7.tex
+INPUT .\hfdst7.tex
+INPUT .\hfdst7.tex
+INPUT hfdst7.tex
+INPUT .\hfdst7.tex
+INPUT .\hfdst7.tex
+INPUT hfdst7.tex
 INPUT .\thesis.bbl
 INPUT thesis.bbl
 INPUT .\thesis.bbl
 INPUT thesis.bbl
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsphv.fd
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\omsphv.fd
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\public\pslatex\pcrr7tn.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr8rn.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\helvetic\phvro7t.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvro8r.tfm
 INPUT .\bijlage1.tex
@@ -1090,10 +1147,20 @@ INPUT thesis.aux
 INPUT .\thesis.out
 INPUT .\thesis.out
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\base\8r.enc
+INPUT C:\Users\Thijs Vercammen\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcss1095.pk
+INPUT C:\Users\Thijs Vercammen\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcss1095.pk
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrb8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrb8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrro8a.pfb
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrro8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvr8a.pfb

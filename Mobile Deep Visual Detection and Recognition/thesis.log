@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.29)  15 DEC 2021 14:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.29)  23 DEC 2021 17:57
 entering extended mode
 **"d:/Desktop/Masterproef/Mobile Deep Visual Detection and Recognition/thesis.tex"
 (d:/Desktop/Masterproef/Mobile Deep Visual Detection and Recognition/thesis.tex
@@ -527,7 +527,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 
 pdfTeX warning: pdflatex (file ./private/cover_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/cover_fiiw_denayer.pdf, id=247, 597.55246pt x 845.07718pt>
+<private/cover_fiiw_denayer.pdf, id=263, 597.55246pt x 845.07718pt>
 File: private/cover_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/cover_fiiw_denayer.pdf>
 Package pdftex.def Info: private/cover_fiiw_denayer.pdf  used on input line 106.
@@ -654,7 +654,7 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 [3
 
 ]
-<fig/embedding.png, id=444, 702.625pt x 486.81876pt>
+<fig/embedding.png, id=464, 702.625pt x 486.81876pt>
 File: fig/embedding.png Graphic file (type png)
 <use fig/embedding.png>
 Package pdftex.def Info: fig/embedding.png  used on input line 34.
@@ -663,102 +663,110 @@ LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 35.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 35.
-<fig/cnn_2.png, id=450, 853.1875pt x 322.20375pt>
+<fig/cnn_2.png, id=470, 853.1875pt x 322.20375pt>
 File: fig/cnn_2.png Graphic file (type png)
 <use fig/cnn_2.png>
 Package pdftex.def Info: fig/cnn_2.png  used on input line 47.
 (pdftex.def)             Requested size: 362.77525pt x 137.00114pt.
  [4 <./fig/embedding.png (PNG copy)> <./fig/cnn_2.png>]
-<fig/convolution layer.png, id=457, 333.245pt x 281.05pt>
+<fig/convolution layer.png, id=477, 333.245pt x 281.05pt>
 File: fig/convolution layer.png Graphic file (type png)
 <use fig/convolution layer.png>
 Package pdftex.def Info: fig/convolution layer.png  used on input line 69.
 (pdftex.def)             Requested size: 149.37958pt x 125.98244pt.
-<fig/ReLu.png, id=461, 358.33875pt x 279.0425pt>
+<fig/ReLu.png, id=481, 358.33875pt x 279.0425pt>
 File: fig/ReLu.png Graphic file (type png)
 <use fig/ReLu.png>
 Package pdftex.def Info: fig/ReLu.png  used on input line 84.
 (pdftex.def)             Requested size: 149.37958pt x 116.32419pt.
  [5 <./fig/convolution layer.png> <./fig/ReLu.png (PNG copy)>]
-<fig/Maxpool.png, id=469, 164.25pt x 68.547pt>
+<fig/Maxpool.png, id=489, 164.25pt x 68.547pt>
 File: fig/Maxpool.png Graphic file (type png)
 <use fig/Maxpool.png>
 Package pdftex.def Info: fig/Maxpool.png  used on input line 98.
 (pdftex.def)             Requested size: 213.39568pt x 89.06503pt.
  [6 <./fig/Maxpool.png>] [7]
-<fig/Faster-R-CNN.png, id=497, 853.1875pt x 861.2175pt>
+<fig/Faster-R-CNN.png, id=517, 853.1875pt x 861.2175pt>
 File: fig/Faster-R-CNN.png Graphic file (type png)
 <use fig/Faster-R-CNN.png>
-Package pdftex.def Info: fig/Faster-R-CNN.png  used on input line 194.
+Package pdftex.def Info: fig/Faster-R-CNN.png  used on input line 198.
 (pdftex.def)             Requested size: 149.37958pt x 150.78102pt.
  [8 <./fig/Faster-R-CNN.png>]
-<fig/YOLO.jpg, id=504, 602.25pt x 382.42876pt>
+<fig/YOLO.jpg, id=524, 602.25pt x 382.42876pt>
 File: fig/YOLO.jpg Graphic file (type jpg)
 <use fig/YOLO.jpg>
-Package pdftex.def Info: fig/YOLO.jpg  used on input line 209.
+Package pdftex.def Info: fig/YOLO.jpg  used on input line 213.
 (pdftex.def)             Requested size: 256.07741pt x 162.61467pt.
-<fig/SSD.png, id=511, 1609.01125pt x 524.96124pt>
+ [9 <./fig/YOLO.jpg>]
+<fig/SSD.png, id=537, 1609.01125pt x 524.96124pt>
 File: fig/SSD.png Graphic file (type png)
 <use fig/SSD.png>
-Package pdftex.def Info: fig/SSD.png  used on input line 237.
+Package pdftex.def Info: fig/SSD.png  used on input line 248.
 (pdftex.def)             Requested size: 341.43437pt x 111.39058pt.
-) (hfdst3.tex [9 <./fig/YOLO.jpg>] [10 <./fig/SSD.png>]
+) (hfdst3.tex [10 <./fig/SSD.png>]
 Hoofdstuk 3.
 [11
 
 ] [12] [13] (C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) [14]
-<fig/onnx.jpeg, id=639, 1405.25pt x 1153.30875pt>
+<fig/onnx.jpeg, id=659, 1405.25pt x 1153.30875pt>
 File: fig/onnx.jpeg Graphic file (type jpg)
 <use fig/onnx.jpeg>
 Package pdftex.def Info: fig/onnx.jpeg  used on input line 143.
 (pdftex.def)             Requested size: 298.75264pt x 245.19365pt.
  [15 <./fig/onnx.jpeg>] [16] [17]
 
-Package Listings Warning: Text dropped after begin of listing on input line 250.
+Package Listings Warning: Text dropped after begin of listing on input line 245.
 
-<fig/TFLite_workflow.png, id=687, 1062.97125pt x 564.1075pt>
+<fig/TFLite_workflow.png, id=707, 1062.97125pt x 564.1075pt>
 File: fig/TFLite_workflow.png Graphic file (type png)
 <use fig/TFLite_workflow.png>
-Package pdftex.def Info: fig/TFLite_workflow.png  used on input line 264.
+Package pdftex.def Info: fig/TFLite_workflow.png  used on input line 259.
 (pdftex.def)             Requested size: 298.75264pt x 158.54294pt.
 [18 <./fig/TFLite_workflow.png (PNG copy)>] [19] [20] [21] [22] [23]
-<fig/pruning.jpg, id=804, 751.80875pt x 375.4025pt>
+<fig/pruning.jpg, id=823, 751.80875pt x 375.4025pt>
 File: fig/pruning.jpg Graphic file (type jpg)
 <use fig/pruning.jpg>
-Package pdftex.def Info: fig/pruning.jpg  used on input line 483.
+Package pdftex.def Info: fig/pruning.jpg  used on input line 477.
 (pdftex.def)             Requested size: 277.41176pt x 138.52441pt.
-<fig/kwantization.png, id=808, 1405.25pt x 649.42625pt>
+<fig/kwantization.png, id=827, 1405.25pt x 649.42625pt>
 File: fig/kwantization.png Graphic file (type png)
 <use fig/kwantization.png>
-Package pdftex.def Info: fig/kwantization.png  used on input line 498.
+Package pdftex.def Info: fig/kwantization.png  used on input line 492.
 (pdftex.def)             Requested size: 298.75264pt x 138.06813pt.
  [24 <./fig/pruning.jpg> <./fig/kwantization.png (PNG copy)>]
-<fig/clus.jpg, id=819, 361.95226pt x 167.4255pt>
+<fig/clus.jpg, id=838, 361.95226pt x 167.4255pt>
 File: fig/clus.jpg Graphic file (type jpg)
 <use fig/clus.jpg>
-Package pdftex.def Info: fig/clus.jpg  used on input line 511.
+Package pdftex.def Info: fig/clus.jpg  used on input line 505.
 (pdftex.def)             Requested size: 298.75264pt x 138.1967pt.
 ) (hfdst6.tex [25 <./fig/clus.jpg>]
 Hoofdstuk 4.
+
+Overfull \hbox (2.38533pt too wide) in paragraph at lines 25--30
+\OT1/phv/m/n/10.95 In fi-guur ... is het stan-daard Res-Net50 net-werk te zien dat in Keras is ge-mo-del-leerd en in TensorFlow
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 43.
 [26
 
 ]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family phv in TS1 encoding.
-            Default family used instead on input line 46.
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 46.
+            Default family used instead on input line 103.
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 103.
  (C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) (hfdst7.tex [27] [28]
+) [27]) (hfdst7.tex [28]
 Hoofdstuk 5.
 [29
 
 ]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family phv in TS1 encoding.
-            Default family used instead on input line 64.
+            Default family used instead on input line 66.
  [30] [31]) (thesis.bbl [32]
 LaTeX Font Info:    Trying to load font information for OMS+phv on input line 23.
  (C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsphv.fd
@@ -802,7 +810,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--10
 )
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=907, 597.55246pt x 845.07718pt>
+<private/back_fiiw_denayer.pdf, id=952, 597.55246pt x 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 128.
@@ -820,7 +828,7 @@ pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: 
 
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=910, page=1, 597.55246pt x 845.07718pt>
+<private/back_fiiw_denayer.pdf, id=955, page=1, 597.55246pt x 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 128.
@@ -849,20 +857,20 @@ Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input lin
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4750C00EFAAAC590495BDEF83E256C9D;10326.
+(rerunfilecheck)             Checksum: 2B0073E10734CA9E52D609F5A50325FE;11055.
  ) 
 Here is how much of TeX's memory you used:
- 16360 strings out of 478907
- 258980 string characters out of 2847115
- 960215 words of memory out of 3000000
- 33661 multiletter control sequences out of 15000+600000
- 447628 words of font info for 100 fonts, out of 8000000 for 9000
+ 16449 strings out of 478907
+ 260304 string characters out of 2847115
+ 980254 words of memory out of 3000000
+ 33718 multiletter control sequences out of 15000+600000
+ 448234 words of font info for 101 fonts, out of 8000000 for 9000
  1149 hyphenation exceptions out of 8191
- 70i,17n,81p,694b,1631s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,17n,81p,694b,2043s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <C:\Users\Thijs Vercammen\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (49 pages, 1475261 bytes).
+Output written on thesis.pdf (49 pages, 1485855 bytes).
 PDF statistics:
- 1033 PDF objects out of 1200 (max. 8388607)
- 235 named destinations out of 1000 (max. 500000)
- 579 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1084 PDF objects out of 1200 (max. 8388607)
+ 267 named destinations out of 1000 (max. 500000)
+ 611 words of extra memory for PDF output out of 10000 (max. 10000000)
 

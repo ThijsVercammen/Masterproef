@@ -143,7 +143,7 @@ Het trainen van een nieuw CNN kan soms weken duren.
 Via transfer learning kan de trainingsperiode met een grote factor gereduceerd worden.
 Deze methode gebruiken we voornamelijk om een 'nieuw' model te trainen vanwege de kleinere trainingsdataset en kortere trainingstijd.
 
-\subsection{ResNet50}
+\subsection{ResNet50} \label{resnet}
 Het herkenningnetwerk dat we willen implementeren in deze masterproef is de ResNet50 architectuur.
 \cite{he2015deep} heeft vastgesteld dat als het aantal lagen van een CNN toeneemt dat op een bepaald moment de training accuraatheid daalt.
 Dit verschijnsel noemt men de vanishing gradient.
@@ -156,6 +156,7 @@ Hierbij wordt de input van een laag rechtstreeks met een volgende laag geconecte
 Op deze manier worden de gradienten per laag niet meer kleiner.
 ResNet50 bestaat uit 50 convolutie lagen waarbij er een skip connection plaatsvindt per 3 lagen.
 De resnet50 architectuur is opgebouwd uit ResNet blokken die bestaan uit 3 convolutie lagen en 1 skip connection.
+% afbeelding
 
 \section{Deep learning-gebaseerde detector}
 Objectdetectie is het lokaliseren en classificeren van objecten in een afbeelding, waarbij de objecten aangeduid worden met een Bounding box.
@@ -172,11 +173,14 @@ Dit is het filteren van regio's waarbij de kans groot is dat deze een object bev
 Het tweede deel classificeert en verfijnt de lokalisatie van de RoIs die in het eerste deel gecre\"eerd werden. 
 
 De voornaamste two-stage detector is de Faster R-CNN detector \cite{ren_faster_2016}. 
-Hierbij verwerkt een CNN eerst de inputafbeeldingen en vervolgens wordt er gebruik gemaakt van een Region Proposal Network (RPN) weergegeven in figuur \ref{fig:faster-r-cnn}. 
+Hierbij wordt via een CNN die de backbone wordt genoemd eerst de features uit de afbeelding gehaald.
+Deze backbone is een meestal een standaard herkenningsnetwerk zoals ResNet50 zonder de classificatielagen.
+
+Vervolgens wordt er gebruik gemaakt van een Region Proposal Network (RPN) weergegeven in figuur \ref{fig:faster-r-cnn}. 
 Het RPN is een volledig convolutioneel netwerk dat regio's uit de afbeelding filtert waar de kans groot is dat er objecten opstaan.
 Per input geeft het RPN een set van regio's als output.
 Elk van deze regio's heeft een objectness score wat aangeeft in welke mate de regio een object bevat.
-Om een region proposal te genereren wordt het RPN over de feature map geschoven dat gegenereerd is door het voorgaande CNN.
+Om een region proposal te genereren wordt het RPN over de feature map geschoven dat gegenereerd is door de backbone.
 Op elke sliding window locatie van het RPN worden er meerdere regio voorspellingen gedaan.
 Deze voorspelling doet het RPN door verschillende anchor boxes te evalueren per sliding window locatie.
 Anchor boxes zijn een voorgedefini\"eerde set van bounding boxes met drie verschillende vormen in drie verschillende schalen.
@@ -213,15 +217,22 @@ Twee veel gebruikte technieken van one-stage detectie zijn: You Only Look Once (
 \end{figure}
 
 YOLO \cite{redmon_you_2016} verdeelt de afbeelding in een S x S rooster zoals in figuur \ref{fig:yolo} te zien is. 
-%De cel waarin het middelpunt van het object valt is verantwoordelijk voor de object detectie.
-Elke cel kan meerdere bounding boxes voorspellen.
-Per bounding box wordt er een score bepaald die aangeeft hoe zeker het model is dat een bepaalde bounding box een object bevat.
+De cel waarin het middelpunt van het object valt is verantwoordelijk voor de object detectie.
+Elke cel zal bounding boxes voorspellen en een zekerheid score bepallen voor elke bounding box. 
+Deze score geeft aan hoe zeker het model is dat een bepaalde bounding box een object bevat.
+Elke cel in het rooster kan meerdere bounding boxes voorspellen.
+Per cel wordt ook de klasse van het object voorspelt.
+
 %Deze score wordt bepaalt met de Intersection Of Union (IOU) tussen de voorspelde box en de ground truth box.
 %IOU
-Vervolgens is er nog een methode nodig om de overbodige bounding boxen te verwijderen. 
-Een eerste mogelijkheid is door enkel bounding boxen te bepalen waarvan de voorspelling boven een zekere treshold ligt. 
-Een andere methode is non-maxima supression, een methode die ervoor zorgt dat elk object maar \'e\'en bounding box heeft. 
-Deze techniek houdt enkel de bounding box over met de beste voorspelling en onderdrukt de rest van de bounding boxes. 
+De YOLO detector kan voor elke cel meerdere bounding boxen voorspellen voor een enkel object.
+Om \'e\'en bounding box per object te krijgen zullen we eerst alle bounding boxen waarvan de score onder een bepaalde drempel ligt verwijderen.
+Vervolgens passen we Non-maxima supression toe om de overbodige bounding boxen te verwijderen. 
+%Een eerste mogelijkheid is door enkel bounding boxen te bepalen waarvan de voorspelling boven een zekere treshold ligt. 
+Zoals de naam van de techniek zegt, worden bounding boxen die niet maximaal zijn onderdrukt.
+Op deze manier blijft enkel de optimale bounding box over.
+%Een andere methode is non-maxima supression, een methode die ervoor zorgt dat elk object maar \'e\'en bounding box heeft. 
+%Deze techniek houdt enkel de bounding box over met de beste voorspelling en onderdrukt de rest van de bounding boxes. 
 
 SSD \cite{liu_ssd_2016} is een one-stage detector waarbij een afbeelding door verschillende convolutielagen gaat.
 Dit resulteert in feature mappen met verschillende schalen.

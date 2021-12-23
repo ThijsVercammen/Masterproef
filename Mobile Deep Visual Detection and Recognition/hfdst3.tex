@@ -147,17 +147,12 @@ Voor elke bibliotheek/framework is het aangeraden om dezelfde opsetversie te imp
 
 \subsection{TensorFlow naar ONNX conversie}
 Om een TensorFlow model naar ONNX formaat te exporteren wordt er gebruik gemaakt van de tf2onnx bibliotheek (\cite{onnx_tf2onnx_2021}).
-Via de volgende lijn code kan de convert functie worden opgeroepen uit de tf2onnx bibliotheek.
+Via de volgende lijn code kan de converteer functie worden opgeroepen uit de tf2onnx bibliotheek.
 
 \begin{python}
 python -m tf2onnx.convert --saved-model <directory van opgeslagen model> 
 		--output <onnx output file> --opset <opsetversie>
 \end{python}
-
-%\begin{lstlisting}[language=Python, caption=Converteren van TensorFlow model naar ONNX model]
-%!python -m tf2onnx.convert --saved-model <directory van opgeslagen model> 
-%		--output <onnx output file> --opset <opset versie>
-%\end{lstlisting}
 
 De conversie van TensorFlow naar ONNX wordt voor opsetversie 9 tot 15 ondersteund en getest.
 Opsetversie 6 tot 8 zou ook ondersteund moeten worden maar hier zijn geen testen voor.
@@ -420,7 +415,6 @@ import coremltools as ct
 model = ct.convert(traced_model, inputs=[ct.TensorType(shape=example_input.shape)])
 # van TensorFlow naar CoreML
 model = ct.convert('tf_model/saved_model.pb', source='tensorflow')
-
 # van onnx naar CoreML
 model  = ct.converters.onnx.convert(model='my_model.onnx')
 \end{python}

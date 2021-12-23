@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {2.1.5}ResNet50}{7}{subsection.2.1.5}%
 \contentsline {section}{\numberline {2.2}Deep learning-gebaseerde detector}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Two-stage detector}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}One-stage detector}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}One-stage detector}{9}{subsection.2.2.2}%
 \contentsline {chapter}{\numberline {3}Implementatie van Herkenning en detectie op mobiel platform}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Frameworks}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}TensorFlow}{12}{subsection.3.1.1}%
@@ -49,9 +49,13 @@
 \contentsline {subsection}{\numberline {3.5.3}Weight Clustering}{25}{subsection.3.5.3}%
 \contentsline {subsection}{\numberline {3.5.4}Convolutionele filter compressie en matrix factorisatie}{25}{subsection.3.5.4}%
 \contentsline {chapter}{\numberline {4}Compatibiliteit van herkenningssystemen}{26}{chapter.4}%
-\contentsline {section}{\numberline {4.1}ResNet50}{26}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Van TensorFlow naar mobiel framework}{26}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Van PyTorch naar mobiele implementatie}{27}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.1}Van TensorFlow naar mobiel framework}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}TensorFlow Lite implementatie}{26}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}ONNX implementatie}{27}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Van PyTorch naar mobiele implementatie}{28}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}PyTorch Mobile implementatie}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}ONNX implementatie}{28}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Conclusie}{28}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Compatibiliteit van detectie systemen}{29}{chapter.5}%
 \contentsline {section}{\numberline {5.1}faster rcnn}{29}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Van TensorFlow naar mobiel mobiele implementatie}{29}{section.5.2}%

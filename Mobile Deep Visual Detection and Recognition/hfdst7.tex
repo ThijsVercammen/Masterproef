@@ -29,7 +29,7 @@ Omdat we gebruik maken van Flex opperaties moet de TensorFlow core bibliotheek m
 Als we het TFLite model willen implementeren in Android studio via de TensorFlow Lite Task Library dan moeten we Metadata aan het model toevoegen.
 We moeten Metadata toevoegen aan het TFLite model zodat bij het uitvoeren van het model de TFLite API weet wat het input en output types zijn van het model.
 Maar bij het toevoegen van Metadata aan het TFLite model krijgen we de volgende fout: Keyerror 2708.
-Deze fout geeft weinig informatie, maar de oorzaak is dat de methode die de Metadat aan het model toevoegt maximaal 4 outputs verwacht.
+Deze fout geeft weinig informatie, maar de oorzaak is dat de methode die de Metadata aan het model toevoegt maximaal 4 outputs verwacht.
 Het geconverteerd Faster-RCNN model heeft 8 outputs.
 Door het aantal outputs te reduceren tot 4 outputs kunnen we succesvol Metadata aan het model toevoegen.
 Bij het uitvoeren van het het model met metadata krijgen we de volgende error: ....
@@ -52,6 +52,8 @@ Op deze manier kunnen we succesvol een Faster-RCNN model uitvoeren op een mobiel
 In het Faster-RCNN model wordt er gebruik gemaakt van de Round opperatie die pas beschikbaar is sinds opset versie 11.
 Al de andere opperaties van het Faster-RCNN model worden ondersteund in eerdere opset versies.
 De round operatie zal ervoor zorgen dat bij het converteren naar onnx formaat minstens een opset versie 11 nodig is.
+Het input datatype dat het Faster-RCNN model verwacht is Uint8, maar dit ondersteund ONNX niet voor Android studio.
+Daarvoor zullen we eerst een cast opperatie moeten toevoegen aan het model dat een Float32 datatype omzet naar Uint8.
 
 
 %de fasterrcnn model heeft een ouput type int32 wat niet ondersteund wordt door tensorflow.
@@ -59,50 +61,50 @@ De round operatie zal ervoor zorgen dat bij het converteren naar onnx formaat mi
 
 \begin{table}[!ht]
     \caption{Alle operaties die terug te vinden zijn in het ResNet50 model en hun compatibiliteit met andere frameworks}
-\begin{tabular}{cccc}
+\begin{tabular}{ccc}
     \hline
-    Operaties & TensorFlow \textrightarrow TFLite & ONNX Opset & MACE \\
+    Operaties & TensorFlow \textrightarrow TFLite & ONNX Opset  \\
     \hline
     % All & / & 1 & / \\
     % Assert & / & / & / \\
     % BroadcastArgs & / & / & / \\
-    BroadcastTo & ond & 8 & / \\
-    ConcatV2 & / & 1 & ond \\
-    Equal & ond & 1 & / \\
-    Exp & ond & 1 & / \\
-    ExpandDims & ond & 1 & / \\
-    Fill & ond & 7 & / \\
-    Floor & ond & 1 & ond \\
-    GatherV2 & ond & 1 & / \\
-    Greater & ond & 1 & / \\
-    Less & ond & 1 & / \\
-    LogicalAnd & ond & 1 & / \\
-    Maximum & const,verw,fus & 1 & / \\
-    Minimum & const,verw,fus & 1 & / \\
-    NonMaxSuppressionV5 & ond & 10 & / \\
-    Range & ond & 7 & / \\
-    RealDiv & / & 1 & / \\
-    Relu6 & const,verw,fus & 1 & ond \\
-    Reshape & ond & 1 & ond \\
-    ResizeBilinear & ond & 7 & / \\
-    Round & ond & 11 & / \\
-    SelectV2 & ond & 7 & / \\
+    BroadcastTo & ond & 8  \\
+    ConcatV2 & / & 1  \\
+    Equal & ond & 1 \\
+    Exp & ond & 1 \\
+    ExpandDims & ond & 1 \\
+    Fill & ond & 7 \\
+    Floor & ond & 1 \\
+    GatherV2 & ond & 1  \\
+    Greater & ond & 1  \\
+    Less & ond & 1 \\
+    LogicalAnd & ond & 1 \\
+    Maximum & const,verw,fus & 1 \\
+    Minimum & const,verw,fus & 1 \\
+    NonMaxSuppressionV5 & ond & 10 \\
+    Range & ond & 7 \\
+    RealDiv & / & 1 \\
+    Relu6 & const,verw,fus & 1 \\
+    Reshape & ond & 1 \\
+    ResizeBilinear & ond & 7 \\
+    Round & ond & 11 \\
+    SelectV2 & ond & 7 \\
     %Size & / & 1 & / \\
-    Slice & ond & 1 & ond \\
-    Softmax & ond & 1 & ond \\
-    Split & ond & 1 & / \\
-    Sqrt & const,verw,fus & 1 & / \\
-    Square & const,verw,fus & 1 & / \\
-    Squeeze & ond & 1 & / \\
+    Slice & ond & 1 \\
+    Softmax & ond & 1 \\
+    Split & ond & 1 \\
+    Sqrt & const,verw,fus & 1 \\
+    Square & const,verw,fus & 1 \\
+    Squeeze & ond & 1 \\
     %StatelessIf & / & 1 & / \\
-    Sub & const,verw,fus & 1 & / \\
-    Sum & ond & 1 & / \\
-    Tile & const,verw,fus & 1 & / \\
-    TopKV2 & ond & 1 & / \\
-    Transpose & ond & 1 & / \\
-    Unpack & ond & 1 & / \\
-    Where & ond & 9 & / \\
-    ZerosLike & ond & 1 & / \\
+    Sub & const,verw,fus & 1 \\
+    Sum & ond & 1 \\
+    Tile & const,verw,fus & 1 \\
+    TopKV2 & ond & 1 \\
+    Transpose & ond & 1 \\
+    Unpack & ond & 1 \\
+    Where & ond & 9 \\
+    ZerosLike & ond & 1 \\
     \hline
 \end{tabular}
 \label{tab:TFop}
@@ -119,6 +121,18 @@ Bij het converteren naar een Torchscript module dat verder ge\"optimaliseerd kan
 Na het converteren kunnen we het model verder optimaliseren voor mobiel gebruik.
 Bij het opslaan van deze ge\"optimaliseerde scriptmodule voor mobiel gebruik crasht Google Colaborate zonder een boodschap.
 In plaats van het model op te slaan met de \_save\_for\_lite\_interpreter methode moeten we het model opslaan voor script gebruik.
+
+\begin{python}
+import torch
+import torchvision
+from torch.utils.mobile_optimizer import optimize_for_mobile
+        
+model.eval()
+script_module = torch.jit.script(model)
+script_module.cpu()
+script_module.save('model.pt')
+\end{python}
+
 Hiervoor moet ook de android\_pytorch bibliotheek worden ge\"implementeerd in plaats van de android\_pytorch\_lite bibliotheek.
 bij het uitvoeren van het script model krijgen we een fout dat de .nms opperatie niet wordt ondersteund.
 PyTorch geeft de mogelijkheid om de torchvision\_ops bibliotheek te implementeren die ervoor zorgt dat alle faster rcnn operaties worden ge\"implementeerd.
@@ -132,4 +146,4 @@ Op deze manier kunnen we succesvol een PyTorch Faster-RCNN model uitvoeren op ee
 \subsection{ONNX implementatie}
 Zoals bij TensorFlow is hier ook een minimale opset versie van 11 vereist.
 Al de andere opperaties van het Faster-RCNN model worden ondersteund in eerdere opset versies.
-hjhjdghjdgh
+

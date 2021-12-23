@@ -1,86 +1,155 @@
 \chapter{Compatibiliteit van herkenningssystemen}
-Voor het herkenningssysteem bestuderen we uitgebreid de ResNet50 architectuur.
-We gaan dit model trainen in het PyTorch en TensorFlow framework.
+Voor het herkenningssysteem bestuderen we de implementatie van de ResNet50 architectuur die in paragraaf \ref{resnet} werd besproken.
+We vertrekken hierbij met een bestaand model dat voorgetraind is met het TensorFlow of het PyTorch framework.
 Om vervolgens de mogelijke paden te bestuderen naar een mobiele implementatie.
+Hierbij zullen we gebruik maken van Google Colaberate ... om de modellen in te laden en te converteren.
+Om het geconverteerd model te implementeren op een mobiel toestel zullen we gebruik maken van Android Studio ....
 
-\section{ResNet50}
-\cite{he2015deep} heeft vastgesteld dat als het aantal lagen van een CNN toeneemt dat op een bepaald moment de training accuraatheid daalt.
-Dit verschijnsel noemt men de vanishing gradient.
-In paragraaf \ref{train} hebben we besproken hoe we de gradient kunnen berekenden tijdens het trainen van een CNN.
-Voor elke laag in het CNN moet de gradient opnieuw berekend worden door telkens opnieuw de afgeleide te berekenen.
-Hierdoor wordt de gradient steeds kleiner en kleiner tot deze een minimum bereikt.
-Waardoor de gewichten in de eerste lagen heel traag aanpassen of zelfs niet meer veranderen.
-\cite{he2015deep} die dit probleem hebben vastgesteld hebben dit opgelost door gebruik te maken van skip connections.
-Hierbij wordt de input van een laag rechtstreeks met een volgende laag die x aantal lagen verder ligt.
-Op deze manier worden de gradienten per laag niet meer kleiner.
-ResNet50 bestaat uit 50 convolutie lagen waarbij er een skip connection plaatsvindt per 3 lagen.
-De resnet50 architectuur is opgebouwd uit ResNet blokken die bestaan uit 3 convolutie lagen en 1 skip connection.
+% \section{ResNet50}
+% \cite{he2015deep} heeft vastgesteld dat als het aantal lagen van een CNN toeneemt dat op een bepaald moment de training accuraatheid daalt.
+% Dit verschijnsel noemt men de vanishing gradient.
+% In paragraaf \ref{train} hebben we besproken hoe we de gradient kunnen berekenden tijdens het trainen van een CNN.
+% Voor elke laag in het CNN moet de gradient opnieuw berekend worden door telkens opnieuw de afgeleide te berekenen.
+% Hierdoor wordt de gradient steeds kleiner en kleiner tot deze een minimum bereikt.
+% Waardoor de gewichten in de eerste lagen heel traag aanpassen of zelfs niet meer veranderen.
+% \cite{he2015deep} die dit probleem hebben vastgesteld hebben dit opgelost door gebruik te maken van skip connections.
+% Hierbij wordt de input van een laag rechtstreeks met een volgende laag die x aantal lagen verder ligt.
+% Op deze manier worden de gradienten per laag niet meer kleiner.
+% ResNet50 bestaat uit 50 convolutie lagen waarbij er een skip connection plaatsvindt per 3 lagen.
+% De resnet50 architectuur is opgebouwd uit ResNet blokken die bestaan uit 3 convolutie lagen en 1 skip connection.
 
 %https://github.com/tensorflow/models/blob/master/official/vision/image_classification/resnet/resnet_model.py
 %https://github.com/priya-dwivedi/Deep-Learning/blob/master/resnet_keras/Residual_Networks_yourself.ipynb
 
 \section{Van TensorFlow naar mobiel framework}
-In figuur ... is het standaard ResNet50 netwerk dat in TensorFlow ge\"implenteerd kan worden vanuit Keras te zien.
+In figuur ... is het standaard ResNet50 netwerk te zien dat in Keras is gemodelleerd en in TensorFlow ge\"implenteerd kan worden.
 In deze figuur kunnen we de voornaamste opperaties terug vinden die in het netwerk gebruikt worden.
 Ook vinden we in deze architectuur 2 verschillende ResNet blokken terug: de ID-blok en de convolutie blok.
 In figuur ... worden de 2 verschillende blokken en hun opperaties weergegeven.
-Hierbij is te zien dat in het convolutieblok 2 extra opperaties worden uitgevoerd tijdens de skip connection.
+Hierbij is te zien dat in het convolutieblok 2 extra opperaties worden uitgevoerd tijdens de skip connections.
 
 Voor het experiment van ResNet50 maken we gebruik van het standaard ResNet50 netwerk dat in TensorFlow ge\"implenteerd kan worden vanuit Keras.
-Dit netwerk is vervolgens hertrained met een katten en honden dataset ... .
-Al de code code is uitgevoerd in Google Colaberate met een GPU runtime.
+Dit ResNet50 model is voorgetrained op de ImageNet dataset ... 
+Dit netwerk kan vervolgens hertrained voor een gewenste functionaliteit.
+Voor deze implementatie zullen we echter vertrekken van het ResNet50 Keras model dat reeds bestaat.
 
-in tabel \ref{tab:TFop} is te zien welke operaties er zijn terug te vinden in het ResNet50 model dat zonet getrained is.
-Ook kunnen we in deze tabel terug vinden welke opereraties TfLite ondersteund en met welke ONNX opset versie deze opperaties compatibel zijn.
+\subsection{TensorFlow Lite implementatie}
+Het inladen en converteren van het Keras model kan eenvoudig via de volgende lijnen code.
+
+\begin{python}
+model = tf.keras.applications.resnet50.ResNet50() # model inladen
+converter = tf.lite.TFLiteConverter.from_keras_model(model) # converter initialiseren
+tflite_model = converter.convert() # model converteren
+open('model.tflite', 'wb').write(tflite_model) # model opslaan
+\end{python}
+
+Het ResNet50 model kan zonder problemen of aanpassingen rechtstreeks worden geconverteerd naar TFlite.
+In tabel \ref{tab:TFop} is te zien welke operaties er zijn terug te vinden in het TensorFlow ResNet50 model dat is ingeladen.
+Vervolgens is in de tabel ook terug te vinden wat er met de operaties gebeurt tijden de TFLite conversie.
+In de tabel kunnen we zien welke TensorFlow operaties worden ondersteund door een TFLite equivalent.
+Vervolgens kunnen we in de tabel ook zien op welke operaties optimalisaties worden uitgevoerd tijdens het converteren.
+Bij deze optimalisaties worden operaties samengevoegd, verwijderd of vervangen door een constante.
+In figuur ... kunnen we zien welke optimalisaties er worden uitgevoerd op een ResNet50 convolutieblok.
+
+Voor de android implementatie kunnen we metadata aan het model toevoegen.
+\begin{python} 
+ImageClassifierWriter = image_classifier.MetadataWriter
+model_p = "./model.tflite" # TFLite model
+label_p = "./labels.txt" # label file voor label formaat
+save_p = "./model_meta.tflite" # opslaan pad
+input_norm_mean = 0.0
+input_norm_std = 1.0
+    
+# metadata scrijver
+writer = ImageClassifierWriter.create_for_inference(
+    writer_utils.load_file(model_p), [input_norm_mean], [input_norm_std],
+    [label_p])
+    
+# Voeg metadata aan het model toe en sla op
+writer_utils.save_file(writer.populate(), save_p)
+\end{python}
+
+Doordat we deze metadata hebben toegevoegd heeft android studio toegang tot al de relevante input en output informatie.
+Vermits Android studio toegang heeft tot deze informatie kan het zelf code genereren om het TFLite model te implementeren.
+De code die gegenereerd wordt is implementeerbaar in Java en Kotlin.
+
+\subsection{ONNX implementatie}
+Het TensorFlow model kunnen we converteren naar ONNX met Tf2onnx bibliotheek.
+De tf2onnx bibliotheek ondersteund TensorFlow en TFLite, dus we kunnen bijde modellen converteren.
+In tabel \ref{tab:TFop} is te zien welke operaties operaties ondersteund zijn door ONNX.
+Ook is te zien vanaf welke opset versie deze operaties worden ondersteund.
+Hierbij kunnen we zien dat de minimale opset versie 6 moet zijn vanwege de FusedBatchNormV3 operatie die pas vanaf versie 7 wordt ondersteund.
+
+
+ONNX DETECTOR DEMO
+%DETECTOR DEMO
+%DETECTOR DEMO
+%DETECTOR DEMO
+%DETECTOR DEMO
+%DETECTOR DEMO
+%DETECTOR DEMO
+ONNX DETECTOR DEMO
+
 %We moeten er wel bij vermelden dat TFLite enkel variabelen van het type float32 en int8 ondersteund.
-Tijdens het converteren van TensorFlow naar TFLite worden optimalisaties uitgevoerd waarbij enkele operaties worden verwijderd, constant gemaakt of samengevoegd met een voorgaande laag.
-De tf2onnx converter maakt standaard gebruik van ONNX opset versie 9.
-Bij het converterent van TensorFlow naar ONNX onder standaard omstandigheden krijgen we de volgende fout 
-\textcolor{red}{ValueError: StridedSlice: only strides=1 is supported}.  
-Voor het converteren van TensorFlow naar ONNX is minstens opset versie 10 nodig.
+%De tf2onnx converter maakt standaard gebruik van ONNX opset versie 9.
+%Bij het converterent van TensorFlow naar ONNX onder standaard omstandigheden krijgen we de volgende fout 
+%\textcolor{red}{ValueError: StridedSlice: only strides=1 is supported}.  
+%Voor het converteren van TensorFlow naar ONNX is minstens opset versie 10 nodig.
 
 \begin{table}[!ht]
     \caption{Alle operaties die terug te vinden zijn in het ResNet50 model en hun compatibiliteit met andere frameworks}
-\begin{tabular}{cccc}
+\begin{tabular}{ccc}
     \hline
-    Operaties & TensorFlow \textrightarrow TFLite & ONNX Opset & MACE \\
+    TensorFlow Operaties & TensorFlow \textrightarrow TFLite & ONNX Opset \\
     \hline
-    AddV2 & fused/ond & 1,6,7,13,14 & / \\
+    AddV2 & Ondersteund & 1 \\
 %   AssignVariableOp & Ondersteund & /  & / \\
-    AveragePooling & ondersteund & 1 & ond \\
-    BiasAdd & ond & 1  & ond \\
-    Cast & Ondersteund & 1,6,9,13  & / \\
-    Const & const & 1,9,11,12,13  & / \\
-    Conv2D & Ondersteund & 1,11  & ond \\
-    FusedBatchNormV3 & fused/ond & 6 & /\\
-    GreaterEqual & Ondersteund & 7  & / \\
-    Identity & ver, fused, const & 1,13,14,16  & / \\
-    MatMul & Ondersteund & 1,9,11  & ond \\
-    MaxPool & Ondersteund & 1,8,10,11,12  & ond \\
-    Mean & Ondersteund & 1,6,8,13  & / \\
+    %AveragePooling & ondersteund & 1 \\
+    BiasAdd & Samengevoegd & 1 \\
+    %Cast & Ondersteund & 1,6,9,13  \\
+    Const & constant & 1 \\
+    Conv2D & Ondersteund & 1 \\
+    FusedBatchNormV3 & Samengevoegd & 6 \\
+   % GreaterEqual & Ondersteund & 7 \\
+    Identity & Verwijderd & 1 \\
+    MatMul & Ondersteund & 1 \\
+    MaxPool & Ondersteund & 1 \\
+    Mean & Ondersteund & 1 \\
 %    MergeV2Checkpoints & ? & /  & / \\
-    Mul & Ondersteund & 1,6,7,13,14  & / \\
-    NoOp & ver & /  & / \\
-    Pack & Ondersteund & 1,4,11,13  & / \\
-    Pad & Ondersteund & 1,2,11,13  & ond \\
+  %  Mul & Ondersteund & 1,6,7,13,14 \\
+    NoOp & Verwijderd & / \\
+    Pack & Ondersteund & 1 \\
+    Pad & Ondersteund & 1 \\
  %  PartitionedCall & ? & /  & / \\
-    Placeholder & const/verw & 1  & / \\
-    RandomUniform & const/verw & 1  & / \\
+    Placeholder & Constant & 1 \\
+ %   RandomUniform & const/verw & 1 \\
  %  ReadVariableOp & Ondersteund & /  & / \\
-    Relu & fused & 1,6,13,14  & ond \\
+    Relu & Samengevoegd & 1 \\
  %  RestoreV2 & ? & /  & / \\
  %  SaveV2 & ? & /  & / \\
-    Select & const/verw & 7  & / \\
-    Shape & ver/const & 1,13,15  & / \\
+    %Select & Ondersteund & 7 \\
+%    Shape & ver/const & 1,13,15 \\
 %   ShardedFilename & ? & /  & / \\
-    StatefulPartitionedCall & ond & /  & / \\
+    Softmax & Ondersteund & ? \\
+    StatefulPartitionedCall & Ondersteund & / \\
 %   StaticRegexFullMatch & ? & /  & / \\
-    StridedSlice & Ondersteund & 1, 10  & / \\
+    %StridedSlice & Ondersteund & 1, 10 \\
 %   StringJoin & ? & /  & / \\
-    VarHandleOp & verw & /  & / \\
+    % VarHandleOp & verw & / \\
     \hline
 \end{tabular}
 \label{tab:TFop}
 \end{table}
 
-\subsection{Van PyTorch naar mobiele implementatie}
+\section{Van PyTorch naar mobiele implementatie}
+Voor de PyTorch implementatie maken we gebruik van het ResNet50 model uit de Torchvision bibliotheek.
+Dit model is voorgetraind op de ImageNet dataset ... .
+Dit netwerk kan vervolgens hertrained voor een gewenste functionaliteit.
+Voor deze implementatie zullen we echter vertrekken van het ResNet50 Keras model dat reeds bestaat.
+
+\subsection{PyTorch Mobile implementatie}
+
+
+\subsection{ONNX implementatie}
+
+\section{Conclusie}

@@ -156,7 +156,28 @@ Hierbij wordt de input van een laag rechtstreeks met een volgende laag geconecte
 Op deze manier worden de gradienten per laag niet meer kleiner.
 ResNet50 bestaat uit 50 convolutie lagen waarbij er een skip connection plaatsvindt per 3 lagen.
 De resnet50 architectuur is opgebouwd uit ResNet blokken die bestaan uit 3 convolutie lagen en 1 skip connection.
-% afbeelding
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{fig/resnet50.png}
+	\caption{ResNet50 architectuur.}
+	\label{fig:resnet}
+\end{figure}
+
+In figuur \ref{fig:resnet} is het standaard ResNet50 netwerk te zien.
+In deze figuur kunnen we de voornaamste opperaties terug vinden die in het netwerk gebruikt worden.
+Ook vinden we in deze architectuur 2 verschillende ResNet blokken terug: de ID-blok en de convolutie blok.
+In figuur \ref{fig:resnet_b} zien we de 2 verschillende blokken en hun opperaties weergegeven.
+De bovenste blok is de ID-blok, dit is de standaard ResNet50 blok waarbij de input en output dimensies gelijk zijn.
+De onderste blok in deze afbeelding is het convolutieblok waarbij twee extra opperaties worden uitgevoerd tijdens de skip connections.
+Deze twee extra opperaties zijn nodig als de input en output dimensies van het ResNet50 blok verschillend zijn.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{fig/resnet_blokken.jpg}
+	\caption{De bovenste blok is de ID blok van de ResNet50 architectuur. De onderste is de Convolutieblok van de ResNet50 architectuur}
+	\label{fig:resnet_b}
+\end{figure}
 
 \section{Deep learning-gebaseerde detector}
 Objectdetectie is het lokaliseren en classificeren van objecten in een afbeelding, waarbij de objecten aangeduid worden met een Bounding box.

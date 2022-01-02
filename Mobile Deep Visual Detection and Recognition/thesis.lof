@@ -7,15 +7,18 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Convolutielaag waarbij een filter wordt herleid tot een output feature.\relax }}{5}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces ReLu, waarbij het maximum wordt genomen van 0 en de input waarde.\relax }}{5}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Max pooling waarbij er verder wordt gegaan met de maximum waarde in een 2x2 regio.\relax }}{6}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Faster R-CNN\relax }}{8}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{9}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces One-stage detector met VGG als backbone, elke feature map met een verschillende schaal wordt ge\"evalueerd.\relax }}{10}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces ResNet50 architectuur.\relax }}{7}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces De bovenste blok is de ID blok van de ResNet50 architectuur. De onderste is de Convolutieblok van de ResNet50 architectuur\relax }}{8}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Faster R-CNN\relax }}{9}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces YOLO waarbij de input is opgedeeld in een S x S rooster. En waarbij bounding box voorspellingen zijn gedaan.\relax }}{10}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces One-stage detector met VGG als backbone, elke feature map met een verschillende schaal wordt ge\"evalueerd.\relax }}{11}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Een weergave van de voornaamste frameworks die naar ONNX kunnen exporten en die een ONNX model kunnen importeren.\relax }}{15}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Implementatieflow van een TensorFlow model naar een mobiele implementatie. Aan de linker kant is te zien dat een TensorFlow model via de TFLite converter wordt omgezet in TFLite flatbuffer model. Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een client toestel waar er gebruik gemaakt kan worden van verschillende hardware componenten\relax }}{18}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces CNN voor en na pruning\relax }}{24}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces kwantisatie van twee floating piont variabelen die worden omgezet naar twee fixed point variabelen met een gemeenschappelijke exponent.\relax }}{24}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Weight clustering: links zijn allemaal verschillende gewichten en na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen kunnen wijzen naar vier verschilende waarden.\relax }}{25}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Een weergave van de voornaamste frameworks die naar ONNX kunnen exporten en die een ONNX model kunnen importeren.\relax }}{14}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Implementatieflow van een TensorFlow model naar een mobiele implementatie. Aan de linker kant is te zien dat een TensorFlow model via de TFLite converter wordt omgezet in TFLite flatbuffer model. Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een client toestel waar er gebruik gemaakt kan worden van verschillende hardware componenten\relax }}{18}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces CNN voor en na pruning\relax }}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces kwantisatie van twee floating piont variabelen die worden omgezet naar twee fixed point variabelen met een gemeenschappelijke exponent.\relax }}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Weight clustering: links zijn allemaal verschillende gewichten en na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen kunnen wijzen naar vier verschilende waarden.\relax }}{24}{figure.caption.24}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ResNet50 convolutieblok voor en na TFLite conversie. BatchNorm en ReLu zijn hierbij samengevoegd met de Conv2D opperaties.\relax }}{26}{figure.caption.25}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -7,10 +7,10 @@ Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografie.bib
 Warning--entry type for "chollet2015keras" isn't style-file defined
 --line 389 of file bibliografie.bib
+Warning--I'm ignoring anh_yolo3_2021's extra "note" field
+--line 873 of file bibliografie.bib
 Warning--empty journal in abadi_tensorflow_2016
-Warning--empty journal in chen_mmdetection_2019
 Warning--empty journal in duan_centernet_2019
-Warning--empty journal in guo_gluoncv_2020
 Warning--empty journal in han_deep_2016
 Warning--empty journal in lin_focal_2018
 Warning--empty booktitle in liu_ssd_2016
@@ -18,45 +18,45 @@ Warning--empty journal in luo_comparison_2020
 Warning--empty journal in ren_faster_2016
 Warning--empty journal in sandler_mobilenetv2_2019
 Warning--empty journal in tan_efficientdet_2020
-You've used 40 entries,
+You've used 33 entries,
             1935 wiz_defined-function locations,
-            662 strings with 12711 characters,
-and the built_in function-call counts, 17693 in all, are:
-= -- 1585
-> -- 1316
-< -- 19
-+ -- 485
-- -- 481
-* -- 1599
-:= -- 3309
-add.period$ -- 110
-call.type$ -- 40
-change.case$ -- 437
-chr.to.int$ -- 40
-cite$ -- 51
-duplicate$ -- 518
-empty$ -- 813
-format.name$ -- 526
-if$ -- 3227
+            629 strings with 10595 characters,
+and the built_in function-call counts, 13577 in all, are:
+= -- 1238
+> -- 938
+< -- 17
++ -- 342
+- -- 340
+* -- 1186
+:= -- 2545
+add.period$ -- 91
+call.type$ -- 33
+change.case$ -- 334
+chr.to.int$ -- 33
+cite$ -- 42
+duplicate$ -- 421
+empty$ -- 655
+format.name$ -- 376
+if$ -- 2484
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 191
-num.names$ -- 122
-pop$ -- 408
+missing$ -- 17
+newline$ -- 159
+num.names$ -- 99
+pop$ -- 309
 preamble$ -- 1
-purify$ -- 437
+purify$ -- 334
 quote$ -- 0
-skip$ -- 423
+skip$ -- 346
 stack$ -- 0
-substring$ -- 664
-swap$ -- 46
-text.length$ -- 5
+substring$ -- 525
+swap$ -- 35
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 238
-warning$ -- 11
-while$ -- 96
+type$ -- 196
+warning$ -- 9
+while$ -- 77
 width$ -- 0
-write$ -- 473
-(There were 12 warnings)
+write$ -- 390
+(There were 11 warnings)

@@ -62,64 +62,64 @@ Voor objectdetectie biedt Torchvision ondersteuning voor de Faster-RCNN (\cite{r
 Van deze architecturen zijn er een aantal voorgetrainde modellen terug te vinden in de Torchvision bibliotheek.
 Via transfer learning is de programmeur dan in staat om een eigen detectiemodel te trainen.
 
-\section{Objectdetectie bibliotheken} \label{lib}
-Er zijn heel wat bibliotheken die de programmeur kan importeren om een detectiesysteem te ontwerpen en te trainen.
-Deze bibliotheken geven de programmeur extra hulpmiddelen om de complexiteit van het process te verminderen en de code overzichtelijk te maken.
-De bibliotheken werken bovenop TensorFlow of PyTorch en geven de programmeur toegang tot een groter aantal verschillende objectdetectoren en voorgetrainde modellen.
+% \section{Objectdetectie bibliotheken} \label{lib}
+% Er zijn heel wat bibliotheken die de programmeur kan importeren om een detectiesysteem te ontwerpen en te trainen.
+% Deze bibliotheken geven de programmeur extra hulpmiddelen om de complexiteit van het process te verminderen en de code overzichtelijk te maken.
+% De bibliotheken werken bovenop TensorFlow of PyTorch en geven de programmeur toegang tot een groter aantal verschillende objectdetectoren en voorgetrainde modellen.
 
-\subsection{MMDetection}
-MMDetection voorgesteld door \cite{chen_mmdetection_2019} maakt deel uit van OpenMMLab en is een open source objectdetectie toolbox gebaseerd op PyTorch.
-Deze bibliotheek is specifiek ontworpen voor objectdetectie taken.
-MMDetection ondersteund ook 48 verschillende detectiemethodes zoals: YOLO (\cite{redmon_you_2016}), Faster R-CNN (\cite{ren_faster_2016}), en SSD (\cite{liu_ssd_2016}).
-Van al deze architecturen samen heeft de programmeur toegang tot meer dan 200 voorgetrainde modellen.
-Een belangrijk aspect van MMDetection is dat het eenvoudige componenten bevat van verschillende detectie architecturen.
-Door deze componenten te combineren kan de programmeur een nieuw detectiemodel ontwerpen.
+% \subsection{MMDetection}
+% MMDetection voorgesteld door \cite{chen_mmdetection_2019} maakt deel uit van OpenMMLab en is een open source objectdetectie toolbox gebaseerd op PyTorch.
+% Deze bibliotheek is specifiek ontworpen voor objectdetectie taken.
+% MMDetection ondersteund ook 48 verschillende detectiemethodes zoals: YOLO (\cite{redmon_you_2016}), Faster R-CNN (\cite{ren_faster_2016}), en SSD (\cite{liu_ssd_2016}).
+% Van al deze architecturen samen heeft de programmeur toegang tot meer dan 200 voorgetrainde modellen.
+% Een belangrijk aspect van MMDetection is dat het eenvoudige componenten bevat van verschillende detectie architecturen.
+% Door deze componenten te combineren kan de programmeur een nieuw detectiemodel ontwerpen.
 
-Doordat al de bounding box en masker operaties worden uitgevoerd op GPU's heeft MMDetection een grote trainingssnelheid.
-MMDetection biedt zelf geen ondersteuning om een bestaand model te optimaliseren naar een model voor mobiel gebruik.
-%Omdat een MMDetection model operaties kan bevatten die een Pytorch model niet ondersteund, kan het zijn de de optimalisatie naar PyTorch mobile niet lukt.
-%Dus dit model zal geconverteerd moeten worden naar een framework waarbij het optimaliseren naar een mobiel model wel mogelijk is.
-%suports COCO en VOC style datasets
+% Doordat al de bounding box en masker operaties worden uitgevoerd op GPU's heeft MMDetection een grote trainingssnelheid.
+% MMDetection biedt zelf geen ondersteuning om een bestaand model te optimaliseren naar een model voor mobiel gebruik.
+% %Omdat een MMDetection model operaties kan bevatten die een Pytorch model niet ondersteund, kan het zijn de de optimalisatie naar PyTorch mobile niet lukt.
+% %Dus dit model zal geconverteerd moeten worden naar een framework waarbij het optimaliseren naar een mobiel model wel mogelijk is.
+% %suports COCO en VOC style datasets
 
-\subsection{Detectron2}
-Detectron2 (\cite{wu2019detectron2}) is een bibliotheek ontworpen door Facebook die segmentatie en detectie algoritmes ondersteunt.
-Zoals MMDetection werkt Detectron2 bovenop Pytorch en kan het netwerk getraind worden op een GPU.
-%Volgens de Detectron2 documentatie heeft Detectron2 een betere trainingssnelheid dan MMDetection.
-%Detectron2 verwerkt 62 afbeeldingen/s en MMDetection 53 afbeeldingen/s bij het trainen van een Mask R-CNN detector.
-Via Modular, extensible design kan Detectron2 specifieke modules toevoegen aan bijna elk deel van een detectiesysteem.
-Detectron2 bevat meer dan 80 voorgetrainde modellen waarop de programmeur verder kan bouwen.
-Voor objectdetectie ondersteund Detectron2 zes verschillende standaardmodellen.
-Ondertussen heeft Detectron2 D2Go als uitbreiding gekregen dat ondersteuning biedt voor objectdetectie voor mobiele toepassingen.
+% \subsection{Detectron2}
+% Detectron2 (\cite{wu2019detectron2}) is een bibliotheek ontworpen door Facebook die segmentatie en detectie algoritmes ondersteunt.
+% Zoals MMDetection werkt Detectron2 bovenop Pytorch en kan het netwerk getraind worden op een GPU.
+% %Volgens de Detectron2 documentatie heeft Detectron2 een betere trainingssnelheid dan MMDetection.
+% %Detectron2 verwerkt 62 afbeeldingen/s en MMDetection 53 afbeeldingen/s bij het trainen van een Mask R-CNN detector.
+% Via Modular, extensible design kan Detectron2 specifieke modules toevoegen aan bijna elk deel van een detectiesysteem.
+% Detectron2 bevat meer dan 80 voorgetrainde modellen waarop de programmeur verder kan bouwen.
+% Voor objectdetectie ondersteund Detectron2 zes verschillende standaardmodellen.
+% Ondertussen heeft Detectron2 D2Go als uitbreiding gekregen dat ondersteuning biedt voor objectdetectie voor mobiele toepassingen.
 
-\subsection{GluonCV}
-GluonCV (\cite{guo_gluoncv_2020}) is een bibliotheek die implementaties levert voor enkele van de State-of-the-art deep learning modellen.
-Voor objectdetectie biedt GluonCV ondersteuning voor vier detectiemodellen: SSD (\cite{liu_ssd_2016}), Faster-RCNN (\cite{ren_faster_2016}), YoloV3 (\cite{redmon_yolov3_2018}) en CenterNet (\cite{duan_centernet_2019})
-Deze bibliotheek is ontworpen om snel prototypes en onderzoeksidee\"en te leveren voor onderzoekers.
-Dit doet GluonCV door de programmeur toegang te geven tot 170 voorgetrainde modellen, die hertraind kunnen worden voor een specifiek doel.
-Met behulp van een API die de complexiteit van het implementeren minimaliseert.
-GluonCV biedt ondersteuning voor PyTorch en MXNet om deep learning modellen te ontwerpen en trainen.
-De GluonCV documentatie bevat meer informatie voor MXNet dan voor PyTorch.
-MXNet is een framework zoals PyTorch en TensorFlow om neurale netwerken te ontwerpen, trainen en deployen (\cite{chen_mxnet_2015}).
+% \subsection{GluonCV}
+% GluonCV (\cite{guo_gluoncv_2020}) is een bibliotheek die implementaties levert voor enkele van de State-of-the-art deep learning modellen.
+% Voor objectdetectie biedt GluonCV ondersteuning voor vier detectiemodellen: SSD (\cite{liu_ssd_2016}), Faster-RCNN (\cite{ren_faster_2016}), YoloV3 (\cite{redmon_yolov3_2018}) en CenterNet (\cite{duan_centernet_2019})
+% Deze bibliotheek is ontworpen om snel prototypes en onderzoeksidee\"en te leveren voor onderzoekers.
+% Dit doet GluonCV door de programmeur toegang te geven tot 170 voorgetrainde modellen, die hertraind kunnen worden voor een specifiek doel.
+% Met behulp van een API die de complexiteit van het implementeren minimaliseert.
+% GluonCV biedt ondersteuning voor PyTorch en MXNet om deep learning modellen te ontwerpen en trainen.
+% De GluonCV documentatie bevat meer informatie voor MXNet dan voor PyTorch.
+% MXNet is een framework zoals PyTorch en TensorFlow om neurale netwerken te ontwerpen, trainen en deployen (\cite{chen_mxnet_2015}).
 
-\subsection{ImageAI}
-ImageAI (\cite{martins_imageai_2021}) is een eenvoudig te gebruiken Python bibliotheek die de programmeur in staat stelt om State-of-the-art AI feautres te implementeren.
-Het doel van deze bibliotheek is om met enkele lijnen code een objectdetector te trainen.
+% \subsection{ImageAI}
+% ImageAI (\cite{martins_imageai_2021}) is een eenvoudig te gebruiken Python bibliotheek die de programmeur in staat stelt om State-of-the-art AI feautres te implementeren.
+% Het doel van deze bibliotheek is om met enkele lijnen code een objectdetector te trainen.
 
-\begin{python}
-from imageai.Detection.Custom import DetectionModelTrainer
+% \begin{python}
+% from imageai.Detection.Custom import DetectionModelTrainer
 
-trainer = DetectionModelTrainer() # init
-trainer.setModelTypeAsYOLOv3()	# model type
-trainer.setDataDirectory('path_to_dataset_dir') # dataset dir
-#training configuratie(lijst met labels, batch size, aantal epochs, voorgetraind model)
-trainer.setTrainConfig(object_names_array=["labels"], batch_size=4, num_experiments=200, train_from_pretrained_model="pretrained-yolov3.h5")
-trainer.trainModel()
-\end{python}
+% trainer = DetectionModelTrainer() # init
+% trainer.setModelTypeAsYOLOv3()	# model type
+% trainer.setDataDirectory('path_to_dataset_dir') # dataset dir
+% #training configuratie(lijst met labels, batch size, aantal epochs, voorgetraind model)
+% trainer.setTrainConfig(object_names_array=["labels"], batch_size=4, num_experiments=200, train_from_pretrained_model="pretrained-yolov3.h5")
+% trainer.trainModel()
+% \end{python}
 
-Deze bibliotheek levert tools voor herkenning, objectdetectie en videoanalyse.
-ImageAI geeft de programmeur toegang tot voorgetrainde detectiemodellen van RetinaNet (\cite{lin_focal_2018}) , YoloV3 (\cite{redmon_yolov3_2018}) en TinyYOLOv3 (\cite{Gai_TinyV3_2021}) getraind met de COCO dataset.
-Deze bibliotheek werkt bovenop TensorFlow en maakt sinds juni 2021 gebruik van een PyTorch backend.
-Ook deze bibliotheek geeft de programmeur de mogelijkheid om nieuwe modellen te trainen om specifieke objecten te detecteren.
+% Deze bibliotheek levert tools voor herkenning, objectdetectie en videoanalyse.
+% ImageAI geeft de programmeur toegang tot voorgetrainde detectiemodellen van RetinaNet (\cite{lin_focal_2018}) , YoloV3 (\cite{redmon_yolov3_2018}) en TinyYOLOv3 (\cite{Gai_TinyV3_2021}) getraind met de COCO dataset.
+% Deze bibliotheek werkt bovenop TensorFlow en maakt sinds juni 2021 gebruik van een PyTorch backend.
+% Ook deze bibliotheek geeft de programmeur de mogelijkheid om nieuwe modellen te trainen om specifieke objecten te detecteren.
 
 \section{Open Neural Network Exange (ONNX)}
 \cite{onnx_onnx_2017} biedt de mogelijkheid om deep learning model te exporteren naar een ander framework.
@@ -362,7 +362,7 @@ Standaard worden al de optimisatie uitgevoerd, de volgende lijst bevat de optima
 
 NHWC of NCHW formaat: 
 
-\begin{itemize}
+\begin{itemize} \label{nhwc}
 	\item N: Aantal afbeeldingen per groep.
 	\item H: Hoogte van de afbeelding.
 	\item W: Breedte van de afbeelding.
@@ -419,14 +419,14 @@ model = ct.convert('tf_model/saved_model.pb', source='tensorflow')
 model  = ct.converters.onnx.convert(model='my_model.onnx')
 \end{python}
 
-\subsection{Mobile AI Compute Engine (MACE)}
-Het MACE framework (\cite{khan_mace_2020}) is ontworpen door Xiaomi en dient specifiek voor mobiele toepassingen van neurale netwerken op Android, IOS, Linux en Windows.
-MACE biedt ondersteuning voor verschillende frameworks zoals: TensorFlow, Caffe en ONNX.
-MACE is ontworpen om accelerators van chips zo optimaal mogelijk te gebruiken voor AI taken.
-Bij het wisselen tussen verschillende systemen probeert MACE het verschil in uitvoering te minimaliseren, zodat elk systeem evengoed presteert.
-Het MACE framework bespaart geheugen door de core library zo klein mogelijk te maken door het aantal externe dependencies te minimaliseren.
-Een YML file wordt gebruikt om het model te beschrijven, op basis van deze informatie wordt een bibliotheek aangemaakt.
-Na het converteren naar een MACE model kan er een bibliotheek gemaakt worden die ge\"implementeerd kan worden in een applicatie via de MACE API.
+% \subsection{Mobile AI Compute Engine (MACE)}
+% Het MACE framework (\cite{khan_mace_2020}) is ontworpen door Xiaomi en dient specifiek voor mobiele toepassingen van neurale netwerken op Android, IOS, Linux en Windows.
+% MACE biedt ondersteuning voor verschillende frameworks zoals: TensorFlow, Caffe en ONNX.
+% MACE is ontworpen om accelerators van chips zo optimaal mogelijk te gebruiken voor AI taken.
+% Bij het wisselen tussen verschillende systemen probeert MACE het verschil in uitvoering te minimaliseren, zodat elk systeem evengoed presteert.
+% Het MACE framework bespaart geheugen door de core library zo klein mogelijk te maken door het aantal externe dependencies te minimaliseren.
+% Een YML file wordt gebruikt om het model te beschrijven, op basis van deze informatie wordt een bibliotheek aangemaakt.
+% Na het converteren naar een MACE model kan er een bibliotheek gemaakt worden die ge\"implementeerd kan worden in een applicatie via de MACE API.
 
 %\subsection{Caffe2}
 %Caffe2 ... is ontworpen door Facebook om grootte machine learning modellen te trainen en deze te gebruiken op mobiele toestellen.

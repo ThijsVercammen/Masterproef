@@ -987,6 +987,20 @@ INPUT .\fig\Maxpool.png
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zpzccmry.vf
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfchan\pzcmi8r.tfm
+INPUT .\fig\resnet50.png
+INPUT .\fig\resnet50.png
+INPUT fig\resnet50.png
+INPUT .\fig\resnet50.png
+INPUT .\fig\resnet50.png
+INPUT .\fig\resnet50.png
+INPUT .\fig\resnet50.png
+INPUT .\fig\resnet_blokken.jpg
+INPUT .\fig\resnet_blokken.jpg
+INPUT fig\resnet_blokken.jpg
+INPUT .\fig\resnet_blokken.jpg
+INPUT .\fig\resnet_blokken.jpg
+INPUT .\fig\resnet_blokken.jpg
+INPUT .\fig\resnet_blokken.jpg
 INPUT .\fig\Faster-R-CNN.png
 INPUT .\fig\Faster-R-CNN.png
 INPUT fig\Faster-R-CNN.png
@@ -1015,21 +1029,6 @@ INPUT hfdst3.tex
 INPUT .\hfdst3.tex
 INPUT .\hfdst3.tex
 INPUT hfdst3.tex
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr7tn.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr7tn.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb7t.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrro7t.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrb7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\public\pslatex\pcrr7tn.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr8rn.tfm
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrro7t.vf
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrro8r.tfm
 INPUT .\fig\onnx.jpeg
 INPUT .\fig\onnx.jpeg
 INPUT fig\onnx.jpeg
@@ -1037,6 +1036,20 @@ INPUT .\fig\onnx.jpeg
 INPUT .\fig\onnx.jpeg
 INPUT .\fig\onnx.jpeg
 INPUT .\fig\onnx.jpeg
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr7tn.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr7tn.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\public\pslatex\pcrr7tn.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\pslatex\pcrr8rn.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrb7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrro7t.tfm
 INPUT .\fig\TFLite_workflow.png
 INPUT .\fig\TFLite_workflow.png
 INPUT fig\TFLite_workflow.png
@@ -1044,6 +1057,8 @@ INPUT .\fig\TFLite_workflow.png
 INPUT .\fig\TFLite_workflow.png
 INPUT .\fig\TFLite_workflow.png
 INPUT .\fig\TFLite_workflow.png
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrro7t.vf
+INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrro8r.tfm
 INPUT .\fig\pruning.jpg
 INPUT .\fig\pruning.jpg
 INPUT fig\pruning.jpg
@@ -1072,7 +1087,13 @@ INPUT hfdst6.tex
 INPUT .\hfdst6.tex
 INPUT .\hfdst6.tex
 INPUT hfdst6.tex
-INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\helvetic\phvr7t.tfm
+INPUT .\fig\class_opt.jpg
+INPUT .\fig\class_opt.jpg
+INPUT fig\class_opt.jpg
+INPUT .\fig\class_opt.jpg
+INPUT .\fig\class_opt.jpg
+INPUT .\fig\class_opt.jpg
+INPUT .\fig\class_opt.jpg
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmss10.tfm
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1cmss.fd
 INPUT C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1cmss.fd

@@ -53,6 +53,11 @@ Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., and Fei-Fei, L. (2009).
 Duan, K., Bai, S., Xie, L., Qi, H., Huang, Q., and Tian, Q. (2019).
 \newblock {CenterNet}: {Keypoint} {Triplets} for {Object} {Detection}.
 
+\bibitem[EAVISE, 2020]{eavise_eavise_2020}
+EAVISE (2020).
+\newblock {EAVISE} / brambox.
+\newblock \url{https://gitlab.com/EAVISE/brambox}.
+
 \bibitem[Febvay, 2020]{febvay_low-level_2020}
 Febvay, M. (2020).
 \newblock Low-level {Optimizations} for {Faster} {Mobile} {Deep} {Learning}
@@ -97,6 +102,12 @@ Kathuria, A. (2022).
 \newblock A {PyTorch} implementation of a {YOLO} v3 {Object} {Detector}.
 \newblock \url{https://github.com/ayooshkathuria/pytorch-yolo-v3}.
 \newblock original-date: 2018-04-06T21:55:48Z.
+
+\bibitem[Khan, 2020]{khan_mace_2020}
+Khan, J. (2020).
+\newblock {MACE}: {Deep} learning optimized for mobile and edge devices.
+\newblock
+  \url{https://heartbeat.comet.ml/mace-deep-learning-optimized-for-mobile-and-edge-devices-5e6941cc0533}.
 
 \bibitem[Koehrsen, 2018]{koehrsen_neural_2018}
 Koehrsen, W. (2018).

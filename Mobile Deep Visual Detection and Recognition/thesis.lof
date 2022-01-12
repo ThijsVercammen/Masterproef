@@ -23,4 +23,3 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces ResNet50 convolutieblok voor en na TFLite conversie. BatchNorm en ReLu zijn hierbij samengevoegd met de Conv2D opperaties.\relax }}{27}{figure.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }

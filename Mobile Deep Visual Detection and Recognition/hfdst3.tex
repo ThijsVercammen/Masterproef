@@ -447,9 +447,12 @@ Voor alle netwerk architecturen in deze paper geeft de optimalisatie naar Tensor
 Uit deze paper is ook af te leiden dat de optimalisatie naar een mobiel model niet alleen afhankelijk is van het framework maar ook van de netwerk architectuur.
 Zo geeft TensorFlow Lite volgens \cite{luo_comparison_2020} betere latency resultaten voor de zwaardere netwerken (ResNet50, InceptionV3, DenseNet121) dan PyTorch Mobile.
 PyTorch Mobile heeft op zijn beurt wel een betere latency voor SqueezeNet en MobileNetV2.
-Dus uit eerder genoemde studie kunnen we afleiden dat TensorFlow Lite het beste de bestands grootteverkleint, maar dat de netwerk architectuur ook een rol speelt.
+Dus uit eerder genoemde studie kunnen we afleiden dat TensorFlow Lite het beste de bestandsgrootte verkleint, maar dat de netwerk architectuur ook een rol speelt.
+\cite{luo_comparison_2020} heeft ook aangetoond dat de NNAPI niet altijd de uitvoeringssnelheid verbeterd.
+Vooral bij de minder zware netwerken zien we dat NNAPI een negatief effect heeft op de uitvoeringssnelheid.
 
-\cite{febvay_low-level_2020} vergelijkt TensorFlow Lite met MACE voor verschillende neurale netwerken ( SqueezeNet, MobileNetV1/V2).
+
+\cite{febvay_low-level_2020} vergelijkt TensorFlow Lite met MACE (\cite{khan_mace_2020}) voor verschillende neurale netwerken ( SqueezeNet, MobileNetV1/V2).
 Hierbij geeft TensorFlow Lite het beste resultaat, TensorFlow Lite gaf een Top-1 resultaat van 69,19\% en MACE gaf een top-1 resultaat van 66.84\% bij MobileNetV1.
 Ook voor de latency gaf TensorFlow Lite in de meeste gevallen de beste resultaten buiten bij het gebruik van 4 of 6 CPU cores, dan gaf MACE betere resultaten.  
 

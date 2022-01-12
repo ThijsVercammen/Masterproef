@@ -1,3 +1,0 @@
-D:/Desktop/test/vision/android/ops/.cxx/cmake/release/x86/CMakeFiles/torchvision_ops.dir
-D:/Desktop/test/vision/android/ops/.cxx/cmake/release/x86/CMakeFiles/edit_cache.dir
-D:/Desktop/test/vision/android/ops/.cxx/cmake/release/x86/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,0 @@
-D:/Desktop/test/vision/android/ops/.cxx/cmake/release/armeabi-v7a/CMakeFiles/torchvision_ops.dir
-D:/Desktop/test/vision/android/ops/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
-D:/Desktop/test/vision/android/ops/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.29)  12 JAN 2022 01:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.29)  12 JAN 2022 16:01
 entering extended mode
 **"d:/Desktop/Masterproef/Mobile Deep Visual Detection and Recognition/thesis.tex"
 (d:/Desktop/Masterproef/Mobile Deep Visual Detection and Recognition/thesis.tex
@@ -597,7 +597,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 
 pdfTeX warning: pdflatex (file ./private/cover_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/cover_fiiw_denayer.pdf, id=275, 597.55246pt x 845.07718pt>
+<private/cover_fiiw_denayer.pdf, id=271, 597.55246pt x 845.07718pt>
 File: private/cover_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/cover_fiiw_denayer.pdf>
 Package pdftex.def Info: private/cover_fiiw_denayer.pdf  used on input line 107.
@@ -653,12 +653,12 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 
 ] (summary.tex [4
 
-]) [5] (abstract.tex
+] [5]) [6] (abstract.tex
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 1.
- [6
+ [7
 
-]) [7] (thesis.toc
+]) [8] (thesis.toc
 LaTeX Font Info:    Trying to load font information for OT1+ptmcm on input line 11.
  (C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
@@ -677,25 +677,25 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
- [8
+ [9
 
-] [9])
+] [10])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [10] (thesis.lof [11
+ [11] (thesis.lof [12
 
 ])
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [12] (thesis.lot)
+ [13] (thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
- (afkortingen.tex [13
+ (afkortingen.tex [14
 
-]) [14
+]) [15
 
 ] (hfdst1.tex
 Hoofdstuk 1.
@@ -707,7 +707,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 10.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 10.
-<fig/situering.jpg, id=486, 807.015pt x 171.039pt>
+<fig/situering.jpg, id=485, 807.015pt x 171.039pt>
 File: fig/situering.jpg Graphic file (type jpg)
 <use fig/situering.jpg>
 Package pdftex.def Info: fig/situering.jpg  used on input line 25.
@@ -737,18 +737,18 @@ File: fig/cnn_2.png Graphic file (type png)
 Package pdftex.def Info: fig/cnn_2.png  used on input line 47.
 (pdftex.def)             Requested size: 362.77525pt x 137.00114pt.
  [5 <./fig/embedding.png (PNG copy)> <./fig/cnn_2.png>]
-<fig/convolution layer.png, id=527, 333.245pt x 281.05pt>
+<fig/convolution layer.png, id=526, 333.245pt x 281.05pt>
 File: fig/convolution layer.png Graphic file (type png)
 <use fig/convolution layer.png>
 Package pdftex.def Info: fig/convolution layer.png  used on input line 70.
 (pdftex.def)             Requested size: 149.37958pt x 125.98244pt.
-<fig/ReLu.png, id=531, 358.33875pt x 279.0425pt>
+<fig/ReLu.png, id=530, 358.33875pt x 279.0425pt>
 File: fig/ReLu.png Graphic file (type png)
 <use fig/ReLu.png>
 Package pdftex.def Info: fig/ReLu.png  used on input line 85.
 (pdftex.def)             Requested size: 149.37958pt x 116.32419pt.
  [6 <./fig/convolution layer.png> <./fig/ReLu.png (PNG copy)>]
-<fig/Maxpool.png, id=539, 164.25pt x 68.547pt>
+<fig/Maxpool.png, id=538, 164.25pt x 68.547pt>
 File: fig/Maxpool.png Graphic file (type png)
 <use fig/Maxpool.png>
 Package pdftex.def Info: fig/Maxpool.png  used on input line 99.
@@ -756,18 +756,18 @@ Package pdftex.def Info: fig/Maxpool.png  used on input line 99.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 5.39996pt on input line 126.
  [7 <./fig/Maxpool.png>]
-<fig/resnet50.png, id=558, 700.6175pt x 142.5325pt>
+<fig/resnet50.png, id=557, 700.6175pt x 142.5325pt>
 File: fig/resnet50.png Graphic file (type png)
 <use fig/resnet50.png>
 Package pdftex.def Info: fig/resnet50.png  used on input line 163.
 (pdftex.def)             Requested size: 426.79135pt x 86.82724pt.
-<fig/resnet_blokken.jpg, id=561, 573.94424pt x 271.61475pt>
+<fig/resnet_blokken.jpg, id=560, 573.94424pt x 271.61475pt>
 File: fig/resnet_blokken.jpg Graphic file (type jpg)
 <use fig/resnet_blokken.jpg>
 Package pdftex.def Info: fig/resnet_blokken.jpg  used on input line 178.
 (pdftex.def)             Requested size: 426.79135pt x 201.974pt.
  [8] [9 <./fig/resnet50.png> <./fig/resnet_blokken.jpg>]
-<fig/Faster-R-CNN.png, id=578, 853.1875pt x 861.2175pt>
+<fig/Faster-R-CNN.png, id=577, 853.1875pt x 861.2175pt>
 File: fig/Faster-R-CNN.png Graphic file (type png)
 <use fig/Faster-R-CNN.png>
 Package pdftex.def Info: fig/Faster-R-CNN.png  used on input line 220.
@@ -779,7 +779,7 @@ File: fig/YOLO.jpg Graphic file (type jpg)
 Package pdftex.def Info: fig/YOLO.jpg  used on input line 235.
 (pdftex.def)             Requested size: 256.07741pt x 162.61467pt.
  [11 <./fig/YOLO.jpg>]
-<fig/iou.png, id=596, 1606.0pt x 905.3825pt>
+<fig/iou.png, id=595, 1606.0pt x 905.3825pt>
 File: fig/iou.png Graphic file (type png)
 <use fig/iou.png>
 Package pdftex.def Info: fig/iou.png  used on input line 284.
@@ -795,7 +795,7 @@ Hoofdstuk 3.
 [13
 
 ] [14]
-<fig/onnx.jpeg, id=661, 1405.25pt x 1153.30875pt>
+<fig/onnx.jpeg, id=663, 1405.25pt x 1153.30875pt>
 File: fig/onnx.jpeg Graphic file (type jpg)
 <use fig/onnx.jpeg>
 Package pdftex.def Info: fig/onnx.jpeg  used on input line 144.
@@ -809,7 +809,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 
 Package Listings Warning: Text dropped after begin of listing on input line 249.
 
-<fig/TFLite_workflow.png, id=712, 1062.97125pt x 564.1075pt>
+<fig/TFLite_workflow.png, id=714, 1062.97125pt x 564.1075pt>
 File: fig/TFLite_workflow.png Graphic file (type png)
 <use fig/TFLite_workflow.png>
 Package pdftex.def Info: fig/TFLite_workflow.png  used on input line 263.
@@ -820,43 +820,43 @@ Overfull \hbox (9.95386pt too wide) in paragraph at lines 412--419
  []
 
 [22] [23]
-<fig/pruning.jpg, id=825, 751.80875pt x 375.4025pt>
+<fig/pruning.jpg, id=832, 751.80875pt x 375.4025pt>
 File: fig/pruning.jpg Graphic file (type jpg)
 <use fig/pruning.jpg>
-Package pdftex.def Info: fig/pruning.jpg  used on input line 486.
+Package pdftex.def Info: fig/pruning.jpg  used on input line 489.
 (pdftex.def)             Requested size: 277.41176pt x 138.52441pt.
-<fig/kwantization.png, id=829, 1405.25pt x 649.42625pt>
+ [24 <./fig/pruning.jpg>]
+<fig/kwantization.png, id=842, 1405.25pt x 649.42625pt>
 File: fig/kwantization.png Graphic file (type png)
 <use fig/kwantization.png>
-Package pdftex.def Info: fig/kwantization.png  used on input line 501.
+Package pdftex.def Info: fig/kwantization.png  used on input line 504.
 (pdftex.def)             Requested size: 298.75264pt x 138.06813pt.
- [24 <./fig/pruning.jpg>]
-<fig/clus.jpg, id=841, 361.95226pt x 167.4255pt>
+<fig/clus.jpg, id=848, 361.95226pt x 167.4255pt>
 File: fig/clus.jpg Graphic file (type jpg)
 <use fig/clus.jpg>
-Package pdftex.def Info: fig/clus.jpg  used on input line 515.
+Package pdftex.def Info: fig/clus.jpg  used on input line 518.
 (pdftex.def)             Requested size: 298.75264pt x 138.1967pt.
 ) (hfdst6.tex [25 <./fig/kwantization.png (PNG copy)> <./fig/clus.jpg>]
 Hoofdstuk 4.
 [26
 
 ]
-<fig/class_opt.jpg, id=862, 569.7285pt x 154.176pt>
+<fig/class_opt.jpg, id=869, 569.7285pt x 154.176pt>
 File: fig/class_opt.jpg Graphic file (type jpg)
 <use fig/class_opt.jpg>
-Package pdftex.def Info: fig/class_opt.jpg  used on input line 50.
+Package pdftex.def Info: fig/class_opt.jpg  used on input line 51.
 (pdftex.def)             Requested size: 426.79135pt x 115.49524pt.
  [27 <./fig/class_opt.jpg>]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family phv in TS1 encoding.
-            Default family used instead on input line 97.
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 97.
+            Default family used instead on input line 98.
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 98.
  (C:\Users\Thijs Vercammen\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [28]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family phv in TS1 encoding.
-            Default family used instead on input line 191.
+            Default family used instead on input line 192.
  [29] [30]) (hfdst7.tex [31]
 Hoofdstuk 5.
 
@@ -897,12 +897,12 @@ Hoofdstuk 6.
 [43
 
 ]
-Overfull \hbox (12.42554pt too wide) in paragraph at lines 37--52
+Overfull \hbox (12.42554pt too wide) in paragraph at lines 41--56
 [][]
  []
 
 
-Overfull \hbox (6.49907pt too wide) in paragraph at lines 94--107
+Overfull \hbox (6.49907pt too wide) in paragraph at lines 98--111
 [][]
  []
 
@@ -920,36 +920,29 @@ LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
  [47
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 155--160
+Underfull \hbox (badness 10000) in paragraph at lines 107--111
+[]\OT1/phv/m/n/10.95 Khan, J. (2020).  MACE: Deep learning op-ti-mi-zed for mo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--111
+\OT1/phv/m/n/10.95 bile and edge de-vi-ces.  []$\OT1/pcr/m/n/10.95 https : / / heartbeat . comet . ml /
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 166--171
 []\OT1/phv/m/n/10.95 ONNX (2021).  tf2onnx - Con-vert TensorFlow, Keras, Tensorflow.js and Tflite
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--160
+Underfull \hbox (badness 10000) in paragraph at lines 166--171
 \OT1/phv/m/n/10.95 mo-dels to ONNX.  []$\OT1/pcr/m/n/10.95 https : / / github . com / onnx / tensorflow-[]onnx / blob /
- []
-
-[48]) (bijlage1.tex [49]
-B\ij lage A.
-
-Overfull \hbox (48.40637pt too wide) in paragraph at lines 2--4
-\OT1/phv/m/n/10.95 Al de bij-la-ges zijn te-rug te vin-den in de vol-gende git-hub re-po-si-tory: []$\OT1/pcr/m/n/10.95 https : / / github . com / ThijsVercammen /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--21
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--21
-
  []
 
 )
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=1236, 597.55246pt x 845.07718pt>
+<private/back_fiiw_denayer.pdf, id=1235, 597.55246pt x 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf  used on input line 130.
@@ -967,7 +960,7 @@ pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: 
 
 
 pdfTeX warning: pdflatex (file ./private/back_fiiw_denayer.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<private/back_fiiw_denayer.pdf, id=1239, page=1, 597.55246pt x 845.07718pt>
+<private/back_fiiw_denayer.pdf, id=1238, page=1, 597.55246pt x 845.07718pt>
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 130.
@@ -976,9 +969,7 @@ File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 130.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
-[50
-
-]
+[49]
 File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 130.
@@ -991,22 +982,22 @@ File: private/back_fiiw_denayer.pdf Graphic file (type pdf)
 <use private/back_fiiw_denayer.pdf, page 1>
 Package pdftex.def Info: private/back_fiiw_denayer.pdf , page1 used on input line 130.
 (pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
- [51 <./private/back_fiiw_denayer.pdf>] (thesis.aux)
+ [50 <./private/back_fiiw_denayer.pdf>] (thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 93BC65B332A12F9794E0E5D899D24AA7;12621.
+(rerunfilecheck)             Checksum: 634455F8913446B4868B43187EAC7B99;12442.
  ) 
 Here is how much of TeX's memory you used:
  18103 strings out of 478907
- 284579 string characters out of 2847115
- 1090763 words of memory out of 3000000
- 35160 multiletter control sequences out of 15000+600000
+ 284587 string characters out of 2847115
+ 1090813 words of memory out of 3000000
+ 35162 multiletter control sequences out of 15000+600000
  448146 words of font info for 101 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
  70i,17n,81p,578b,2103s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <C:\Users\Thijs Vercammen\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1095.pk><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Thijs Vercammen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (65 pages, 1719023 bytes).
+Output written on thesis.pdf (65 pages, 1721128 bytes).
 PDF statistics:
- 1409 PDF objects out of 1440 (max. 8388607)
- 452 named destinations out of 1000 (max. 500000)
- 655 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1413 PDF objects out of 1440 (max. 8388607)
+ 453 named destinations out of 1000 (max. 500000)
+ 647 words of extra memory for PDF output out of 10000 (max. 10000000)
 

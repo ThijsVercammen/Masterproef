@@ -54,7 +54,14 @@ This method of implementing the not supported operations has a negative effect o
 The operations of both frameworks are fully supported by ONNX with a minimum opset version of 11.
 For the Android studio implementation we see that there is a maximum file size for ONNX.
 
-%YOLO
+We can't find a YOLO model that is pretrained by PyTorch or TensorFlow, but we can find the pretrained YOLO weights.
+Those weights can be loaded in a model that we configured in TensorFlow or PyTorch.
+Like the Faster-RCNN model the input shape must be confined in TensorFlow before we convert to TFLite, otherwise de input shapes wil be set to 1.
+This model can be converted to TFLite without any problems.
+The output shapes of the converted model will be correct and the model can be implemented in Android studio without additional configurations for the outputbuffers.
+The PyTorch model couldn't be converted because of the way the weight are loaded.
+When the YOLO PyTorch model is converted to a model compatibel with a mobile environment the output is always the same.
+Because of the file size of YOLO model the ONNX model is to large to be implemented in Android studio.
 
 We conlude that TensorFlow supports the most operations for mobile use, but PyTorch mobile is still in its beta phase.
 We can expect that more operations wil be added to PyTorch.

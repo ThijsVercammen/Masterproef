@@ -2,6 +2,7 @@
 We zullen de resultaten bespreken van bestandsgrootte, uitvoeringssnelheid en accuraatheid bespreken voor de ResNet50, Faster-RCNN en YOLO architectuur.
 
 \section{De bestandsgrootte van de verschillende modellen}
+
 \begin{table}[!ht]
     \caption{De bestandsgrootte van de verschillende modellen}
 \begin{tabular}{ccccc}
@@ -21,11 +22,14 @@ We zullen de resultaten bespreken van bestandsgrootte, uitvoeringssnelheid en ac
 \label{tab:size}
 \end{table}
 
-In tabel \ref{tab:size} kunnen we zien dat de conversie geen grote in invloed heeft op de bestandsgrootte.
+In tabel \ref{tab:size} zien we de bestandsgrootte van de verschillende modellen nadat ze zijn ingeladen en geconverteerd.
+We hebben geen extra optimalisatie technieken toegepast, de enige optimalisaties zijn de default optimalisatie uitgevoerd door de converters.
+We zien dat de optimalisaties uitgevoerd tijdens de conversie geen grote in invloed heeft op de bestandsgrootte.
 Het YOLO model dat naar TFLite wordt geconverteerd ondervindt de grootste invloed met een reductie van ongeveer 1MB in bestandsgrootte.
 We kunnen ook duidelijk zien dat de bestandsgrootte bij detectiesystemen aanzienlijk toeneemt.
 We kunnen geen duidelijk onderscheid maken voor welk framework de beste optimalisaties uitvoert tijdens de conversie.
 Voor het PyTorch YOLO model hebben we geen resultaten voor het mobiel en ONNX model omdat we dit niet succesvol hebben converteren.
+De reden waarom de verschillen in bestandsgroottes zo weinig verschillen is omdat TensorFlow en PyTorch deze modellen al heeft geoptimaliseerd voor deze ter beschikking te stellen aan het publiek.
 
 \section{De uitvoersnelheid van de verschillende modellen}
 De uitvoeringssnelheid is getest in Google Colaboratory met een CPU runtime en als mobiel toestel hebben we de Xiaomi T9 genomen.

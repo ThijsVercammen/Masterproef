@@ -13,4 +13,3 @@
 \contentsline {table}{\numberline {6.2}{\ignorespaces De uitvoersnelheid van de verschillende modellen in Google Colaboratory en in de mobiele omgeving. Als mobiele omgeving gebruiken we de Xiaomi T9.\relax }}{44}{table.caption.29}%
 \contentsline {table}{\numberline {6.3}{\ignorespaces Top 1 accuraatheid voor het standaard, mobiel en ONNX model.\relax }}{45}{table.caption.30}%
 \contentsline {table}{\numberline {6.4}{\ignorespaces Mean avarage precision van de modellen uitgevoerd op Google Colab en Xiaomi T9.\relax }}{45}{table.caption.31}%
-\addvspace {10\p@ }

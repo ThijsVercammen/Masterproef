@@ -1,7 +1,0 @@
-Executable : D:\Programmas\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
-arguments : 
--C
-D:\Desktop\test\vision\android\ops\.cxx\cmake\debug\x86
-torchvision_ops
-jvmArgs : 
-

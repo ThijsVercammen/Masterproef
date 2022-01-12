@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Fac, 2021]{Facebook_detectron2_2021}
+ (2021).
+\newblock facebookresearch/detectron2.
+\newblock \url{https://github.com/facebookresearch/detectron2}.
+
 \bibitem[Abadi et~al., 2015]{tensorflow2015-whitepaper}
 Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado,
   G.~S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp,
@@ -38,6 +43,12 @@ Chollet, F. et~al. (2015).
 \newblock Keras.
 \newblock \url{https://github.com/fchollet/keras}.
 
+\bibitem[Deng et~al., 2009]{deng_2009_imagenet}
+Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., and Fei-Fei, L. (2009).
+\newblock Imagenet: A large-scale hierarchical image database.
+\newblock In {\em 2009 IEEE conference on computer vision and pattern
+  recognition}, pages 248--255. Ieee.
+
 \bibitem[Duan et~al., 2019]{duan_centernet_2019}
 Duan, K., Bai, S., Xie, L., Qi, H., Huang, Q., and Tian, Q. (2019).
 \newblock {CenterNet}: {Keypoint} {Triplets} for {Object} {Detection}.
@@ -53,10 +64,6 @@ Febvay, M. (2020).
 Geiger, A., Lenz, P., Stiller, C., and Urtasun, R. (2013).
 \newblock Vision meets robotics: The kitti dataset.
 \newblock {\em International Journal of Robotics Research (IJRR)}.
-
-\bibitem[Goel et~al., 2020]{goel_survey_2020}
-Goel, A., Tung, C., Lu, Y.-H., and Thiruvathukal, G.~K. (2020).
-\newblock A survey of methods for low-power deep learning and computer vision.
 
 \bibitem[Google, 2014]{Google_flatbuffers_2014}
 Google (2014).
@@ -84,6 +91,12 @@ Jiang, X., Hadid, A., Pang, Y., Granger, E., and Feng, X. (2019).
   {Granger}, {Xiaoyi} {Feng}.}
 \newblock Springer Singapore : Imprint: Springer, Singapore, 1st ed. 2019.
   edition.
+
+\bibitem[Kathuria, 2022]{kathuria_pytorch_2022}
+Kathuria, A. (2022).
+\newblock A {PyTorch} implementation of a {YOLO} v3 {Object} {Detector}.
+\newblock \url{https://github.com/ayooshkathuria/pytorch-yolo-v3}.
+\newblock original-date: 2018-04-06T21:55:48Z.
 
 \bibitem[Koehrsen, 2018]{koehrsen_neural_2018}
 Koehrsen, W. (2018).
@@ -155,6 +168,17 @@ PyTorch (2021).
 \newblock pytorch/aten/src/{ATen}/native at master · pytorch/pytorch.
 \newblock \url{https://github.com/pytorch/pytorch}.
 
+\bibitem[Recht et~al., 2019]{recht2019imagenet}
+Recht, B., Roelofs, R., Schmidt, L., and Shankar, V. (2019).
+\newblock Do imagenet classifiers generalize to imagenet?
+\newblock In {\em International Conference on Machine Learning}, pages
+  5389--5400.
+
+\bibitem[Redmon, 2016]{darknet13}
+Redmon, J. (2013--2016).
+\newblock Darknet: Open source neural networks in c.
+\newblock \url{http://pjreddie.com/darknet/}.
+
 \bibitem[Redmon et~al., 2016]{redmon_you_2016}
 Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016).
 \newblock You {Only} {Look} {Once}: {Unified}, {Real}-{Time} {Object}
@@ -163,11 +187,22 @@ Redmon, J., Divvala, S., Girshick, R., and Farhadi, A. (2016).
   {Recognition} ({CVPR})}, pages 779--788.
 \newblock ISSN: 1063-6919.
 
+\bibitem[Redmon and Farhadi, 2018]{redmon_yolov3_2018}
+Redmon, J. and Farhadi, A. (2018).
+\newblock Yolov3: An incremental improvement.
+\newblock \url{https://arxiv.org/abs/1804.02767}.
+
 \bibitem[Ren et~al., 2016]{ren_faster_2016}
 Ren, S., He, K., Girshick, R., and Sun, J. (2016).
 \newblock Faster {R}-{CNN}: {Towards} {Real}-{Time} {Object} {Detection} with
   {Region} {Proposal} {Networks}.
 \newblock \url{http://arxiv.org/abs/1506.01497}.
+
+\bibitem[Roeder, 2022]{roeder_lutzroedernetron_2022}
+Roeder, L. (2022).
+\newblock lutzroeder/netron.
+\newblock \url{https://github.com/lutzroeder/netron}.
+\newblock original-date: 2010-12-26T12:53:43Z.
 
 \bibitem[Sandler et~al., 2019]{sandler_mobilenetv2_2019}
 Sandler, M., Howard, A., Zhu, M., Zhmoginov, A., and Chen, L.-C. (2019).

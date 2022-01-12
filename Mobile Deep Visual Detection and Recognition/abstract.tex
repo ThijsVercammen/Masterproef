@@ -1,3 +1,39 @@
-Het extended abstract of de wetenschappelijke samenvatting wordt in het Engels geschreven en bevat {\bf 500 tot 1.500 woorden}. Dit abstract moet {\bf niet} in KU Loket opgeladen worden (vanwege de beperkte beschikbare ruimte daar).
+Deep learning wordt steeds meer gebruikt om beeldverwerkingsproblemen zoals \textbf{herkenningssystemen} en \textbf{detectiesystemen} op te lossen. 
+Via neurale netwerken kunnen we met meer en betere features werken om de afbeeldingen te analyseren. 
+Veel van deze modellen hebben echter behoorlijk wat rekenkracht en geheugen nodig om te werken.
+Om deze reden wordt bij veel huidige mobiele toepassingen het deep learning model uitgevoerd in de cloud.
+Hierdoor kan de mobiele toepassing echter niet werken zonder een internetconnectie.
+Een ander probleem is dat veel operaties die een bestaand model uitvoert niet compatibel zijn met de \textbf{mobiele omgeving} waar we het model willen gebruiken.
+Een veel gebruikte taal voor het ontwerpen en trainen van neurale netwerken is Python.
+Deze modellen worden in een Python omgeving uitgevoerd terwijl Android studio applicaties in een Java omgeving worden uitgevoerd.
+Het doel van deze masterproef is het onderzoeken van de \textbf{compatibiliteit} tussen de operaties van een \textbf{bestaand neuraal netwerk} in zijn originele omgeving en een mobiele omgeving, zodat een bestaand en complex deep learning model ge\"implementeerd kan worden op een mobiel apparaat met zo min mogelijk effect op de accuraatheid. 
 
-\textbf{Keywords}: Voeg een vijftal keywords in (bv: Latex-template, thesis, ...)
+We gaan deze compatibiliteit onderzoeken voor de ResNet50, YOLO en Faster-RCNN architectuur.
+We vertrekken van bestaande architecturen die ontworpen en getraind zijn in het TensorFlow en PyTorch framework.
+Deze twee frameworks hebben elk een eigen methode om het model te converteren naar een taalonafhankelijk model.
+We stellen vast dat TensorFlow de meeste operaties ondersteund voor een Android studio implementatie.
+De PyTorch bibliotheek voor Android studio bevat minder operaties dan TensorFlow maar voert zijn operaties wel sneller uit.
+PyTorch moet zijn niet ondersteunde operaties op een alternatieve manier importeren in Android studio.
+Uiteindelijk zijn de drie architecturen implementeerbaar in Android studio met weinig of geen effect op de accuraatheid.
+
+\newpage
+Deep learning is used more and more for vision applications like \textbf{image recognition} and \textbf{object detection}. 
+With neural networks we are able to extract more and beter features from images.
+Many of these neural networks require a lot of memory and computing power to extract those features.
+Therefore, many mobile applications exists where the neural network is executed in the cloud.
+In addition, by developing deep learning applications this way an internet connection is always required.
+Furthermore, the operations of an existing neural network are often not compatibel with the \textbf{mobile environment} where the application is executed.
+A coding language often used for designing and training neural networks is Python.
+Consequently these neural networks are designed to be executed in a Python environment, while Android studio applications are executed in a Java environment.
+The purpose of this thesis is to research the \textbf{compatibility} between operations of an \textbf{existing neural network} in its original environment and a mobile environment.
+So we can implement complex neural networks on a mobile device with a minimal effect on its accuracy.
+We will study this implementation for recognition systems and detection systems.
+
+Futhermore we will study the compatibility for the ResNet50, Faster-RCNN and the YOLO architecture.
+Initially we will study existing neural networks designed and trained in the TensorFlow and PyTorch framework.
+Each framework has its own method to convert a neural network to a language independent version.
+Thereafter we demonstrate that TensorFlow supports the most operations for an Android studio implementation.
+While PyTorch supports less operations, it executes the supported operations faster.
+PyTorch has to import its not supported operations with an alternate method in Android studio.
+Eventuay al three architectures are executable in Android studio with a minimal effect on the accuracy.
+%\textbf{Keywords}: Voeg een vijftal keywords in (bv: Latex-template, thesis, ...)

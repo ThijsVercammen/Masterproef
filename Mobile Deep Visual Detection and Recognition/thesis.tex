@@ -24,7 +24,8 @@
 \usepackage{sectsty}					% aanpassen van de fonts van sections en chapters
 %\usepackage[nottoc,numbib]{tocbibind}	% Bibliography mee in de ToC
 \usepackage{wrapfig}
-%\usepackage{minted}
+\usepackage{mathtools}
+\usepackage{amsmath}
 \usepackage{pythonhighlight}
 \allsectionsfont{\sffamily}
 \chapterfont{\raggedleft\sffamily}
@@ -39,11 +40,11 @@
 \hyphenation{TensorFlow}
 \hyphenation{PyTorch}
 \hyphenation{FlatBuffer}
-\hyphenation{MXNet}
-%\hyphenation{Detectron2}
+\hyphenation{Python}
+\hyphenation{Torchscript}
 \hyphenation{ONNX}
-\hyphenation{GluonCV}
-\hyphenation{ImageAI}
+\hyphenation{ResNet}
+\hyphenation{YOLO}
 \hyphenation{MMDetection}
 % MFA: zet zoekpad voor figure
 \graphicspath{{fig/}}
@@ -60,7 +61,7 @@
 
 %samenvatting toevoegen
 \summarypagetrue
-\summary{samenvatting}					%.tex met daarin de samenvatting
+\summary{summary}					%.tex met daarin de samenvatting
 
 %abstract toevoegen?
 
@@ -71,8 +72,8 @@
 %lijst van tabellen toevoegen?
 \listoftablespagetrue
 %lijst van symbolen toevoegen?
-\listofsymbolspagetrue
-\listofsymbols{symbolen}				%.tex file met daarin de lijst van symbolen
+%\listofsymbolspagetrue
+%\listofsymbols{symbolen}				%.tex file met daarin de lijst van symbolen
 %lijst van afkortingen toevoegen?
 \listofabbrevspagetrue
 \listofabbrevs{afkortingen}				%.tex file met daarin de lijst van symbolen
@@ -112,6 +113,7 @@
 %\input{hfdst5}
 \input{hfdst6}
 \input{hfdst7}
+\input{hfdst8}
 % Bibliografie: referenties. De items zitten in bibliografie.bib
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Indien je ook de niet geciteerde werken in je bibliografie wil opnemen, commentarieer dan onderstaande regel uit!

@@ -3,30 +3,31 @@
 %                            CHAPTER                              %
 %                                                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\chapter{Implementatie van Herkenning en detectie op mobiel platform}
+\chapter{Implementatie van herkenning en detectie op een mobiel platform}
 Dit hoofdstuk gaat over het implementeren van deep learning herkenningssystemen en detectiesystemen op een mobiel platform.
 Bij het uitvoeren van een neuraal netwerk op een mobiel apparaat zal men rekening moeten houden met gelimiteerde rekenkracht en het beschikbaar geheugen.
-Het uitvoeren van de vele berekeningen en geheugen operaties zal ook invloed hebben op de batterij van het mobiel toestel.
+Het uitvoeren van de vele berekeningen en geheugen operaties zal ook invloed hebben op de batterij van het mobiele toestel.
+Ook zullen we de operaties van het detectie systeem moeten vervangen door operaties die compatibel zijn met de mobiele omgeving.
 Eerst zullen we een aantal frameworks bespreken waarmee we neurale netwerken kunnen ontwerpen, trainen en deployen.
-Vervolgens zullen we een aantal bibliotheken bespreken die ons extra hulpmiddelen geven om detectiesystemen mee te ontwerpen.
+%Vervolgens zullen we een aantal bibliotheken bespreken die ons extra hulpmiddelen geven om detectiesystemen mee te ontwerpen.
 Dan gaan we een aantal frameworks bespreken die specifiek ontworpen zijn voor mobiele implementaties.
 Als laatste gaan we een aantal optimalisatietechnieken bespreken waarmee we het neurale netwerk verder kunnen optimaliseren.
 Er zal voornamelijk gefocust worden op Android implementaties.
 
 \section{Frameworks}
 Om machine learning modellen te ontwerpen en te trainen kan er gebruik gemaakt worden van frameworks.
-Deze frameworks geven de programmeur een set van tools die hem in staat stelt om op een overzichtelijke en flexibele manier deep learning modellen te ontwerpen en trainen.
+Deze frameworks geven de programmeur een set van tools die hem in staat stelt om op een overzichtelijke en flexibele manier deep learning modellen te ontwerpen en te trainen.
 TensorFlow (\cite{abadi_tensorflow_2016}) en PyTorch (\cite{li_PyTorch_2020}) zijn de twee voornaamste frameworks om neurale netwerken te ontwerpen.
 Veel van de tools en bibliotheken die we gebruiken om complexere herkenningssystemen en detectiesystemen te ontwerpen worden bovenop deze frameworks gebruikt.
 Vanwege hun populariteit gaan we de twee frameworks bespreken en gaan we kijken welke mogelijkheden elk framework heeft.
 
 \subsection{TensorFlow}
 TensorFlow (\cite{abadi_tensorflow_2016}) is ontworpen door Google en is een open source framework voor machine learning implementaties dat focust op het ontwerpen, trainen en deployen van neurale netwerken.
-Ook ondersteund TensorFlow meerdere programmeertalen zoals: Python, Java en C.
+Ook ondersteunt TensorFlow meerdere programmeertalen zoals: Python, Java en C.
 
 %Keras
 Door de introductie van de Keras API (\cite{chollet2015keras}) is TensorFlow meer gebruiksvriendelijk.
-Keras is een framework dat bovenop TensorFlow gebruikt kan worden en waarmee we machine learning modellen kunnen ontwerpen op een overzichtelijke manier.
+Keras is een framework dat in combinatie TensorFlow gebruikt kan worden en waarmee we machine learning modellen kunnen ontwerpen op een overzichtelijke manier.
 Het idee van Keras is om zo snel mogelijk van een idee naar een toepassing te gaan.
 Zo heeft TensorFlow een gebruiksvriendelijk API voor eenvoudige projecten en meer uitgebreide tools voor complexe projecten.
 Ondertussen is Keras ge\"integreerd met het TensorFlow framework.
@@ -40,15 +41,15 @@ Ondertussen is Keras ge\"integreerd met het TensorFlow framework.
 
 %TensorFlow Object Detection API
 De TensorFlow Object Detection API (\cite{tensorflow2015-whitepaper}) is een open source framework dat bovenop TensorFlow werkt. 
-Het maakt het voor de programmeur eenvoudiger om detectiemodellen te ontwerpen, trainen en deployen.
+Het maakt het voor de programmeur eenvoudiger om detectiemodellen te ontwerpen en te trainen.
 Deze API voorziet een set van meer dan 40 modellen voorgetraind op de COCO dataset waarop de programmeur verder kan bouwen. 
 De COCO dataset is een grote dataset voor objectdetectie en segmentatie gepubliceerd door Microsoft (\cite{lin2015microsoft}).
 De API heeft voorgetrainde detectiemodellen van de volgende architecturen: CenterNet (\cite{duan_centernet_2019}) RetinaNet (\cite{lin_focal_2018}), EfficientDet (\cite{tan_efficientdet_2020}), SSD (\cite{liu_ssd_2016}) en Faster-RCNN (\cite{ren_faster_2016}).
 %De Object Detection API kan ook ge\"importeerd worden in Android studio, waardoor het TFLite model op een eenvoudige manier ge\"implementeerd kan worden op een mobiele applicatie.	
 
 \subsection{PyTorch}
-PyTorch (\cite{li_PyTorch_2020}) is ontworpen door Facebook en wordt zoals TensorFlow ook gebruikt om machine learning modellen te ontwerpen, trainen en deployen.
-Dit is een python gebaseerd framework dat focust op flexibiliteit.
+PyTorch (\cite{li_PyTorch_2020}) is ontworpen door Facebook en wordt zoals TensorFlow ook gebruikt oor het onwerpen, trainen en deployen van machine learning modellen..
+Dit is een Python gebaseerd framework dat focust op flexibiliteit.
 Door zijn flexibiliteit is het eenvoudig om nieuwe functionaliteiten toe te voegen door bestaande code aan te passen of nieuwe code toe te voegen.
 %Zoals TensorFlow kan het model worden voorgesteld op een grafische manier die bestaat uit nodes en waarbij elke node een operatie is.
 %PyTorch maakt gebruik van externe tools zoals TensorBoard om data te visualiseren.
@@ -122,13 +123,13 @@ Via transfer learning is de programmeur dan in staat om een eigen detectiemodel 
 % Ook deze bibliotheek geeft de programmeur de mogelijkheid om nieuwe modellen te trainen om specifieke objecten te detecteren.
 
 \section{Open Neural Network Exange (ONNX)}
-\cite{onnx_onnx_2017} biedt de mogelijkheid om deep learning model te exporteren naar een ander framework.
+\cite{onnx_onnx_2017} biedt de mogelijkheid om een deep learning model te exporteren naar een ander framework.
 Hierbij converteren we een bestaand model naar een ONNX model.
 Dit model kan op zijn beurt geconverteerd worden naar het gewenste framework (figuur: \ref{fig:onnx}).
 Volgens de website van ONNX zijn er momenteel 23 frameworks die naar het ONNX framework geconverteerd kunnen worden, waaronder PyTorch en TensorFlow.
 Deze modellen kunnen we dan converteren naar een framework dat het model kan implementeren op een mobiel apparaat.
 Voor deze masterproef waarin een bestaand model ontworpen is in een bepaald framework, zal ONNX een belangrijke rol spelen.
-Op deze manier kunnen we een bestaand model implementeren met een framework dat mobiele implementatie ondersteund.
+Op deze manier kunnen we een bestaand model implementeren met een framework dat mobiele implementatie ondersteunt.
 
 ONNX definieert een aantal gemeenschappelijke sets van operaties en bouwblokken genaamd opsets.
 Deze opsets bevatten operaties die compatibel zijn met operaties van andere frameworks.
@@ -147,7 +148,7 @@ Voor elke bibliotheek/framework is het aangeraden om dezelfde opsetversie te imp
 
 \subsection{TensorFlow naar ONNX conversie}
 Om een TensorFlow model naar ONNX formaat te exporteren wordt er gebruik gemaakt van de tf2onnx bibliotheek (\cite{onnx_tf2onnx_2021}).
-Via de volgende lijn code kan de converteer functie worden opgeroepen uit de tf2onnx bibliotheek.
+Via het volgende commando kan via een CLI-programma de converteer functie worden opgeroepen uit de tf2onnx bibliotheek.
 
 \begin{python}
 python -m tf2onnx.convert --saved-model <directory van opgeslagen model> 
@@ -155,7 +156,7 @@ python -m tf2onnx.convert --saved-model <directory van opgeslagen model>
 \end{python}
 
 De conversie van TensorFlow naar ONNX wordt voor opsetversie 9 tot 15 ondersteund en getest.
-Opsetversie 6 tot 8 zou ook ondersteund moeten worden maar hier zijn geen testen voor.
+%Opsetversie 6 tot 8 zou ook ondersteund moeten worden maar hier zijn geen testen voor.
 Bij de conversie wordt opsetversie 9 standaard gebruikt.
 Voor een meer recente opsetversie moet de opsetversie specifiek worden meegegeven via bovestaande code met de optie '--opset'.
 In de Tf2onnx documentatie is een lijst terug te vinden met Tensorflow operaties die ONNX ondersteund.
@@ -173,31 +174,32 @@ De TensorFlow naar ONNX conversie bestaat uit de volgende stappen:
 
 \subsection{PyTorch naar ONNX conversie}
 De tools om een PyTorch model te converteren naar een ONNX model maken standaard deel uit van PyTorch.
-Zo kan via de volgende lijn code een PyTorch model ge\"exporteerd worden naar ONNX.
+Zo kan via de volgende lijn code kan in PyThon een PyTorch model ge\"exporteerd worden naar ONNX.
 
 \begin{python}
 torch.onnx.export(model, args, 'test.onnx')
 \end{python}
 
 De verplichte inputs nodig voor het uitvoeren van deze functie zijn: het PyTorch model, een set van inputargumenten en een output bestand.
-De set van inputargumenten bestaat uit een tuple van inputs of een dictionary die de input parameters van het model geeft.
-Bij het uitvoeren van torch.onnx.export zal de functie het model omzetten in een TorchScript model dat wordt besproken in paragraaf \ref{trace}.
+De set van inputargumenten bestaat uit een lijst met voorbeeld inputs voor het PyTorch model.
+Bij het uitvoeren van \texttt{torch.onnx.export} zal de functie het model omzetten in een TorchScript model dat wordt besproken in paragraaf \ref{trace}.
 Hierbij zal het model worden uitgevoerd en zullen al de uitgevoerde operaties bewaard worden.
-De inputargumenten meegegeven met de export functie zullen gebruikt worden als input voor de trace functie.
+De inputargumenten meegegeven met de export functie zullen gebruikt worden als input voor de \texttt{jit.trace} of de \texttt{jit.script} functie die een TorchScript model genereren.
 De operaties van het TorchScript model zullen dan vervangen worden door hun ONNX equivalent.
 De PyTorch documentatie bevat een lijst met al de operaties die ondersteund worden voor het uitvoeren van de export functie naar ONNX.
 
-Het is mogelijk om operaties die niet in deze lijst staan toe te voegen aan de PyTorch bron code als de operatie ondersteund wordt door ONNX.
-Dit doen we door de operator te registreren in de native\_functions.yaml file die terug te vinden is in de volgende folder van de PyTorch bron code: pytorch/aten/src/ATen/native (\cite{pytorch_atensrcatennative_2021}).
-Vervolgens moet in dezelfde folder de functie worden geschreven in een nieuwe C++ file.
+Het is mogelijk om een operatie die niet in deze lijst staat toe te voegen aan de PyTorch bron code als de operatie wel ondersteund wordt door ONNX.
+Dit doen we door de operatie te registreren in de native\_functions.yaml file die terug te vinden is in de volgende folder van de PyTorch bron code: pytorch/aten/src/ATen/native (\cite{pytorch_atensrcatennative_2021}).
+Vervolgens moet in dezelfde folder de functie worden geschreven in een nieuw C++ bestand.
 In deze folder is ook meer informatie beschikbaar voor het toevoegen van niet ondersteunde operaties.
 %Als er gewerkt wordt met de voorgetrainde modellen uit de TorchVision bibliotheek dan is het model exporteerbaar naar ONNX tenzij het model geoptimaliseerd is via quantisatie.
 
 \section{Frameworks voor mobiele implementatie}
-Er zijn een aantal frameworks die de programmeur de mogelijkheid geven om een model te optimaliseren voor een mobiel platform.
-Deze frameworks hebben bovendien een API ter beschikking die het mogelijk maakt om het geoptimaliseerd model te implementeren in een mobiele omgeving.
+Er zijn een aantal frameworks die de programmeur de mogelijkheid geven om de operaties van een model te converteren naar operaties voor een mobiele omgeving.
+Ook zullen een aantal van deze frameworks de mogelijkheid geven om een model verder te optimaliseren voor mobiel gebruik.
+Deze frameworks hebben bovendien een API ter beschikking die het mogelijk maakt om het geconverteerd model te implementeren in een mobiele omgeving.
 We focussen op Android implementaties, maar de optie voor IOS zal ook vermeld worden.
-Niet elke framework voor mobiele implementatie voert de zelfde optimalisatietechnieken uit.
+Niet elke framework voor mobiele implementatie voert dezelfde optimalisatietechnieken uit.
 Dus het converteren van het standaardmodel naar het mobiele model zal voor elk framework een ander resultaat geven.
 Sommige modellen zullen na het optimaliseren in een bepaald framework een kleinere bestandsgrootte hebben dan bij andere frameworks.
 Deze frameworks zullen een model importeren van PyTorch, TensorFlow of ONNX.
@@ -207,7 +209,8 @@ Voor mobiele implementatie biedt TensorFlow de mogelijkheid om een TFLite model 
 De meeste detectiemodellen ontworpen met TensorFlow Object Detection API zijn niet bedoeld om op mobiele apparaten te werken.
 Maar TensorFlow Object Detection API heeft ondersteuning om SSD  (\cite{liu_ssd_2016}) en EfficientDet (\cite{tan_efficientdet_2020}) architecturen te exporteren naar een TFLite model.
 %
-TFLite zorgt ervoor dat het model een lage latency heeft en een kleine binaire bestandsgrootte.
+TFLite zorgt ervoor dat de TensorFlow operaties worden geconverteerd naar TFLite operaties die bruikbaar zijn in een mobiele omgeving.
+Ook zal TFLite het model optimaliseren zodat de uitvoeringssnelheid en de bestandsgrootte verkleint.
 Deze modellen kunnen ge\"implenteerd worden op zowel Android als IOS applicaties.
 Via de TFLite ObjectDetector API kunnen we TFLite detectiemodellen eenvoudig implementeren in Android studio.
 Het converteren kan eenvoudig worden uitgevoerd via de volgende lijnen code in Python.
@@ -223,24 +226,25 @@ De TFLiteConverter neemt een TensorFlow model als input en op basis van dit mode
 Het TFLite model is eigenlijk een geoptimaliseerde FlatBuffer (\cite{Google_flatbuffers_2014}), deze kan herkend worden door de .tflite extensie.
 FlatBuffer is serialisatie bibliotheek waarbij het object niet verpakt wordt en dus rechtsreeks uitleesbaar is voor verdere toepassingen.
 Omdat het FlatBuffer object rechtsreeks uitleesbaar is zorgt dit voor een optimale snelheid en een effici\"ent geheugengebruik.
-Het FlatBuffer formaat is niet python afhankelijk en is bruikbaar over verschillende platformen zoals: C, Java en Python.
+Het FlatBuffer formaat is niet Python afhankelijk en is bruikbaar over verschillende platformen zoals: C, Java en Python.
 Tijdens de TFLite conversie worden er ook een aantal verdere optimalisaties uitgevoerd via Grappler (\cite{tensorflow2015-whitepaper}) om het model kleiner en sneller te maken.
 Grappler is het standaard optimalisatie systeem van TensorFlow om automatisch het model te verbeteren.
-Grappler voert een heel aantal optimalisatie uit, de volgende technieken zijn enkele van de voornaamste Grappler optimalisaties: 
+Grappler voert een heel aantal optimalisaties uit, de volgende technieken zijn enkele van de voornaamste Grappler optimalisaties: 
 
 \begin{itemize}
-	\item Constant Folding optimizer: Is het vervangen van operaties door constanten, bij operaties waarvan de waardes niet veranderen tijdens de uitvoering.  
-	\item Remapper optimizer: operaties  in het model worden samengevoegd tot \'e\'en operatie.
-	\item Memory optimizer: Analyseert het geheugengebruik van operaties in het model en voegt bij zwaar geheugengebruik swap operaties toe tussen CPU en GPU.
+	\item Constant Folding optimizer: dit is het vervangen van operaties door constanten, bij operaties waarvan de waardes niet veranderen tijdens de uitvoering.  
+	\item Remapper optimizer: operaties in het model worden samengevoegd tot \'e\'en operatie.
+	\item Memory optimizer: dit analyseert het geheugengebruik van operaties in het model en voegt bij zwaar geheugengebruik swap operaties toe tussen CPU en GPU.
 	\item Pruning optimizer: het verwijderen van operaties in het model die geen invloed hebben op de output.
 \end{itemize}
 
-De TFLite bibliotheek ondersteund een gelimiteerd aantal operaties van de standaard TensorFlow operaties.
+De TFLite bibliotheek ondersteunt een gelimiteerd aantal operaties van de standaard TensorFlow operaties.
 Hierdoor is het mogelijk dat bij complexere modellen de TFLite conversie niet altijd succesvol is, omdat een bepaalde TensorFlow operatie geen TFLite tegenhanger heeft.
 De lijst met ondersteunde TFLite operaties is terug te vinden in de TFLite documentatie.
 %%%%%%%%%%%%%%% iets zeggen over welke operaties
 Het is mogelijk om TensorFlow operaties te gebruiken die niet ondersteund worden door TFLite door dit mee te geven met de TFLiteConverter.
-Dit heeft als gevolg dat de TensorFlow Core bibliotheek mee ge\"implementeerd moet worden waardoor de bestandsgrootte van het TFLite model zal toenemen.
+Dit heeft als gevolg dat de TensorFlow Core bibliotheek mee ge\"implementeerd moet worden waardoor de bestandsgrootte van de mobiele toepassing zal toenemen.
+Via volgende Python code kunnen we standaard TensorFlow operaties toevoegen aan het TFLite model.
 
 \begin{python}]
 converter.target_spec.supported_ops = [
@@ -256,14 +260,16 @@ Op deze manier kan de conversiestap overgeslagen worden.
 
 \begin{figure}[!ht]
     \centering
- 	\includegraphics[width=0.7\linewidth]{fig/TFLite_workflow.png}
+ 	\includegraphics[width=0.85\linewidth]{fig/TFLite_workflow.png}
  	\caption{Implementatieflow van een TensorFlow model naar een mobiele implementatie. Aan de linker kant is te zien dat een TensorFlow model via de TFLite converter wordt omgezet in TFLite flatbuffer model.
-	 Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een client toestel waar er gebruik gemaakt kan worden van verschillende hardware componenten}
+	 Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een toestel waar het gebruik kan maken van verschillende hardware componenten}
  	\label{fig:tflite}
 \end{figure}
 
-Het framework geeft ook de mogelijkheid om TFLite model verder te verbeteren via hardwareacceleraties en modeloptimalisaties.
+Het framework geeft ook de mogelijkheid om TFLite model verder te verbeteren bovenop de grappler optimalisaties via hardwareacceleraties en modeloptimalisaties.
 De modeloptimalisaties die TFLite ondersteunt zijn: weight pruning, kwantisatie en clustering.
+Deze drie optimalisaties maken deel uit van de Tensorflow Model Optimization Toolkit.
+In tegenstelling tot de Grappler optimalisaties kunnen deze drie methodes wel een duidelijk negatief effect hebben op de accuraatheid.
 Wat deze optimalisatietechnieken exact inhouden wordt later besproken in paragraaf \ref{optim}.
 De kwantisatie optimalisatie kan als optie worden meegegeven aan de TFLiteConverter.
 Weight pruning en clustering moeten uitgevoerd worden voordat het model geconverteerd wordt naar TFLite.
@@ -271,31 +277,31 @@ Weight pruning en clustering moeten uitgevoerd worden voordat het model geconver
 De uitvoering van het TFLite model dat normaal op de CPU wordt uitgevoerd, kan versneld worden door gebruik te maken van verschillende hardwarecomponenten die op het toestel aanwezig zijn.
 Elk van deze hardwarecomponenten maakt gebruik van een eigen API waardoor er extra code moet worden geschreven specifiek voor elke hardwarecomponent.
 De TensorFlow Lite Delegate API (\cite{tensorflow2015-whitepaper}) dient als een interface in de vorm van delegates voor deze componenten.
-Deze delegates zorgen ervoor dat we geen specifieke API moeten implementeren voor een bepaalde hardwarecomponent. 
-TFLite ondersteund meerdere delegates die kunnen geoptimaliseerd worden voor een specifiek platform.
+TFLite ondersteunt meerdere delegates die kunnen geoptimaliseerd worden voor een specifiek platform.
 Voor Android kunnen we gebruik maken van de GPU delegate en de Neural Network API (NNAPI) delegate.
 De NNAPI (\cite{Android_NNAPI_2021}) is ontworpen om intensieve berekeningen uit te voeren op een Android apparaat.
 Deze API wordt aangeroepen door deep learning applicaties om gebruik te maken van de GPU, DSP of NPU.
 In figuur \ref{fig:tflite} is een algemene workflow te zien om van een TensorFlow model naar een mobiele implementatie te gaan.
 
 \subsection{TensorFlow.js}
-TensorFlow biedt ook de mogelijkheid om via de TensorFlow.js API een model te implementeren in javascript.
+TensorFlow biedt ook de mogelijkheid om via de TensorFlow.js API een model te implementeren in Javascript.
 Op deze manier kunnen we gebruik maken van TensorFlow modellen in de browser en met Node.js.
-De TensorFlow.js API kan neurale netwerken modelleren, trainen en uitvoeren in javascript.
+De TensorFlow.js API kan neurale netwerken modelleren, trainen en uitvoeren in Javascript.
 Deze API heeft ook een set van voorgetrainde modellen, voor objectdetectie zijn er enkel voorgetrainde modellen van de SSD architectuur (\cite{liu_ssd_2016}).
-Ook kan via de TensorFlow.js API een TensorFlow model geconverteerd worden naar een TensorFlow.js model.
+Ook kan via de TensorFlow.js API een TensorFlow model via de volgende CLI code geconverteerd worden naar een TensorFlow.js model.
 
 \begin{python}
 tensorflowjs_converter <dir_TensorFlow_model> <dir_TensorFlowjs_model>
 \end{python}
 
-TensorFlow.js onderseund een gelimiteerd aantal TensorFlow operaties, in de TensofFlow.js documentatie is een lijst met ondersteunde operaties terug te vinden.
+TensorFlow.js ondersteunt een gelimiteerd aantal TensorFlow operaties, in de TensorFlow.js documentatie is een lijst met ondersteunde operaties terug te vinden.
 Momenteel is er geen manier om standaard TensorFlow operaties te implementeren in TenorFlow.js.
 
 \subsection{PyTorch Mobile} \label{trace}
-PyTorch biedt zoals TensorFlow ook de mogelijkheid om het model te optimaliseren voor een mobiele implementatie.
+PyTorch biedt zoals TensorFlow ook de mogelijkheid om operaties van het model te converteren naar operaties die kunnen uitgevoerd worden in een mobiele omgeving.
+Ook geeft PyTorch Mobile de mogelijkheid om deze modellen verder te optimaliseren voor een mobiele implementatie.
 PyTorch mobile zit nog in zijn beta fase, dus er zijn componenten die gelimiteerde ondersteuning hebben.
-De onderstaande lijnen code geven aan welke code er moeten worden uitgevoerd om een PyTorch model te converteren naar een PyTorch mobile model.
+De onderstaande Python code geeft aan welke functies er uitgevoerd moeten worden om een PyTorch model te converteren naar een PyTorch mobile model.
 
 \begin{python}
 import torch
@@ -313,19 +319,22 @@ Voordat we het PyTorch model kunnen optimaliseren voor mobiel gebruik moeten we 
 De ScriptModule is een serieel model dat verder geoptimaliseerd kan worden en platformonafhankelijk is.
 Dit geeft ook de mogelijkheid om een model dat ontwikkeld is in Pytorch te gebruiken in een andere omgeving.
 Via TorchScript kan het model worden omgezet naar een ScriptModule.
-De torch.jit.trace functie verwacht als input het model en een voorbeeld input in de vorm van een torch.Tensor.
-De trace functie voert het model uit met de meegegeven voorbeeldinput en bewaart al de operaties die zijn uitgevoerd.
+De \texttt{torch.jit.trace} functie verwacht als input het model en een voorbeeld input in de vorm van een \texttt{torch.Tensor}.
+De trace functie voert het model uit met de meegegeven voorbeeld input en bewaart al de operaties die zijn uitgevoerd.
 De bewaarde operaties worden gebruikt om een ScriptModule te genereren.
-Bij de trace functie zijn enkel de uitgevoerde operaties bewaard, andere elementen van het model maken geen deel uit van de ScriptModule.
+Bij de trace functie zijn enkel de uitgevoerde operaties bewaard, andere elementen van het model maken geen deel uit van de ScriptModule..
+Een andere optie is de \texttt{torch.jit.script} deze methode compileert de code.
+Op deze manier wordt control flow zoals loops en if/else functies ook ondersteunt.
+Het nadeel van de script methode is dat de code niet compileert wanneer een Python functie niet ondersteunt is of bij dynamisch gedrag.
 Op de PyTorch documentatie (\cite{Facebook_PyTorch_2017}) is een lijst terug te vinden met al de operaties die ondersteund worden bij het omzetten naar een ScriptModule.
 
 Eenmaal dat er een scriptmodule is gegenereerd kan dit gebruikt worden om het model te optimaliseren voor mobiel gebruik.
-De optimize\_for\_mobile functie zal de volgende optimalisaties automatisch uitvoeren.
+De \texttt{optimize\_for\_mobile} functie zal de volgende optimalisaties automatisch uitvoeren.
 
 \begin{itemize}
 	\item De Conv2D en BatchNorm operaties worden samengevoegd tot een Conv2D operaties met aangepasten gewichten.
 	\item 2D convoluties en lineaire operaties worden vervangen met hun PyTorch Mobile equivalent.
-	\item Activatie functies ReLu en tanh die volgen op Conv2D en lineaire operaties worden samengevoegd met de voorgaande Conv2D of lineaire operatie.
+	\item De activatie functies ReLu en tanh die volgen op Conv2D en lineaire operaties worden samengevoegd met de voorgaande Conv2D of lineaire operatie.
 	\item Het verwijderen van dropout nodes (\cite{Facebook_PyTorch_2017}).
 \end{itemize}
 
@@ -333,56 +342,56 @@ PyTorch biedt ook nog de mogelijkheid om verdere optimalisaties toe te voegen in
 Wat deze techniek inhoud wordt besproken in paragraaf \ref{optim}.
 Zoals TensorFlow is er ook de mogelijkheid om de uitvoering van het model te versnellen door gebruik te maken van de NNAPI (\cite{Android_NNAPI_2021}).
 Op deze manier kan het PyTorch model operaties uitvoeren op andere hardwarecomponenten dan de CPU.
-De PyTorch NNAPI zit momenteel in de prototype fase en ondersteund maar een gelimiteerd aantal operaties die kunnen uitgevoerd worden met NNAPI.
-Via de volgende lijnen code kunnen we een TorchScript model optimalliseren zodat operaties worden uitgevoerd door de NNAPI.
+De PyTorch NNAPI zit momenteel in zijn prototype fase en ondersteund maar een gelimiteerd aantal operaties die kunnen uitgevoerd worden met de NNAPI.
+Via volgende Python code kunnen we in PyThon een TorchScript model optimalliseren zodat operaties worden uitgevoerd door de NNAPI.
 
 \begin{python}
 import torch.backends._nnapi.prepare
 
-nnapi_model = torch.backends._nnapi.prepare.convert_model_to_nnapi(traced, input_tensor)
+nnapi_model = torch.backends._nnapi.prepare.convert_model_to_nnapi(traced_model, input_tensor)
 \end{python}
 
 \subsection{Onnxruntime}
 Het ONNX framework biedt via onnxruntime (\cite{onnx_onnxruntime_2019}) zelf ook de mogelijkheid om een model te deployen en te optimaliseren voor mobiel gebruik.
-Dit is mogelijk door het ONNX model te converteren naar een onnxruntimemodel via de volgende lijnen code.
+Dit is mogelijk door het ONNX model te converteren naar een onnxruntimemodel via het volgende CLI-commando.
 
 \begin{python}
 python -m onnxruntime.tools.convert_onnx_models_to_ort onnx_model.onnx
 \end{python}
 
 Zoals Pytorch en Tensorflow voert onnxruntime tijdens het converteren een aantal optimalisaties uit.
-Deze optimalisaties bestaan uit 3 niveaus: Basic, Extended en All.
+Deze optimalisaties bestaan uit 3 niveaus: basic, extended en all.
 Standaard worden al de optimisatie uitgevoerd, de volgende lijst bevat de optimalisaties die tijdens het converteren worden uitgevoerd.
 
 \begin{itemize}
-	\item Basic: verwijderen van redundante nodes in het model en constant folding waarbij waarden door constanten worden vervangen zodat deze tijdens de uitvoering niet meer berekend moeten worden.
+	\item Basic: het verwijderen van redundante nodes in het model en constant folding waarbij waarden door constanten worden vervangen zodat deze tijdens de uitvoering niet meer berekend moeten worden.
 	\item Extended: \'e\'en of meer ONNX standaardoperaties samenvoegen tot \'e\'en operatie 
-	\item All: optimaliseer afbeelding formaat door te converteren tussen NHWC gebruikt door ONNX en NCHW.
+	\item All: het optimaliseren van afbeelding formaat door te converteren tussen NHWC gebruikt door ONNX en NCHW formaat.
 \end{itemize}
 
 NHWC of NCHW formaat: 
 
 \begin{itemize} \label{nhwc}
-	\item N: Aantal afbeeldingen per groep.
+	\item N: Aantal afbeeldingen per groep/batch.
 	\item H: Hoogte van de afbeelding.
 	\item W: Breedte van de afbeelding.
 	\item C: Aantal kanalen van de afbeelding.
 \end{itemize}
 
 Onnxruntime geeft ook de mogelijkheid om het model verder te optimaliseren door gebruik te maken van de NNAPI om het model sneller te maken.
-Het gegenereerde onnxruntimemodel kan vervolgens ge\"implementeerd worden in Android studio via de volgende lijnen code.
+Het gegenereerde onnxruntimemodel kan vervolgens ge\"implementeerd worden in Android studio via de volgende lijnen Kotlin code.
 
 \begin{python}
-SessionOptions session_options = new SessionOptions();
-session_options.addConfigEntry("session.load_model_format", "ORT");
-	
-OrtEnvironment env = OrtEnvironment.getEnvironment();
-OrtSession session = env.createSession(<path to model>, session_options);
+var env = OrtEnvironment.getEnvironment();
+var session = env.createSession("model.onnx",new OrtSession.SessionOptions());
+OnnxTensor t1;
+var inputs = Map.of("name",t1);
+var results = session.run(inputs)
 \end{python}
 
 \subsection{ONNX.js}
 Het ONNX model kan ook worden ge\"implementeerd via javascript, om vervolgens dit script te gebruiken in een webapplicatie.
-Via de volgende lijnen code kan het ONNX model worden uitgevoerd in javascript.
+Via de volgende lijnen Javascript code kan het ONNX model worden uitgevoerd in javascript.
 
 \begin{python}
 const ort = require('onnxruntime-node'); 
@@ -396,13 +405,13 @@ const results = await session.run(feeds);
 \subsection{CoreML}
 Core ML (\cite{Apple_CoreML_2018}) is het Apple framework om machine learning tools te integreren in een applicatie.
 Dit kan een model zijn van Create ML het machine learning framework van Apple zelf.
-Maar Core ML biedt ondersteuning om modellen te converteren van TensorFlow, PyTorch en ONNX naar Core ML.
+Maar Core ML biedt ondersteuning om modellen te converteren vanuit TensorFlow, PyTorch en ONNX naar Core ML.
 CoreML optimaliseert de prestaties op het toestel door effici\"ent gebruik te maken van de CPU en GPU.
 Uiteraard is dit framework enkel van toepassing voor Apple, en in deze masterproef wordt er vooral gefocust op Android implementaties.
 
 Om een model te converteren naar CoreML zijn er 3 mogelijkheden.
 De eerste manier is rechtstreeks converteren vanuit PyTorch.
-Daarvoor moeten we eerst het model omzetten in een torchscript.
+Daarvoor moeten we eerst het model omzetten in een Torchscript model.
 Een tweede manier is door het model rechtstreeks te converteren vanuit TensorFlow.
 De derde manier is via ONNX maar dat raadt Apple af omdat dit in nieuwe versies van CoreML niet meer ondersteund zal worden.
 CoreML biedt ook maar ondersteuning tot en met opsetversie 10 van ONNX.
@@ -432,42 +441,42 @@ model  = ct.converters.onnx.convert(model='my_model.onnx')
 %Caffe2 ... is ontworpen door Facebook om grootte machine learning modellen te trainen en deze te gebruiken op mobiele toestellen.
 
 \subsection{Gerelateerd werk}
-In de paper geschreven door \cite{luo_comparison_2020} wordt PyTorch Mobile vergeleken met Tenserfolow Lite voor verschillende classificatie architecturen.
+In de paper geschreven door \cite{luo_comparison_2020} wordt PyTorch Mobile vergeleken met Tenserflow Lite voor verschillende classificatie architecturen.
 De architecturen die hier gebruikt worden zijn: ResNet50, InceptionV3, DenseNet121, SqueezeNet, MobileNetV2 en MnasNet.
 Voor alle netwerk architecturen in deze paper geeft de optimalisatie naar TensorFlow Lite de kleinste bestandsgrootte van het model. 
 Uit deze paper is ook af te leiden dat de optimalisatie naar een mobiel model niet alleen afhankelijk is van het framework maar ook van de netwerk architectuur.
 Zo geeft TensorFlow Lite volgens \cite{luo_comparison_2020} betere latency resultaten voor de zwaardere netwerken (ResNet50, InceptionV3, DenseNet121) dan PyTorch Mobile.
-Maar PyTorch Mobile heeft op zijn beurt wel een betere latency voor SqueezeNet en MobileNetV2.
-Dus uit deze paper kunnen we afleiden dat TensorFlow Lite het beste de bestands grootte verkleint, maar dat de netwerk architectuur ook een rol speelt.
+PyTorch Mobile heeft op zijn beurt wel een betere latency voor SqueezeNet en MobileNetV2.
+Dus uit eerder genoemde studie kunnen we afleiden dat TensorFlow Lite het beste de bestands grootteverkleint, maar dat de netwerk architectuur ook een rol speelt.
 
 \cite{febvay_low-level_2020} vergelijkt TensorFlow Lite met MACE voor verschillende neurale netwerken ( SqueezeNet, MobileNetV1/V2).
 Hierbij geeft TensorFlow Lite het beste resultaat, TensorFlow Lite gaf een Top-1 resultaat van 69,19\% en MACE gaf een top-1 resultaat van 66.84\% bij MobileNetV1.
 Ook voor de latency gaf TensorFlow Lite in de meeste gevallen de beste resultaten buiten bij het gebruik van 4 of 6 CPU cores, dan gaf MACE betere resultaten.  
 
 \section{Optimalisaties van neurale netwerken voor snelheid en bestandgrootte} \label{optim}
-Er zijn in voorgaande paragrafen al termen gevallen zoals prunning en kwantisatie.
+Er zijn in voorgaande paragrafen al termen gevallen zoals pruning en kwantisatie.
 In deze paragraaf zullen we hier dieper op in gaan.
-we onderzoeken welke optimalisaties er kunnen worden toegepast om de snelheid en het gebruikt geheugen te verbeteren.
-Maar het optimaliseren van de snelheid en geheugen zal vaak negatieve gevolgen hebben voor de accuraatheid.
-Dus er zal een goede belans gevonden moeten worden tussen de optimalisaties en de accuraatheid van het neuraal netwerk.
+We onderzoeken welke optimalisaties er kunnen worden toegepast om de snelheid en het gebruikt geheugen te verbeteren.
+Dit heeft als neveneffect dat het optimaliseren van de snelheid en geheugen vaak negatieve gevolgen heeft voor de accuraatheid.
+Dus er zal een goed evenwicht gevonden moeten worden tussen de optimalisaties en de accuraatheid van het neuraal netwerk.
 
 \subsection{Pruning}
-Pruning is de eerste stap van de Deep compression methode voorgesteld door \cite{han_deep_2016}.
+Pruning is de eerste stap van de Deep Compression methode voorgesteld door \cite{han_deep_2016}.
 Bij het trainen van een CNN hebben bepaalde gewichten een grotere invloed op het resultaat.
 Andere gewichten hebben weinig tot geen invloed op het resultaat.
-Maar bij het trainen van een neuraal netwerk worden al de gewichten steeds berekend ongeacht hun invloed op het resultaat.
-Bij pruning gaan we de parameters met een kleine invloed op het resultaat verwijderd.
-Waardoor er geen berekeningen meer moeten uitgevoerd worden voor de verwijderde parameters, wat zorgt voor een snelheidswinst.
-Deze parameters hoeven we dan ook niet bij te houden waardoor het CNN model minder geheugen in beslag neemt.
+Maar bij het uitlezen van een neuraal netwerk worden al de gewichten steeds berekend ongeacht hun invloed op het resultaat.
+Bij pruning gaan we de parameters met een kleine invloed op het resultaat verwijderen.
+Hierdoor gaan er geen berekeningen meer moeten uitgevoerd worden voor de verwijderde parameters, wat zorgt voor een snelheidswinst.
+Deze parameters zijn niet meer van belang en moeten we dan ook niet bijhouden waardoor het CNN model minder geheugen in beslag neemt.
 
-Er zijn een aantal verschillende pruningtechnieken, we gaan er twee bespreken.
+Er zijn een aantal verschillende pruningstechnieken, we gaan er twee bespreken.
 Prune connection in figuur \ref{fig:pruning} of weight pruning wordt gebruikt door TensorFlow na het trainen van een model (zie paragraaf \ref{tf}).
 Dit is het verwijderen van parameters die niet nuttig zijn in de gewichttensor.
 Op deze manier wordt het aantal connecties tussen de lagen verminderd.
 
 Een tweede techniek te zien op op figuur \ref{fig:pruning} is neuron pruning.
 Hierbij wordt een volledige kolom in de gewichten matrix verwijderd, daardoor verdwijnt een neuron in het neurale netwerk. 
-Volgens \cite{han_deep_2016} wordt voor VGG-16 (\cite{simonyan2015deep}) het aantal parameters met factor 13 verminderd, voor AlexNet (\cite{Krizhevsky_act_2017}) met een factor 9.
+Volgens \cite{han_deep_2016} worden voor VGG-16 (\cite{simonyan2015deep}) het aantal parameters met factor 13 verminderd en voor AlexNet (\cite{Krizhevsky_act_2017}) met een factor 9.
 Zowel AlexNet als VGG-16 zijn hierbij getraind met de ImageNet dataset.
 Deze methode heeft zeer weinig tot geen effect op de accuraatheid.
 %connectie pruning, neuron pruning
@@ -479,13 +488,13 @@ Deze methode heeft zeer weinig tot geen effect op de accuraatheid.
 	\label{fig:pruning}
 \end{figure}
 
-\subsection{Parameter kwantisatie}
+\subsection{Parameter kwantisatie} \label{quant}
 Het kwantiseren van gewichten is een tweede methode voorgesteld door \cite{han_deep_2016}.
-Een CNN bestaat uit miljoenen gewichten en de waarde van elke van deze gewichten moet op het systeem worden opgeslagen.
+Een CNN bestaat uit miljoenen gewichten en de waarde van elk van deze gewichten moet op het systeem worden opgeslagen.
 De defaultrepresentatie van een waarde wordt opgeslagen als een floating point wat 4 bytes in beslag neemt.
 Dus voor miljoenen parameters hebben de gewichten veel schijfruimte nodig.
 Een mogelijke oplossing hiervoor is het kwantiseren van gewichten.
-Hierbij wordt de getalrepresentatie van de gewichten verandert naar een representatie die minder geheugen in beslag neemt, een voorbeeld is te zien op figuur \ref{fig:kwantizatie}.
+Hierbij wordt de getalrepresentatie van de gewichten veranderd naar een representatie die minder geheugen in beslag neemt, een voorbeeld is te zien op figuur \ref{fig:kwantizatie}.
 
 \begin{figure}[!ht]
 	\centering
@@ -495,22 +504,23 @@ Hierbij wordt de getalrepresentatie van de gewichten verandert naar een represen
 \end{figure}
 
 \subsection{Weight Clustering}
-Hierbij worden de waarden van gewichten beperkt tot een set van beschikbare waardes (\cite{han_deep_2016}) dit is te zien op figuur \ref{fig:clus}.
-Waarbij de waardes eenmalig worden opgeslagen en al de gewichten refereren naar een waarde van de vaste set met waardes.
-Hoe kleiner de set met waardes is hoe minder geheugen er in beslag wordt genomen, maar een kleinere set van waardes zorgt ook voor een mindere accuratie.
-\cite{han_deep_2016} past vervolgens Huffman encodering toe die een compressie uitvoert op de geclusterde parameters.
+Volgens \cite{han_deep_2016} worden de waarden van de gewichten beperkt tot een set van beschikbare waardes, dit is te zien op figuur \ref{fig:clus}.
+Waarbij we de waardes eenmalig opslagen en de gewichten refereren dan naar een waarde van de vaste set met waardes.
+Hoe kleiner de set met waardes is, hoe minder geheugen er in beslag wordt genomen.
+Een kleinere set van waardes zorgt ook voor een verlaagde accuratie.
+\cite{han_deep_2016} passen vervolgens Huffman encodering toe die een compressie uitvoert op de geclusterde parameters.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{fig/clus.jpg}
-	\caption{Weight clustering: links zijn allemaal verschillende gewichten en na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen kunnen wijzen naar vier verschilende waarden.}
+	\caption{Weight clustering: links zien we verschillende gewichten en na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen naar een set van vier vaste waarden.}
 	\label{fig:clus}
 \end{figure}
 
-\subsection{Convolutionele filter compressie en matrix factorisatie}
-Een andere methode voorgesteld is Compressed Convolutional Filters (\cite{goel_survey_2020}).
-Hierbij wordt de grootte van de kernel verkleind om het aantal parameters en rekenwerk te verminderen.
-Maar door de kernels te verkleinen daalt de accuraatheid van het CNN.
-Bij matrix factorisatie (\cite{goel_survey_2020}) worden grootte en complexe matrices opgesplitst in verschillende kleinere en eenvoudigere matrices.
-Op deze manier worden ook redundante operaties uit het model gefilterd.
+%\subsection{Convolutionele filter compressie en matrix factorisatie}
+%Een andere methode voorgesteld is Compressed Convolutional Filters (\cite{goel_survey_2020}).
+%Hierbij wordt de grootte van de kernel verkleind om het aantal parameters en rekenwerk te verminderen.
+%Maar door de kernels te verkleinen daalt de accuraatheid van het CNN.
+%Bij matrix factorisatie (\cite{goel_survey_2020}) worden grootte en complexe matrices opgesplitst in verschillende kleinere en eenvoudigere matrices.
+%Op deze manier worden ook redundante operaties uit het model gefilterd.
 

@@ -1,9 +1,8 @@
 \chapter{Compatibiliteit van herkenningssystemen}
 Voor het herkenningssysteem bestuderen we de implementatie van de ResNet50 architectuur die in paragraaf \ref{resnet} werd besproken.
-We vertrekken hierbij met een bestaand model dat voorgetraind is met het TensorFlow of het PyTorch framework.
-Om vervolgens de verschillende mogelijkheden te bestuderen voor een mobiele implementatie.
-Hierbij zullen we gebruik maken van Google Colaboratory in CPU runtime om de modellen in te laden en te converteren.
-Om het geconverteerd model te implementeren op een mobiel toestel zullen we gebruik maken van Android Studio.
+We vertrekken van een bestaand model dat voorgetraind is met het TensorFlow of het PyTorch framework om de verschillende mogelijkheden voor een mobiele implementatie te bestuderen.
+Hierbij maken we gebruik van Google Colaboratory in CPU runtime om de modellen in te laden en te converteren.
+Om het geconverteerd model te implementeren op een mobiel toestel maken we gebruik van Android Studio.
 De ge\"implementeerde code is terug te vinden in de volgende github repository: \url{https://github.com/ThijsVercammen/Masterproef.git}.
 
 % \section{ResNet50}
@@ -23,13 +22,13 @@ De ge\"implementeerde code is terug te vinden in de volgende github repository: 
 %https://github.com/priya-dwivedi/Deep-Learning/blob/master/resnet_keras/Residual_Networks_yourself.ipynb
 
 \section{Van TensorFlow naar mobiel framework}
-Voor het experiment van ResNet50 maken we gebruik van het standaard ResNet50 netwerk dat in TensorFlow ge\"implementeerd kan worden vanuit Keras.
+Voor het experiment van ResNet50 maken gebruiken we het standaard ResNet50 netwerk dat in TensorFlow ge\"implementeerd kan worden vanuit Keras.
 Dit ResNet50 model is voorgetrained op de ImageNet dataset \cite{deng_2009_imagenet}. 
 Dit netwerk kunnen we vervolgens hertrainen naar een gewenste functionaliteit.
 Voor deze implementatie zullen we echter vertrekken van het ResNet50 Keras model dat reeds bestaat.
 
 \subsection{TensorFlow Lite implementatie} \label{tf_h_conv}
-Het inladen en converteren van het Keras model kan eenvoudig via de volgende lijnen Python code.
+Het inladen en converteren van het Keras model kan eenvoudig via de volgende Python code.
 
 \begin{python}
 model = tf.keras.applications.resnet50.ResNet50() # model inladen
@@ -39,12 +38,11 @@ open('model.tflite', 'wb').write(tflite_model) # model opslaan
 \end{python}
 
 Het ResNet50 model kan zonder problemen of aanpassingen rechtstreeks worden geconverteerd naar TFlite.
-In tabel \ref{tab:TFop} is te zien welke operaties er terug te vinden zijn in het TensorFlow ResNet50 model.
-Vervolgens is in de tabel ook terug te vinden wat er met de operaties gebeurt tijdens de TFLite conversie.
+We vertrekken van een bestaand model dat voorgetraind is met het TensorFlow of het PyTorch framework om de verschillende mogelijkheden voor een mobiele implementatie te bestuderen.
 In de tabel kunnen we zien welke TensorFlow operaties worden ondersteund door een TFLite equivalent.
-Vervolgens kunnen we in de tabel ook zien op welke operaties optimalisaties worden uitgevoerd tijdens het converteren.
+Verder is in de tabel weergegeven welke TensorFlow operaties worden ondersteund door een TFLite equivalent en op welke operaties optimalisaties worden uitgevoerd tijdens het converteren. 
 Bij deze optimalisaties worden operaties samengevoegd, verwijderd of vervangen door een constante.
-In figuur \ref{fig:class_opt} kunnen we zien welke optimalisaties er worden uitgevoerd op een ResNet50 convolutieblok.
+Figuur \ref{fig:class_opt} laat zien welke optimalisaties er worden uitgevoerd op een ResNet50 convolutieblok.
 
 \begin{figure}[!ht]
 	\centering
@@ -72,7 +70,7 @@ writer = ImageClassifierWriter.create_for_inference(
 writer_utils.save_file(writer.populate(), save_p)
 \end{python}
 
-Doordat we deze metadata hebben toegevoegd heeft Android studio toegang tot al de relevante input en output informatie.
+Omdat we deze metadata hebben toegevoegd heeft Android studio toegang tot al de relevante input en output informatie.
 Vermits Android studio toegang heeft tot deze informatie kan het zelf code genereren om het TFLite model te implementeren.
 De code die gegenereerd wordt is implementeerbaar in Java en Kotlin.
 Onderstaande Java code heeft Android studio voor ons gegenereerd.
@@ -119,11 +117,12 @@ model.close();
 \end{table}
 
 \subsection{ONNX implementatie} \label{classonnx}
-Het TensorFlow model kunnen we converteren naar ONNX met Tf2onnx bibliotheek.
-De tf2onnx bibliotheek ondersteunt TensorFlow en TFLite, dus we kunnen beide modellen converteren.
-In tabel \ref{tab:TFop} is te zien welke operaties ondersteund zijn door ONNX en vanaf welke opset versie deze operaties worden ondersteund.
-Hierbij kunnen we zien dat de minimale opset versie 6 moet zijn vanwege de FusedBatchNormV3 operatie die pas vanaf versie 6 wordt ondersteund.
-Via het volgende CLI commando kunnen we het TensorFlow model converteren naar ONNX of we kunnen het TFLite model converteren naar ONNX door de optie --tflite mee te geven.
+Het TensorFlow model kunnen we converteren naar ONNX met tf2onnx bibliotheek.
+De tf2onnx bibliotheek ondersteunt TensorFlow en TFLite.
+Hierdoor kunnen we beide modellen converteren naar ONNX.
+In tabel \ref{tab:TFop} kunnen we afleiden welke operaties ondersteund zijn door ONNX en vanaf welke opset versie deze operaties worden ondersteund.
+De minimale opset moet versie 6 zijn vanwege de FusedBatchNormV3 operatie die pas vanaf versie 6 wordt ondersteund.
+Via het volgende CLI commando kunnen we het TensorFlow model converteren naar ONNX of kunnen we het TFLite model converteren naar ONNX door de optie --tflite mee te geven.
 
 \begin{python}
 python -m tf2onnx.convert --saved-model ./model --output model.onnx
@@ -147,9 +146,9 @@ val output = session?.run(inputs)
 \end{python}
 
 We lezen het ONNX model in als een byteArray.
-Dit ONNX model is opgelsagen in de res/raw folder van het Android studio project.
+Dit ONNX model hebben we opgeslagen in de res/raw folder van het Android studio project.
 Vervolgens wordt er een ONNX input tensor aangemaakt.
-Hierbij wordt de data van de afbeelding als FloatArray meegegeven en de vorm van de input tensor die het ONNX model verwacht.
+Hierbij wordt de data van de afbeelding als FloatArray meegegeven net als de vorm van de input tensor die het ONNX model verwacht.
 Het ONNX model verwacht een input vorm [1, hoogte, breedte, 3] deze vorm is van het NHWC formaat eerder besproken in \ref{nhwc}.
 Voordat we het model kunnen uitvoeren moeten we de input tensor aan een map toevoegen.
 De keys van deze map zijn de namen van de inputs die het ONNX model verwacht, de values van de map zijn de input tensoren.
@@ -161,7 +160,7 @@ De input namen zijn terug te vinden in de output boodschappen van tf2onnx conver
 %Voor het converteren van TensorFlow naar ONNX is minstens opset versie 10 nodig.
 
 \section{Van PyTorch naar mobiele implementatie}
-Voor de PyTorch implementatie maken we gebruik van het ResNet50 model uit de Torchvision bibliotheek.
+Voor de PyTorch implementatie gebruiken we van het ResNet50 model uit de Torchvision bibliotheek.
 Dit model is voorgetraind op de ImageNet dataset (\cite{deng_2009_imagenet}) .
 Dit netwerk kunnen we vervolgens hertrainen voor een gewenste functionaliteit.
 Voor deze implementatie zullen we echter vertrekken van het reeds bestaande ResNet50 Torchvision model.
@@ -182,7 +181,7 @@ traced_script_module_optimized._save_for_lite_interpreter("./model.pt")
 \end{python}
 
 Het ResNet50 model wordt zonder problemen geconverteerd, geoptimaliseerd en opgeslagen voor mobiel gebruik.
-In tabel \ref{tab:PYop} kunnen we zien welke operaties er terug te vinden zijn in het Torchvision model en wat er met deze operaties gebeurt tijdens de conversie.
+In tabel \ref{tab:PYop} zien we welke operaties er terug te vinden zijn in het Torchvision model en wat er met deze operaties gebeurt tijdens de conversie.
 Het mobiel model kunnen we vervolgens implementeren in Android studio.
 
 \begin{table}[!ht]
@@ -225,7 +224,7 @@ Tensor outputTensor = module.forward(IValue.from(inputTensor)).toTensor();
 \end{python}
 
 \subsection{ONNX implementatie} \label{py_onnx}
-Het ResNet50 Torchvision model kunnen we in Python eenvoudig te converteren naar ONNX via de volgende code.
+Het ResNet50 Torchvision model kunnen we in Python eenvoudig converteren naar ONNX via de volgende code:
 
 \begin{python}
 torch.onnx.export(model, # model 
@@ -237,8 +236,8 @@ torch.onnx.export(model, # model
 
 Het gegenereerde ONNX model kan ge\"implementeerd worden in Android studio.
 Het ONNX model verwacht een input vorm [1, 3, hoogte, breedte], deze vorm is van het NCHW formaat eerder besproken in \ref{nhwc}.
-Het geconverteerd PyTorch model verwacht een genormaliseerde input afbeelding.
-De genormaliseerde waarde kan via de volgende formule berekent worden.
+Het geconverteerd PyTorch model verwacht een genormaliseerde input van een afbeelding.
+De genormaliseerde waarde kan via de volgende formule berekend worden.
 
 \begin{equation}
     \begin{aligned}
@@ -248,10 +247,10 @@ De genormaliseerde waarde kan via de volgende formule berekent worden.
 \end{aligned}
 \end{equation}
 
-Waarbij mean de gemiddelde waarde is en std de standaarddeviatie is waarmee Torchvision een normalisatie uitvoert.
+In deze formule is mean de gemiddelde waarde en std de standaarddeviatie waarmee Torchvision een normalisatie uitvoert.
 De mean en std bevatten drie waarde.
 Dit is omdat bij Torchvision elk kleurkanaal zijn eigen mean en std waarde heeft voor normalisatie.
-De rest van de implementatie in Android studio is identiek aan de ONNX implementatie van het TensorFlow model uitgelegd in \ref{classonnx}. 
+De rest van de implementatie in Android studio is identiek aan de ONNX implementatie van het TensorFlow model zoals besproken in \ref{classonnx}. 
 
 \section{Samenvatting}
 We hebben gezien dat herkenningssystemen volledig ondersteund zijn.
@@ -267,8 +266,8 @@ TensorFlow geeft ons de mogelijkheid om hier Metadata aan toe te voegen, waardoo
     open('model.tflite', 'wb').write(tflite_model) # model opslaan
 \end{python}
 
-Het PyTorch model kunnen we ook eenvoudig converteren met de volgende Python code.
-Wel moeten we er bij opletten dat het Torchvision model een genormaliseerde input verwacht.
+Het PyTorch model kunnen we ook eenvoudig converteren met onderstaande Python code.
+We moeten wel rekening houden met het feit dat het Torchvision model een genormaliseerde input verwacht.
 
 \begin{python}
 model.eval() # model in uitvoer modus
@@ -292,6 +291,6 @@ torch.onnx.export(model, example, "model.onnx",
 \end{python}
 
 De twee ONNX modellen worden op dezelfde ge\"implementeerd in Android studio.
-Wel moeten we rekening houden met het input formaat.
+Hierbij moeten we wel rekening houden met het input formaat.
 Het PyTorch ONNX model verwacht NCHW formaat en het TensorFlow ONNX model verwacht NHWC formaat.
-Ook verwacht het PyTorch ONNX model een genormaliseerde input en het TensorFlow ONNX model geen genormaliseerde input.
+Bovendien verwacht het PyTorch ONNX model een genormaliseerde input en het TensorFlow ONNX model geen genormaliseerde input.

@@ -6,9 +6,9 @@ The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografie.bib
 Warning--entry type for "chollet2015keras" isn't style-file defined
---line 389 of file bibliografie.bib
+--line 777 of file bibliografie.bib
 Warning--I'm ignoring Facebook_detectron2_2021's extra "note" field
---line 619 of file bibliografie.bib
+--line 1237 of file bibliografie.bib
 Warning--to sort, need author or key in Facebook_detectron2_2021
 Warning--empty journal in abadi_tensorflow_2016
 Warning--empty journal in duan_centernet_2019

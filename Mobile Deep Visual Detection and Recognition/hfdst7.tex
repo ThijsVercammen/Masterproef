@@ -1,17 +1,17 @@
 \chapter{Compatibiliteit van detectie systemen}
 Voor detectiesystemen bestuderen we uitgebreid de mobiele implementatie van de Faster-RCNN architectuur met een ResNet50 backbone en de YOLO architectuur.
 Voor deze modellen vertrekken we vanuit het PyTorch en TensorFlow framework om vervolgens de mogelijke paden te bestuderen naar een mobiele implementatie.
-Hierbij zullen we gebruik maken van Google Colaboratory met een CPU runtime om de modellen in te laden en te converteren.
-Om het geconverteerde model te implementeren op een mobiel toestel zullen we gebruik maken van Android Studio.
-Al de ge\"implementeerde code is terug te vinden in de volgende github repository: \url{https://github.com/ThijsVercammen/Masterproef.git}.
+Hierbij maken we gebruik van Google Colaboratory met een CPU runtime om de modellen in te laden en te converteren.
+Om het geconverteerde model te implementeren op een mobiel toestel gebruiken we Android Studio.
+De volledige ge\"implementeerde code is terug te vinden in de volgende github repository: \url{https://github.com/ThijsVercammen/Masterproef.git}.
 
 \section{Faster-RCNN naar mobiel mobiele implementatie}
 Het Faster-RCNN model waarmee we starten is terug te vinden in de TensorFlow object detection API.
 Dit Faster-RCNN model is voorgetraind met de COCO 2017 dataset (\cite{lin2015microsoft}) en maakt gebruik van een ResNet50 backbone.
 We gaan dit model converteren naar een ONNX en TFLite formaat zodat dit model ge\"implementeerd kan worden in Android studio.
-Vervolgens gaan we starten vanuit PyTorch waar we het Faster-RCNN model kunnen terugvinden in de Torchvision bibliotheek.
+Vervolgens vertrekken we vanuit PyTorch waar we het Faster-RCNN model kunnen terugvinden in de Torchvision bibliotheek.
 Dit model is ook een Faster-RCNN model dat voorgetraind is op de COCO 2017 dataset.
-Het Torchvision model gaan we vervolgens converteren naar een ONNX of PyTorch mobile formaat dat we kunnen implementeren in Android studio.
+Vervolgens converteren we het Torchvision model naar een ONNX of PyTorch mobile formaat dat we kunnen implementeren in Android studio.
 
 \subsection{Van TensorFlow naar TFLite implementatie} \label{rcnn_tf}
 Het Faster-RCNN model van de TensorFlow object detection API is terug te vinden in de TensorFlow Hub.
@@ -32,7 +32,7 @@ Als we het script toch proberen uit te voeren dan krijgen we de volgende error:
 Als we het model willen converteren zonder gebruik te maken van het optimalisatie script zullen we standaard TensorFlow operaties aan het TFLite model moeten toevoegen.
 Deze operaties moeten worden toegevoegd omdat we de ConcatV2 operatie niet kunnen converteren naar de TFLite concatenation operatie.
 % waarom?????????????????????????????????????????
-Hierbij moet we TensorFlow core bibliotheek worden toegevoegd aan Android studio zodat alle operaties uitgevoerd kunnen worden.
+Om dit te realiseren moet de TensorFlow core bibliotheek worden toegevoegd aan Android studio zodat alle operaties uitgevoerd kunnen worden.
 
 \begin{python}
 converter = tf.lite.TFLiteConverter.from_keras_model(hub_model) # init converter
@@ -48,7 +48,7 @@ Na het uitvoeren van bovenstaande Python code hebben we een TFLite model dat een
 Om dit TFLite model te kunnen uitvoeren moeten we de grootte van de inputafbeelding naar een hoogte en een breedte van 1 veranderen.
 Een input die bestaat uit 1 pixel zou nooit voldoende informatie bevatten om objecten in de originele afbeelding te gaan detecteren.
 
-Om dit probleem op te lossen kunnen het model van de TensorFlow object detection API gaan defini\"eren als een Keras laag.
+Om dit probleem op te lossen defini\"eren we het model van de TensorFlow object detection API als een Keras laag.
 Op deze manier kunnen we de input specifi\"eren en extra lagen gaan toevoegen via onderstaande Python code.
 
 \begin{python} \label{testref}
@@ -63,11 +63,11 @@ Het formaat van de input kunnen we kiezen.
 Een groot formaat geeft een beter resultaat, maar bevat meer data dus er moeten meer berekeningen worden uitgevoerd.
 Een klein formaat geeft een minder goed resultaat, maar is sneller omdat er minder berekeningen uitgevoerd moeten worden.
 Het datatype van de input moet uint8 zijn omdat het ingeladen model dit datatype verwacht.
-Een ander voordeel van dit model is dat ConcatV2 operaties zonder problemen kan worden omgezet in de TFLite concatenation operatie.
+Een ander voordeel van dit model is dat ConcatV2 operaties zonder problemen kunnen omgezet worden in de TFLite concatenation operatie.
 
 De TFLiteConverter zal de namen van de verschillende outputs van het Faster-RCNN model veranderen.
 Tijdens de conversie zal de volgorde van de vier outputs willekeurig veranderd worden.
-De 4 outputs die wij zullen gebruiken in de Android studio implementatie zijn de volgende:
+De 4 outputs die wij zullen gebruiken in de Android studio implementatie zijn:
 
 \begin{itemize}
 	\item detection\_classes \textrightarrow StatefulPartitionedCall:0
@@ -82,25 +82,25 @@ De 4 outputs die wij zullen gebruiken in de Android studio implementatie zijn de
 %wat deze 2 gevallen van tf.ConcatV2 gemeenschappelijk hebben is dat zij een input krijgen van de tfl.div opperatie die is geconverteerd van tf.Realdiv.
 %Door het toevoegen van TensorFlow Flex opperaties kan het model zonder problemen geconverteerd worden naar een TFLite model.
 %Omdat we gebruik maken van Flex opperaties moet de TensorFlow core bibliotheek mee ge\"implementeerd worden in Android studio.
-In tabel \ref{tab:TF_det_op} kunnen we zien wat er gebeurt met de operaties van het Faster-RCNN model tijdens de conversie naar TFLite.
+In tabel \ref{tab:TF_det_op} zien we wat er gebeurt met de operaties van het Faster-RCNN model tijdens de conversie naar TFLite.
 Uiteraard komen de operaties van het ResNet50 model eerder besproken in (\ref{tab:TFop}) ook voor in het Faster-RCNN.
-Deze operaties zullen op de zelfde manier geconverteerd worden naar TFLite.
+Deze operaties zullen op dezelfde manier geconverteerd worden naar TFLite.
 
 Om Android studio zelf de code te laten genereren zoals bij het herkenningssysteem moeten we Metadata aan het model toevoegen. 
 Bij het toevoegen van Metadata aan het TFLite model krijgen we de volgende fout: \textcolor{red}{Keyerror 2708.}
 Deze fout geeft weinig informatie, maar de oorzaak is dat de methode die de Metadata aan het model toevoegt maximaal 4 outputs verwacht.
-Het geconverteerd Faster-RCNN model heeft namelijk 8 outputs.
+Het geconverteerd Faster-RCNN model heeft echter 8 outputs.
 Door het aantal outputs te reduceren tot 4 outputs kunnen we Metadata succesvol aan het model toevoegen. % \ref{testref}.
-Bij het uitvoeren van het model met Metadata in Android studio krijgen we de volgende error: 
+Het uitvoeren van het model met Metadata in Android studio geeft de volgende error: 
 \textcolor{red}{java.lang.IllegalArgumentException: Cannot copy from a TensorFlowLite tensor (StatefulPartitionedCall:2) with 1200 bytes to a Java Buffer with 4 bytes.}
 \newline
 Deze fout onstaat doordat tijdens het converteren naar TFLite de output informatie is gewijzigd.
-De converter wijzigt namelijk de grootte van de output arrays naar 1, terwijl er wel meerdere resultaten worden geproduceerd.
-Bijvoorbeeld de output van de detection\_boxes is [1, 300, 4] maar volgens de metadata is de output grootte [1, 1, 1] voor de bounding box co\"ordinaten.
+De converter wijzigt namelijk de grootte van de output arrays naar 1, terwijl er meerdere resultaten worden geproduceerd.
+Bijvoorbeeld de output van de detection\_boxes is [1, 300, 4], maar volgens de metadata is de output grootte [1, 1, 1] voor de bounding box co\"ordinaten.
 Android studio genereert volgens de metadata een output buffer met grootte [1, 1, 1] die veel te klein is.
 
 Om de grootte van de output buffers zelf te defini\"eren kunnen we gebruik maken van de TensorFlow Lite Interpreter API.
-Via onderstaande Java code kunnen we TFLite model uitvoeren in Android studio door gebruik te maken van de TensorFlow Lite Interpreter API
+Via onderstaande Java code kunnen we het TFLite model uitvoeren in Android studio door gebruik te maken van de TensorFlow Lite Interpreter API
 
 \begin{python}
 Interpreter.Options tfliteOptions = new Interpreter.Options();
@@ -119,10 +119,11 @@ private MappedByteBuffer loadModelFile() throws IOException {
 
 Hierbij kunnen we het TFLite model implementeren zonder er metadata aan toe te voegen.
 De vereiste informatie om de correcte buffers te defini\"eren kan uit het niet geconverteerde model gehaald worden.
-Het TFLite model bevat de juiste informatie voor de inputbuffer, via deze informatie kan de juiste inputbuffer worden aangemaakt.
+Het TFLite model bevat de juiste informatie voor de inputbuffer.
+via deze informatie kan de juiste inputbuffer worden aangemaakt.
 Voor de outputbuffers geeft de TensorFlow Lite Inerpreter API ons de mogelijkheid om de outputbuffers aan te passen zodat deze de gewenste grootte hebben.
 Op deze manier kunnen we succesvol een Faster-RCNN model uitvoeren op een mobiel apparaat.
-De volgende lijnen Java code defini\"eren de outputbuffer voor de bounding boxen in Android studio.
+De onderstaande Java code definieert de outputbuffer voor de bounding boxen in Android studio.
 
 \begin{python}
 if(tflite.getOutputTensor(i).equals("StatefulPartitionedCall:1")) {
@@ -142,12 +143,12 @@ Het TensorFlow Faster-RCNN model kunnen we op de zelfde manier converteren naar 
 Wel moeten we tijdens de conversie naar ONNX gebruik maken van opset versie 11 of hoger.
 In het Faster-RCNN model wordt er namelijk gebruik gemaakt van de NonMaxSuppressionV5 operatie die pas beschikbaar is vanaf opset versie 11.
 Al de andere operaties van het Faster-RCNN model worden ondersteund in eerdere opset versies.
-In tabel \ref{tab:TF_det_op} kunnen we zien vanaf welke opset versie elke operatie wordt ondersteund.
+In tabel \ref{tab:TF_det_op} zien we vanaf welke opset versie elke operatie wordt ondersteund.
 
 Het gegenereerde ONNX model kunnen we op dezelfde manier als het ResNet50 model implementeren in Android studio.
-Wel verwacht het TensorFlow Faster-RCNN model een input van het type Uint8.
+Het TensorFlow Faster-RCNN model verwacht echter een input van het type Uint8.
 Tijdens de conversie blijft het type input hetzelfde, maar de Onnxruntime API voor Android studio ondersteunt het Uint8 datatype niet.
-Daarvoor zullen we eerst met onderstaande Python code een cast operatie moeten toevoegen aan het model.
+Daarvoor moeten we eerst met onderstaande Python code een cast operatie moeten toevoegen aan het model.
 Deze cast operatie zet een Float32 datatype om naar een Uint8 datatype.
 
 \begin{python}
@@ -216,11 +217,11 @@ Het Faster-RCNN model uit de Torchvision bibliotheek kunnen we in Python op de v
 model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
 \end{python}
 
-Dit model willen we converteren naar een model voor mobiel gebruik zoals we bij het ResNet50 herkenningssysteem gedaan hebben in \ref{py_class}. 
-We kunnen echter geen gebruik maken van de \texttt{jit.trace} functie omdat deze geen control flow ondersteund zoals loops en if/else functies (\ref{trace}).
+Dit model willen we converteren naar een model voor mobiel gebruik zoals we in \ref{py_class} bij het ResNet50 herkenningssysteem gedaan hebben. 
+We kunnen echter geen gebruik maken van de \texttt{jit.trace} functie omdat deze geen control flow ondersteunt zoals loops en if/else functies (\ref{trace}).
 De \texttt{jit.script} functie heeft deze limitaties niet en kan het Faster-RCNN model succesvol converteren.
 Na het converteren kunnen we de scriptmodule verder optimaliseren voor mobiel gebruik.
-Bij het opslaan van deze ge\"optimaliseerde scriptmodule voor mobiel gebruik crasht Google Colaborate zonder een boodschap.
+Bij het opslaan van deze geoptimaliseerde scriptmodule voor mobiel gebruik crasht Google Colaborate zonder een boodschap.
 Vermits PyTorch mobile nog in zijn beta fase zit gebeurt er geen correcte foutafhandeling voor niet ondersteunde operaties.
 In plaats van het model op te slaan met de \texttt{\_save\_for\_lite\_interpreter} methode zoals bij de ResNet50 herkenner kunnen we het model opslaan als een standaard scriptmodule.
 Deze scriptmodule kunnen we echter niet verder optimaliseren voor mobiel gebruik.
@@ -251,8 +252,7 @@ Tensor b = Tensor.fromBlob(input.getDataAsFloatArray(), shape);
 IValue[] output2 = model.forward(IValue.listFrom(input)).toTuple();
 \end{python}
 
-Het TorchVision Faster-RCNN model verwacht geen input die genormaliseerd is volgens de standaard waarden zoals het ResNet50 model \ref{py_class}.
-Waardoor we de mean en std waarden zelf moeten initialiseren.
+Het TorchVision Faster-RCNN model verwacht geen input die genormaliseerd is volgens de standaard waarden zoals het ResNet50 model \ref{py_class}, waardoor we de mean en std waarden zelf moeten initialiseren.
 Bij het uitvoeren van het script model krijgen we een fout dat de .nms opperatie niet wordt ondersteund.
 \textcolor{red}{Could not find any similar ops to torchvision::nms. This op may not exist or may not be currently supported in TorchScript.}
 \newline
@@ -267,7 +267,7 @@ implementation 'org.pytorch:torchvision_ops:0.9.0'
 \end{python}
 
 Maar om gebruik te maken van deze torchvision\_ops bibliotheek hebben we een model nodig van het Detectron2Go (\cite{Facebook_detectron2_2021}) framework.
-Hierbij krijgen we ook tijdens het importeren van deze bibliotheek steeds foutboodschappen dat bepaalde modules meerdere keren aanwezig zijn.
+Tijdens het importeren van deze bibliotheek krijgen we steeds foutboodschappen dat bepaalde modules meerdere keren aanwezig zijn.
 De Torchvisions\_ops bibliotheek importeert bepaalde modules die pytorch\_android ook importeert.
 
 %Maar na het implementeren van deze bibliotheek krijgen we de volgende error ....
@@ -302,7 +302,7 @@ De conversie naar ONNX gebeurt op dezelfde manier als de ResNet50 convertie voor
 Bij het uitvoeren van het model in Android studio krijgen we een error dat het model te groot is:
 \textcolor{red}{java.lang.OutOfMemoryError: Failed to allocate a 247754488 byte allocation with 16831896 free bytes and 16MB until OOM, target footprint 268435456, growth limit 268435456}.
 Het uitvoeren van het ONNX model in Android studio lukt dus niet.
-Dit probleem kan mogelijks worden opgelost door de quantisatie optimalisatie toe te passen beschreven in \ref{quant}.
+Dit probleem kan mogelijk worden opgelost door de quantisatie optimalisatie toe te passen beschreven in \ref{quant}.
 
 \subsection{Samenvatting}
 Voor de implementatie van een Faster-RCNN model moeten we rekening houden met enkele zaken.
@@ -320,8 +320,9 @@ output = [x["detection_classes"], x["detection_boxes"], x["detection_scores"], x
 model = tf.keras.Model(inputs, output) 
 \end{python}
 
-Dit model kunnen converteren naar TFLite zoals het ResNet50 model en via de TensorFlow Lite Interpreter API kunnen we het model uitvoeren in Android studio.
-Wel moeten we hier de outputbuffers defini\"eren want de ouput is groter dan dat het TFLite model verwacht.
+Dit model kunnen we converteren naar TFLite zoals het ResNet50 model in \ref{tf_h_conv}.
+Via de TensorFlow Lite Interpreter API kunnen we het model uitvoeren in Android studio.
+Wel moeten we hier de outputbuffers defini\"eren want de ouput is groter dan het TFLite model verwacht.
 
 Het Pytorch Faster-RCNN model kan met onderstaande code geconverteerd worden naar een model dat uitvoerbaar is op een mobiel toestel.
 We kunnen het model niet verder optimaliseren voor mobiel gebruik omdat niet al de operaties ondersteund worden.
@@ -337,7 +338,8 @@ Omdat niet al de operaties ondersteund worden moeten we eerst een torchvision\_o
 Deze module is terug te vinden in Torchivision Github repository.
 
 Voor ONNX kunnen we enkel het TensorFlow model implementeren in Android studio omdat de bestandsgrootte van het PyTorch model te groot is.
-Voor de conversie naar ONNX hebben is een minimum opset versie van 11 nodig omdat de NonMaxSuppressionV5 operatie pas vanaf deze opset versie wordt ondersteund.
+Voor de conversie naar ONNX hebben is een minimum opset versie van 11 nodig.
+De NonMaxSuppressionV5 operatie wordt pas vanaf opset versie 11 ondersteund.
 Dit model kan eenvoudig geconverteerd worden met het volgende CLI-commando.
 
 \begin{python}
@@ -346,12 +348,12 @@ python -m tf2onnx.convert --saved-model ./model --output model.onnx
 
 \section{YOLO naar mobiele implementatie}
 Een voorgetraind YOLO model is niet terug te vinden in de TorchVision biblitotheek of TensorFlow object detection API.
-We zullen zelf onze detector moeten defini\"eren en vervolgens de voorgetrainde YOLO gewichten moeten inladen.
+We moeten zelf onze detector defini\"eren en vervolgens de voorgetrainde YOLO gewichten inladen.
 We kiezen de YOLOV3 architectuur omdat dit de laatste YOLO versie is voorgesteld door \cite{redmon_yolov3_2018}.
 Voor de standaard YOLO architectuur met een Darknet backbone kunnen we de gewichten terugvinden op \cite{darknet13} .
 
 \subsection{Van TensorFlow naar TFlite implementatie}
-Voor het defini\"eren van het YOLO model en het inladen van de voorgetrainde gewichten gebruiken we een script uit de volgende Github repository \cite{anh_yolo3_2021}.
+Voor het defini\"eren van het YOLO model en het inladen van de voorgetrainde gewichten gebruiken we een script uit de Github repository van \cite{anh_yolo3_2021}.
 Aan de hand van dit script kunnen we op een eenvoudige manier het model in Python inladen.
 
 \begin{python}
@@ -365,7 +367,7 @@ Het YOLO model levert al de mogelijke bounding boxes en classificatie voorspelli
 Waardoor we na het uitvoeren van het model nog de Non-maxima suppresion methode moeten uitvoeren zodat enkel de beste bounding box overblijven per object.
 
 Het model kunnen we eenvoudig converteren naar een TFLite model zoals het ResNet50 model.
-Maar zoals bij het Faster-RCNN model wordt het input formaat tijdens het converteren [1, 1, 1, 3].
+Maar zoals bij het Faster-RCNN model wordt het input formaat tijdens het converteren gewijzigd naar [1, 1, 1, 3].
 Ook hier moeten we het input formaat specifiek met het model meegeven.
 We kunnen er ook voor zorgen dat de output al in het juiste formaat staat zodat we dit niet in Android studio moeten implementeren.
 
@@ -379,15 +381,15 @@ model = tf.keras.Model(inputs, output)
 \end{python}
 
 Het gegenereerde model kan op dezelfde manier worden uitgevoerd als het Faster-RCNN model in Android studio beschreven in \ref{rcnn_tf}.
-Wel moet we nog de Non-Maxima supression stap zelf implementeren in Android studio.
+Wel moeten we nog de Non-Maxima supression stap zelf implementeren in Android studio.
 
 \subsection{Van TensorFlow naar ONNX implementatie}
 De conversie naar ONNX gebeurt op dezelfde manier als ResNet50 en Faster-RCNN.
 Er zijn geen limiterende operaties waardoor de standaard opset versie van 9 voldoende is voor de conversie.
-Maar omdat het ONNX model een bestandsgrootte heeft 236.28MB wat groter is dan het PyTorch Faster-RCNN model is het niet implementeerbaar in Android studio.
+Maar omdat het ONNX model een bestandsgrootte heeft 236.28 MB wat groter is dan het PyTorch Faster-RCNN model is het niet implementeerbaar in Android studio.
 
 \subsection{Van PyTorch naar PyTorch mobile implementatie}
-Voor het defini\"eren van het Yolo model en het inladen van de voorgetrainde gewichten gebruiken we een script uit de volgende Github repositorie \cite{kathuria_pytorch_2022} .
+Voor het defini\"eren van het Yolo model en het inladen van de voorgetrainde gewichten gebruiken we een script uit de Github repository van \cite{kathuria_pytorch_2022} .
 Aan de hand van dit script kunnen we op een eenvoudige manier het model inladen.
 De volgende Python code zal het model laden en converteren voor mobiel gebruik.
 
@@ -405,31 +407,32 @@ traced_script_module_optimized = optimize_for_mobile(traced_script_module)
 traced_script_module_optimized._save_for_lite_interpreter("./model_s.ptl")
 \end{python}
 
-Zoals we in de resultaten zullen zien zal de \texttt{optimize\_for\_mobile} functie de bestandsgrootte sterk doen dalen.
+Zoals we in de resultaten zullen zien (\ref{res_size}), zal de \texttt{optimize\_for\_mobile} functie de bestandsgrootte sterk doen dalen.
 Dit komt doordat de meeste PyTorch implementaties van YOLO de verschillende lagen in een lijst bewaren.
 Op deze manier kunnen we vervolgens de gewichten inlezen en elk element in de lijst itereren zodat we voor elke laag de gewichten kunnen configureren.
-Al deze gegevens worden tijdens runtime bewaard, bij het uitvoeren van het model zal de forward functie van het model deze lijst itereren en elke laag uitvoeren.
-Bij het uitvoeren van de \texttt{jit.trace} functie zal de forward functie van het model opnieuw worden uitgevoert.
-De \texttt{jit.trace} functie houdt enkel rekening met de gegevens in de classe die het netwerk defini\"eert.
-In deze klasse zijn niet de verschillende lagen gedefini\"eert maar enkel een lijst die deze lagen bevat.
+Al deze gegevens worden tijdens runtime bewaard.
+Bij het uitvoeren van het model zal de forward functie van het model deze lijst itereren en elke laag uitvoeren.
+Bij het uitvoeren van de \texttt{jit.trace} functie zal de forward functie van het model opnieuw worden uitgevoerd.
+De \texttt{jit.trace} functie houdt enkel rekening met de gegevens in de klasse die het netwerk definieert.
+In deze klasse zijn niet de verschillende lagen gedefinieerd maar enkel een lijst die deze lagen bevat.
 Hierdoor registreert de trace functie de lijst met de verschillende lagen als een lijst waar telkens een constante waarde wordt uitgehaald.
 Als gevolg hiervan zal het torchscript model altijd hetzelfde resultaat produceren.
 Om dit op te lossen zouden we het YOLO model zelf kunnen defini\"eren in \'e\'en klasse en vervolgens zelf trainen.
-Of een methode vinden waarbij we de gewichten kunnen inladen zonder de operaties in een lijst te plaatsen.
+We zouden het probleem ook kunnen oplossen door een methode te ontwikkelen waarbij we de gewichten  zonder de operaties in een lijst te plaatsen kunnen inladen.
 
 \subsection{Van PyTorch naar ONNX implementatie}
-Het PyTorch model kunnen we op dezelfde manier converteren als het ResNet50 en Faster-RCNN model zoals we hebben gezien in \ref{py_onnx}.
+Het PyTorch model kunnen we op dezelfde manier converteren als het ResNet50 en Faster-RCNN model zoals beschreven in \ref{py_onnx}.
 Hierbij is een opset versie van 11 vereist omdat de operatie index\_put pas ondersteund is vanaf opset versie 11.
-Maar na de conversie is de megegeven input leeg waardoor we onnxruntime niet kunnen uitvoeren omdat we de input niet kunnen meegeven.
-Dit is omdat bij het uitvoeren van onnxruntime er altijd een input met een naam moet worden meegegeven.
+Na de conversie is de meegegeven input echter leeg waardoor we onnxruntime niet kunnen uitvoeren omdat we de input niet kunnen meegeven.
+De reden hiervoor is dat bij het uitvoeren van onnxruntime er altijd een input met een naam moet worden meegegeven.
 Als we het model in Netron (\cite{roeder_lutzroedernetron_2022}) openen zien we dat er geen input is.
 Het gegenereerde ONNX model is een gesloten model dat slechts \'e\'en output produceert.
 De oorzaak hiervan is hetzelfde als bij het converteren naar PyTorch Mobile.
 
 \subsection{Samenvatting}
 De YOLO detector kunnen we enkel via TensorFlow in een mobiele omgeving implementeren.
-We configureren het model en laden de YOLO gewichten in via de manier die voorgesteld is door \cite{anh_yolo3_2021}.
-Om ervoor te zorgen dat de TFLiteConverter de inputgrootte niet op 1 zet moet we deze eerst specifi\"eren via de volgende Python code.
+We configureren het model en laden de YOLO gewichten in via de methode voorgesteld door \cite{anh_yolo3_2021}.
+Om ervoor te zorgen dat de TFLiteConverter de inputgrootte niet op 1 zet moet we deze eerst specifi\"eren via onderstaande Python code.
 We zorgen er ook voor dat de output al in het juiste formaat staat zodat we deze stappen niet meer moeten implementeren in Android studio.
 
 \begin{python}

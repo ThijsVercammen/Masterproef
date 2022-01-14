@@ -5,7 +5,7 @@ Deze repository bevat al de code waarnaar verwezen is in de masterproef. In de f
 
 Om de Android applicaties uit te voeren moet eerst het model gegenereerd worden met de bijhorende Google Colab notebook.
 
-## Opdeling code
+## Code folder
 Code/Herkenningssystemen/ResNet50/PyTorch:
 - Bevat de PyTorch code van de ResNet50 implementatie.
 - Het genereerde model moet aan de assets folder van het Android project worden toegevoegd.
@@ -48,3 +48,6 @@ Onder de folder documenten zijn de volgende items terug te vinden:
 - Abstract (EN)
 - Abstract (NL)
 - Samenvatting
+
+## Latex folder
+- Mobile Deep Visual Detection and Recognition

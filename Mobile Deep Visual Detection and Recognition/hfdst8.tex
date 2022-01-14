@@ -23,9 +23,9 @@ We bespreken achtereenvolgens de resultaten van de bestandsgrootte, uitvoeringss
 \end{table}
 
 In tabel \ref{tab:size} zien we de bestandsgrootte van de verschillende modellen nadat ze zijn ingeladen en geconverteerd.
-We hebben geen extra optimalisatie technieken toegepast, de enige optimalisaties zijn de default optimalisatie uitgevoerd door de converters.
+We hebben geen extra optimalisatie technieken toegepast, de enige optimalisaties zijn de default optimalisatie uitgevoerd tijdens de conversie.
 De optimalisaties uitgevoerd tijdens de conversie hebben geen grote invloed op de bestandsgrootte.
-Het YOLO model dat naar TFLite wordt geconverteerd ondervindt de grootste invloed met een reductie van ongeveer 1 MB in bestandsgrootte.
+Het YOLO model dat naar TFLite wordt geconverteerd ondervindt de grootste invloed met een reductie van ongeveer 1 MB.
 We kunnen ook duidelijk zien dat de bestandsgrootte bij detectiesystemen aanzienlijk toeneemt.
 Uit de resultaten is het niet duidelijk welk framework de beste optimalisaties uitvoert tijdens de conversie.
 Voor het PyTorch YOLO model hebben we geen resultaten voor het mobiel en ONNX model omdat we er niet in geslaagd zijn deze modellen succesvol te converteren.
@@ -45,7 +45,7 @@ We hebben elk model 50 keer uitgevoerd en hiervan telkens de gemiddelde snelheid
     TensorFlow & & & & \\
      & ResNet50 & 0.276s & 0.405s & 0.356s & 0.106s & 0.394s \\
      & Faster-RCNN & 3.617s & 5.91s & 8.33s & 4.774s & 12.388s \\
-     & YOLO & 2.545s & 2.220s & 2.47s & 0.107s & / \\
+     & YOLO & 2.545s & 2.220s & 2.47s & 1.036s & / \\
     PyTorch & & & & \\
     & ResNet50 & 0.262s & 0.390s & 0.303s & 0.129s & 0.414s \\
     & Faster-RCNN & 4.707s & 5.119s & 11.194s & 4.065s & / \\
@@ -62,15 +62,17 @@ Voor eenvoudige architecturen zoals ResNet50 zien we ook dat het mobiel model be
 Zoals eerder besproken zien we ook dat Faster-RCNN als two-stage detector trager een resultaat levert dan YOLO als one-stage detector.
 Voor mobiel gebruik levert PyTorch de snelste resultaten bij de ResNet50 architectuur, terwijl voor de Faster-RCNN architectuur TensorFlow de beste resultaten levert.
 Wel kunnen we opmerken dat ONNX in vrijwel elke situatie het beste presteert in Google Colab.
-Voor het PyTorch YOLO model hebben we niet succesvol kunnen converteren naar ONNX en PyTorch Mobile.
+Het PyTorch YOLO model hebben we niet succesvol kunnen converteren naar ONNX en PyTorch Mobile, daardoor zijn hiervoor geen waarden in tabel \ref{tab:speed}.
 
 \section{De accuraatheid van de verschillende modellen}
 
-Voor de evaluatie hebben we gebruik gemaakt van de ImagenetV2-matched-frequency dataset (\cite{recht2019imagenet}).
+Voor de evaluatie van ResNet50 hebben we gebruik gemaakt van de ImagenetV2-matched-frequency dataset (\cite{recht2019imagenet}).
 Deze dataset bestaat uit 10.000 afbeeldingen die onafhankelijk zijn van de meeste modellen.
 We zullen de top-1 accuraatheid evalueren voor de verschillende ResNet50 modellen.
 Hierbij gaan we voor elke voorspelling in de dataset de label met de hoogste score vergelijken met de label die we verwachten.
-We zien dat na de conversie de ResNet50 modellen van elk frameork telkens hetzelfde resultaat leveren.
+Als input afbeelding nemen we een herschaalde image met centercrop.
+Het ResNet50 TensorFlow model moet een input formaat van [224, 224] hebben, voor het PyTorch model kiezen we hetzelfde formaat.
+We zien in tabel \ref{tab:class_acc} dat na de conversie de ResNet50 modellen van elk framework telkens hetzelfde resultaat leveren.
 
 \begin{table}[!ht]
     \caption{Top 1 accuraatheid voor het standaard, mobiel en ONNX model van de ResNet50 architectuur.}
@@ -78,7 +80,7 @@ We zien dat na de conversie de ResNet50 modellen van elk frameork telkens hetzel
     \hline
     Framework & Standaard model & Mobiel model & ONNX model \\
     \hline
-    TensorFlow & 37.1\% & 37.1\% & 37.1\%  \\
+    TensorFlow & 61.2\% & 61.2\% & 61.2\%  \\
     PyTorch & 73.21\% & 73.21\% & 73.21\%  \\
     \hline
 \end{tabular}
@@ -87,28 +89,35 @@ We zien dat na de conversie de ResNet50 modellen van elk frameork telkens hetzel
 
 Voor de evaluatie van de detectiesystemen hebben we de COCO 2017 evaluatie dataset genomen die uit 5.000 afbeeldingen bestaat.
 We zullen de modellen evalueren aan de hand van de mAP beschreven in \ref{map}.
+De input afbeeldingen hebben we herschaald naar een breedte en hoogte van 416 pixels.
 
-In tabel \ref{tab:rcnn_acc} zien we dat voor de twee frameworks de conversie geen invloed heeft op de accuraatheid.
+In tabel \ref{tab:rcnn_acc} zien we dat voor de twee frameworks de conversie geen invloed heeft op de accuraatheid van het Faster-RCNN model.
 Het standaard model, het mobiel model en het ONNX model geven hetzelfde resultaat bij zowel TensorFlow als PyTorch.
-Als test data hebben we de COCO 2017 dataset genomen en de mean avarage precision bepaald met iou \textgreater 0.5.
+Voor YOLO hebben we enkel resultaten voor het TensorFlow framework.
+Daar zien we dat de accuraatheid van het TFLite model hetzelfde is als het standaard model en het ONNX model voor mAP50.
+We zien ook een sterke daling bij mAP75 en mAP COCO voor het mobiel en standaard model.
+De reden hiervoor is dat het TFLite model de output op een verschillende manier afhandelt, doordat de output structuur verschillend is van het ONNX en standaard model.
+We hebben bij het analyseren namelijk een al een score treshold toegevoegd zodat het rekenwerk voor de Non-Maxima suppresion methode vermindert.
+De eerste twee kolommen in de tabel \ref{tab:rcnn_acc} zijn de mAP met een IoU treshold van 0.5 en 0.75.
+De laatste kolom is de mAP berekend volgens de COCO dataset.
 %% MEAN AVARAGE PRECISION
 \begin{table}[!ht]
-    \caption{Mean avarage precision van de modellen uitgevoerd op Google Colab en Xiaomi T9.}
+    \caption{Mean avarage precision met verschillende IoU tresholds voor de modellen uitgevoerd in Google Colab.}
 \begin{tabular}{ccccc}
     \hline
-    Framework & Architectuur & mAP Standaard model & mAP Mobiel model & mAP ONNX model\\
+    Framework & Architectuur & mAP 50 & mAP 75 & mAP COCO\\
     \hline
     Faster-RCNN & & & & \\
      & TensorFlow & 0.3240  & 0.228 & 0.209 \\
-     & TFLite & & & \\
-     & TF ONNX & & & \\
-     & PyTorch & 0.412 & 0.292 & 0.26 \\
-     & PyTorch Mobile & & & \\
-     & PY ONNX & & & \\
+     & TFLite & 0.3240 & 0.228 & 0.209 \\
+     & TF ONNX & 0.3240 & 0.228 & 0.209 \\
+     & PyTorch & 0.412 & 0.292 & 0.263 \\
+     & PyTorch Mobile & 0.412 & 0.292 & 0.263 \\
+     & PY ONNX & 0.412 & 0.292 & 0.263 \\
     YOLO & & & & \\
-     & TensorFlow & 0.3240  & 0.228 & 0.209 \\
-     & TFLite & & & \\
-     & TF ONNX & & & \\
+     & TensorFlow & 0.502  & 0.153 & 0.202 \\
+     & TFLite & 0.502 & 0.3522 & 0.3017 \\
+     & TF ONNX & 0.502  & 0.153 & 0.202 \\
     \hline
 \end{tabular}
 \label{tab:rcnn_acc}
@@ -126,16 +135,18 @@ We hebben aangetoond dat de optimalisaties tijdens de conversie naar een mobiel 
 Een mogelijke oorzaak is dat het PyTorch en TensorFlow framework al optimalisaties hebben uitgevoerd voordat deze modellen beschikbaar werden voor het publiek.
 
 Het ONNX framework ondersteunt de meeste operaties bij het uitvoeren van conversies vanuit TensorFlow en PyTorch met een standaard opset versie van 9.
-Er zijn enkele operaties die pas in latere opset versies ondersteuning kregen zoals de NonMaxSuppressionV5 operatie.
+Er zijn enkele operaties die pas in latere opset versies ondersteuning krijgen zoals de NonMaxSuppressionV5 operatie.
 Ook kan het voorvallen dat sommige operaties wel worden ondersteund door ONNX maar op een gelimiteerde manier.
 Bij elke ONNX versie zal het framework bestaande operaties updaten waardoor sommige operaties pas volledig compatibel zijn in latere opset versies.
 Hierdoor kan het dus zijn dat een operatie ondersteund sinds opset versie 1 toch een opset versie 11 nodig heeft.
-ONNX is ideaal om modellen naar een ander framework te converteren, maar voor mobiel gebruik bieden TensorFlow en PyTorch een betere oplossing.
+ONNX is ideaal om modellen naar een ander framework te converteren.
+Zowel PyTorch als TensorFlow kan zijn modellen exporteren naar ONNX, maar enkel TensorFlow kan ONNX modellen importeren.
+Voor mobiel gebruik kunnen we vaststellen dat TensorFlow en PyTorch een betere oplossing bieden.
 In de situaties in dit onderzoek heeft zowel PyTorch als TensorFlow een betere uitvoeringssnelheid op een mobiel apparaat.
 We hebben ook ondervonden dat er tussen een bestandsgrootte van 111.88 MB en 159.59 MB een grens ligt voor de implementatie van een ONNX model in Android studio.
 
 Als we naar de evaluatie resultaten kijken zien we dat dat de conversie weinig invloed heeft op de accuraatheid van het model.
-In vrijwel elke situatie bleef de accuraatheid na conversie gelijk, in veel gevallen was de output zelfs identiek.
+In vrijwel elke situatie bleef de accuraatheid na conversie gelijk, in veel gevallen is de output zelfs identiek.
 
 We kunnen dus concluderen dat TensorFlow een groter aantal operaties ondersteuning geeft voor conversie naar een mobiel formaat.
 Wel biedt de TFLiteConverter geen volledige ondersteuning voor complexere architecturen waardoor het formaat van de outputbuffers op \'e\'en wordt gezet.

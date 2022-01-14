@@ -19,45 +19,45 @@ Warning--empty journal in luo_comparison_2020
 Warning--empty journal in ren_faster_2016
 Warning--empty journal in sandler_mobilenetv2_2019
 Warning--empty journal in tan_efficientdet_2020
-You've used 41 entries,
+You've used 49 entries,
             1935 wiz_defined-function locations,
-            672 strings with 11841 characters,
-and the built_in function-call counts, 16239 in all, are:
-= -- 1522
-> -- 1019
-< -- 25
-+ -- 368
-- -- 366
-* -- 1365
-:= -- 3007
-add.period$ -- 119
-call.type$ -- 41
-change.case$ -- 387
-chr.to.int$ -- 41
-cite$ -- 52
-duplicate$ -- 537
-empty$ -- 835
-format.name$ -- 411
-if$ -- 3019
+            713 strings with 13736 characters,
+and the built_in function-call counts, 18459 in all, are:
+= -- 1747
+> -- 1113
+< -- 31
++ -- 398
+- -- 396
+* -- 1525
+:= -- 3443
+add.period$ -- 142
+call.type$ -- 49
+change.case$ -- 442
+chr.to.int$ -- 49
+cite$ -- 60
+duplicate$ -- 620
+empty$ -- 961
+format.name$ -- 451
+if$ -- 3425
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 19
-newline$ -- 202
-num.names$ -- 120
-pop$ -- 349
+missing$ -- 20
+newline$ -- 241
+num.names$ -- 144
+pop$ -- 383
 preamble$ -- 1
-purify$ -- 387
+purify$ -- 442
 quote$ -- 0
-skip$ -- 444
+skip$ -- 517
 stack$ -- 0
-substring$ -- 694
-swap$ -- 57
+substring$ -- 790
+swap$ -- 58
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 244
+type$ -- 292
 warning$ -- 10
-while$ -- 97
+while$ -- 113
 width$ -- 0
-write$ -- 494
+write$ -- 589
 (There were 12 warnings)

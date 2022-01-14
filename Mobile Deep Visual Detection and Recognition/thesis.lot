@@ -7,9 +7,9 @@
 \contentsline {table}{\numberline {4.1}{\ignorespaces Alle operaties die terug te vinden zijn in het TensorFlow ResNet50 model en hun compatibiliteit met andere frameworks\relax }}{28}{table.caption.25}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Alle operaties die terug te vinden zijn in het Torchvision ResNet50 model en hun compatibiliteit met andere frameworks\relax }}{30}{table.caption.26}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Alle operaties die terug te vinden zijn in het TensorFlow Faster-RCNN model en hun compatibiliteit met het ONNX en TFLite framework. De operaties van de ResNet50 backbone zijn in tabel \ref {tab:TFop} terug te vinden.\relax }}{36}{table.caption.27}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Alle operaties die terug te vinden zijn in het TensorFlow Faster-RCNN model en hun compatibiliteit met het ONNX en TFLite framework. De operaties van de ResNet50 backbone zijn in tabel \ref {tab:TFop} terug te vinden.\relax }}{37}{table.caption.27}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces De bestandsgrootte van de verschillende modellen\relax }}{43}{table.caption.28}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces De uitvoersnelheid van de verschillende modellen in Google Colaboratory en in de mobiele omgeving. Als mobiele omgeving gebruiken we de Xiaomi T9.\relax }}{44}{table.caption.29}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Top 1 accuraatheid voor het standaard, mobiel en ONNX model van de ResNet50 architectuur.\relax }}{45}{table.caption.30}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Mean avarage precision van de modellen uitgevoerd op Google Colab en Xiaomi T9.\relax }}{45}{table.caption.31}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces De bestandsgrootte van de verschillende modellen\relax }}{44}{table.caption.28}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces De uitvoersnelheid van de verschillende modellen in Google Colaboratory en in de mobiele omgeving. Als mobiele omgeving gebruiken we de Xiaomi T9.\relax }}{45}{table.caption.29}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Top 1 accuraatheid voor het standaard, mobiel en ONNX model van de ResNet50 architectuur.\relax }}{46}{table.caption.30}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Mean avarage precision met verschillende IoU tresholds voor de modellen uitgevoerd in Google Colab.\relax }}{46}{table.caption.31}%

@@ -42,7 +42,6 @@ The ResNet50 architecture is fully supported to be converted to TensorFlow Lite,
 TensorFlow gives the possibility to add metadata to a TensorFlow neural network that is converted to TensorFlow Lite.
 If we add metadata to this TensorFlow Lite model, Android studio will generate the code to implement the model.
 However the ResNet50 model from PyTorch will be executed faster on a mobile device.
-Solely the PyTorch to ONNX conversion has a negative effect on the accuracy.
 
 The conversion of the Faster-RCNN model to a mobile model will be more complex.
 Prior to converting the model to TensorFlow Lite we have to specify the input shape.
@@ -68,7 +67,6 @@ We can expect that more operations wil be added to PyTorch.
 It is obvious that PyTorch wants these operations for android studio because there is already a library for Android studio.
 However, this library doesn't combine well with the other PyTorch imports for Android studio.
 Conversion to TensorFlow Lite and Pytorch mobile has little to no effect on the accuracy.
-Only the ResNet50 conversion to ONNX has a negative effect on the accuracy.
 ONNX is compatibel with all the operations we encountered.
 Although most of the operations are supported since opset version 1, a part of them are only fully supported in later opset versions.
 The file sizes of the models are still a problem.

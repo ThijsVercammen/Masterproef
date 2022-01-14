@@ -1,0 +1,73 @@
+[
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\deform_conv2d_kernel.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\deform_conv2d_kernel.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\deform_conv2d_kernel.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\nms_kernel.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\nms_kernel.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\nms_kernel.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_align_kernel.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_align_kernel.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_align_kernel.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_pool_kernel.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_pool_kernel.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\ps_roi_pool_kernel.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_align_kernel.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_align_kernel.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_align_kernel.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_pool_kernel.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_pool_kernel.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\cpu\\roi_pool_kernel.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\deform_conv2d.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\deform_conv2d.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\deform_conv2d.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\nms.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\nms.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\nms.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_align.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_align.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_align.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_pool.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_pool.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\ps_roi_pool.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_align.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_align.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_align.cpp"
+},
+
+{
+  "directory": "D:/Desktop/test/vision/android/ops/.cxx/cmake/debug/arm64-v8a",
+  "command": "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Programmas/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dtorchvision_ops_EXPORTS -I../../../../build/pytorch_android-1.10.0.aar/headers -I../../../../build/pytorch_android-1.10.0.aar/headers/torch/csrc/api/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -DMOBILE -O0 -fno-limit-debug-info  -fPIC   -fexceptions -std=gnu++14 -o CMakeFiles\\torchvision_ops.dir\\D_\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_pool.cpp.o -c D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_pool.cpp",
+  "file": "D:\\Desktop\\test\\vision\\torchvision\\csrc\\ops\\roi_pool.cpp"
+}
+]

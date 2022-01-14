@@ -38,6 +38,13 @@ Apple (2018).
 \newblock Core {ML} {\textbar} {Apple} {Developer} {Documentation}.
 \newblock \url{https://developer.apple.com/documentation/coreml}.
 
+\bibitem[Brownlee, 2017]{brownlee_convolutional_2017}
+Brownlee, J. (2017).
+\newblock How do {Convolutional} {Layers} {Work } in {Deep } {Learning} {Neural
+  } {Networks}.
+\newblock
+  \url{https://machinelearningmastery.com/convolutional-layers-for-deep-learning-neural-networks/}.
+
 \bibitem[Chollet et~al., 2015]{chollet2015keras}
 Chollet, F. et~al. (2015).
 \newblock Keras.
@@ -97,6 +104,13 @@ Jiang, X., Hadid, A., Pang, Y., Granger, E., and Feng, X. (2019).
 \newblock Springer Singapore : Imprint: Springer, Singapore, 1st ed. 2019.
   edition.
 
+\bibitem[Kanchan, 2018]{Kanchan_activation_2018}
+Kanchan, S. (2018).
+\newblock Relu : Not a differentiable function: Why used in gradient based
+  optimization? and other generalizations of relu.
+\newblock
+  \url{https://medium.com/@kanchansarkar/relu-not-a-differentiable-function-why-used-in-gradient-based-optimization-7fef3a4cecec}.
+
 \bibitem[Kathuria, 2022]{kathuria_pytorch_2022}
 Kathuria, A. (2022).
 \newblock A {PyTorch} implementation of a {YOLO} v3 {Object} {Detector}.
@@ -120,6 +134,13 @@ Krizhevsky, A., Sutskever, I., and Hinton, G.~E. (2017).
 \newblock Imagenet classification with deep convolutional neural networks.
 \newblock {\em Commun. ACM}, 60.
 
+\bibitem[Lance, 2017]{Lance_pruning_2017}
+Lance, E. (2017).
+\newblock Deep compression and pruning for machine learning in ai self-driving
+  cars: Using convolutional neural networks (cnn).
+\newblock
+  \url{https://www.aitrends.com/ai-insider/deep-compression-pruning-machine-learning-ai-self-driving-cars-using-convolutional-neural-networks-cnn/}.
+
 \bibitem[Li et~al., 2020]{li_PyTorch_2020}
 Li, S., Zhao, Y., Varma, R., Salpekar, O., Noordhuis, P., Li, T., Paszke, A.,
   Smith, J., Vaughan, B., Damania, P., and Chintala, S. (2020).
@@ -136,11 +157,23 @@ Lin, T.-Y., Maire, M., Belongie, S., Bourdev, L., Girshick, R., Hays, J.,
   Perona, P., Ramanan, D., Zitnick, C.~L., and Dollár, P. (2015).
 \newblock Microsoft coco: Common objects in context.
 
+\bibitem[Liu et~al., 2018]{liu2018artificial}
+Liu, D., Sepulveda, N., and Zheng, M. (2018).
+\newblock Artificial neural networks condensation: A strategy to facilitate
+  adaption of machine learning in medical settings by reducing computational
+  burden.
+
 \bibitem[Liu et~al., 2016]{liu_ssd_2016}
 Liu, W., Anguelov, D., Erhan, D., Szegedy, C., Reed, S., Fu, C.-Y., and Berg,
   A. (2016).
 \newblock {SSD}: {Single} {Shot} {MultiBox} {Detector}.
 \newblock volume 9905, pages 21--37.
+
+\bibitem[Lopez, 2020]{Lopez_onnx_2020}
+Lopez, F. (2020).
+\newblock Onnx: Preventing framework lock in.
+\newblock
+  \url{https://towardsdatascience.com/onnx-preventing-framework-lock-in-9a798fb34c92}.
 
 \bibitem[Luo et~al., 2020]{luo_comparison_2020}
 Luo, C., He, X., Zhan, J., Wang, L., Gao, W., and Dai, J. (2020).
@@ -151,6 +184,11 @@ Luo, C., He, X., Zhan, J., Wang, L., Gao, W., and Dai, J. (2020).
 Ma, H., Gou, J., Wang, X., Ke, J., and Zeng, S. (2017).
 \newblock Sparse coefficient-based ${k}$ -nearest neighbor classification.
 \newblock {\em IEEE Access}, 5.
+
+\bibitem[Njima et~al., 2019]{s19143127}
+Njima, W., Ahriz, I., Zayani, R., Terre, M., and Bouallegue, R. (2019).
+\newblock Deep cnn for indoor localization in iot-sensor systems.
+\newblock {\em Sensors}, 19(14).
 
 \bibitem[ONNX, 2017]{onnx_onnx_2017}
 ONNX (2017).
@@ -178,6 +216,12 @@ Paszke, A., Gross, S., Chintala, S., and Chanan, G. (2017).
 PyTorch (2021).
 \newblock pytorch/aten/src/{ATen}/native at master · pytorch/pytorch.
 \newblock \url{https://github.com/pytorch/pytorch}.
+
+\bibitem[Raghunandepu, 2019]{Raghunandepu_resnet_2019}
+Raghunandepu (2019).
+\newblock Understanding and implementation of residual networks(resnets).
+\newblock
+  \url{https://medium.com/analytics-vidhya/understanding-and-implementation-of-residual-networks-resnets-b80f9a507b9c}.
 
 \bibitem[Recht et~al., 2019]{recht2019imagenet}
 Recht, B., Roelofs, R., Schmidt, L., and Shankar, V. (2019).
@@ -227,5 +271,11 @@ Simonyan, K. and Zisserman, A. (2015).
 \bibitem[Tan et~al., 2020]{tan_efficientdet_2020}
 Tan, M., Pang, R., and Le, Q.~V. (2020).
 \newblock {EfficientDet}: {Scalable} and {Efficient} {Object} {Detection}.
+
+\bibitem[Yohanandan and Pokhrel, 2020]{Yohanandan_map_2020}
+Yohanandan, S. and Pokhrel, S. (2020).
+\newblock map (mean average precision) might confuse you!
+\newblock
+  \url{https://towardsdatascience.com/map-mean-average-precision-might-confuse-you-5956f1bfa9e2}.
 
 \end{thebibliography}

@@ -49,21 +49,21 @@
 \contentsline {subsection}{\numberline {4.2.1}PyTorch Mobile implementatie}{29}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}ONNX implementatie}{30}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Samenvatting}{31}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Compatibiliteit van detectie systemen}{32}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Faster-RCNN naar mobiel mobiele implementatie}{32}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Van TensorFlow naar TFLite implementatie}{32}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Van TensorFlow naar ONNX implementatie}{35}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Van PyTorch naar PyTorch Mobile}{36}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Van PyTorch naar ONNX implementatie}{38}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Samenvatting}{38}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5.2}YOLO naar mobiele implementatie}{39}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Van TensorFlow naar TFlite implementatie}{39}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Van TensorFlow naar ONNX implementatie}{40}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Van PyTorch naar PyTorch mobile implementatie}{40}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Van PyTorch naar ONNX implementatie}{41}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Samenvatting}{41}{subsection.5.2.5}%
-\contentsline {chapter}{\numberline {6}Resultaten}{43}{chapter.6}%
-\contentsline {section}{\numberline {6.1}De bestandsgrootte van de verschillende modellen}{43}{section.6.1}%
-\contentsline {section}{\numberline {6.2}De uitvoersnelheid van de verschillende modellen}{44}{section.6.2}%
-\contentsline {section}{\numberline {6.3}De accuraatheid van de verschillende modellen}{44}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Conclusie}{45}{section.6.4}%
+\contentsline {chapter}{\numberline {5}Compatibiliteit van detectie systemen}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Faster-RCNN naar mobiel mobiele implementatie}{33}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Van TensorFlow naar TFLite implementatie}{33}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Van TensorFlow naar ONNX implementatie}{36}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Van PyTorch naar PyTorch Mobile}{37}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Van PyTorch naar ONNX implementatie}{39}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Samenvatting}{39}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}YOLO naar mobiele implementatie}{40}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Van TensorFlow naar TFlite implementatie}{40}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Van TensorFlow naar ONNX implementatie}{41}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Van PyTorch naar PyTorch mobile implementatie}{41}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Van PyTorch naar ONNX implementatie}{42}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Samenvatting}{42}{subsection.5.2.5}%
+\contentsline {chapter}{\numberline {6}Resultaten}{44}{chapter.6}%
+\contentsline {section}{\numberline {6.1}De bestandsgrootte van de verschillende modellen}{44}{section.6.1}%
+\contentsline {section}{\numberline {6.2}De uitvoersnelheid van de verschillende modellen}{45}{section.6.2}%
+\contentsline {section}{\numberline {6.3}De accuraatheid van de verschillende modellen}{45}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Conclusie}{47}{section.6.4}%

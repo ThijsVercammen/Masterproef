@@ -1076,6 +1076,9 @@ INPUT .\fig\resnet50.png
 INPUT .\fig\resnet50.png
 INPUT .\fig\resnet50.png
 INPUT .\fig\resnet50.png
+INPUT C:\Users\kathl\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zpzccmry.vf
+INPUT C:\Users\kathl\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\kathl\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfchan\pzcmi8r.tfm
 INPUT .\fig\resnet_blokken.jpg
 INPUT .\fig\resnet_blokken.jpg
 INPUT fig\resnet_blokken.jpg
@@ -1083,9 +1086,6 @@ INPUT .\fig\resnet_blokken.jpg
 INPUT .\fig\resnet_blokken.jpg
 INPUT .\fig\resnet_blokken.jpg
 INPUT .\fig\resnet_blokken.jpg
-INPUT C:\Users\kathl\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\zpzccmry.vf
-INPUT C:\Users\kathl\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\kathl\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfchan\pzcmi8r.tfm
 INPUT .\fig\Faster-R-CNN.png
 INPUT .\fig\Faster-R-CNN.png
 INPUT fig\Faster-R-CNN.png

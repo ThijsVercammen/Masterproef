@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "D:\\Desktop\\test\\vision\\android\\ops\\CMakeLists.txt",
+    "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
+    "D:\\Programmas\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
+  ],
+  "cleanCommands": [
+    "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "torchvision_ops-Debug-armeabi-v7a": {
+      "artifactName": "torchvision_ops",
+      "buildCommand": "D:\\Programmas\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\Desktop\\test\\vision\\android\\ops\\.cxx\\cmake\\debug\\armeabi-v7a\" torchvision_ops",
+      "abi": "armeabi-v7a",
+      "output": "D:\\Desktop\\test\\vision\\android\\ops\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libtorchvision_ops.so",
+      "runtimeFiles": []
+    }
+  }
+}

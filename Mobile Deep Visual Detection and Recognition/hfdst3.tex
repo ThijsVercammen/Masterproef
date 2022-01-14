@@ -141,9 +141,10 @@ Voor elke bibliotheek/framework is het aangeraden om dezelfde opsetversie te imp
 
 \begin{figure}[!ht]
     \centering
- 	\includegraphics[width=0.7\linewidth]{fig/onnx.jpeg}
- 	\caption{Een weergave van de voornaamste frameworks die naar ONNX kunnen exporten en die een ONNX model kunnen importeren.}
+ 	\includegraphics[width=0.65\linewidth]{fig/onnx.jpeg}
+ 	\caption{Een weergave van de voornaamste frameworks die we naar ONNX kunnen exporteren en die een ONNX model kunnen importeren.}
  	\label{fig:onnx}
+	\cite{Lopez_onnx_2020}
 \end{figure}
 
 \subsection{TensorFlow naar ONNX conversie}
@@ -261,9 +262,10 @@ Op deze manier kan de conversiestap overgeslagen worden.
 \begin{figure}[!ht]
     \centering
  	\includegraphics[width=0.85\linewidth]{fig/TFLite_workflow.png}
- 	\caption{Implementatieflow van een TensorFlow model naar een mobiele implementatie. Aan de linker kant is te zien dat een TensorFlow model via de TFLite converter wordt omgezet in TFLite flatbuffer model.
-	 Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een toestel waar het gebruik kan maken van verschillende hardware componenten}
+ 	\caption{Implementatieflow van een TensorFlow model naar een mobiele implementatie. Aan de linker kant zien we dat een TensorFlow model via de TFLite converter wordt omgezet in TFLite flatbuffer model.
+	 Het TFLite flatbuffer model kan vervolgens ge\"implementeerd worden op een toestel waar het gebruik kan maken van de verschillende hardware componenten}
  	\label{fig:tflite}
+	\cite{tensorflow2015-whitepaper}
 \end{figure}
 
 Het framework geeft ook de mogelijkheid om TFLite model verder te verbeteren bovenop de grappler optimalisaties via hardwareacceleraties en modeloptimalisaties.
@@ -486,9 +488,10 @@ Deze methode heeft zeer weinig tot geen effect op de accuraatheid.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.65\linewidth]{fig/pruning.jpg}
-	\caption{CNN voor en na pruning}
+	\includegraphics[width=0.6\linewidth]{fig/pruning.jpg}
+	\caption{CNN voor en na pruning. We kunnen zien dat er 2 verschillende prunig methodes zijn uitgevoerd, connection en neuron pruning}
 	\label{fig:pruning}
+	\cite{Lance_pruning_2017}
 \end{figure}
 
 \subsection{Parameter kwantisatie} \label{quant}
@@ -501,9 +504,10 @@ Hierbij wordt de getalrepresentatie van de gewichten veranderd naar een represen
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/kwantization.png}
-	\caption{kwantisatie van twee floating piont variabelen die worden omgezet naar twee fixed point variabelen met een gemeenschappelijke exponent.}
+	\includegraphics[width=0.65\linewidth]{fig/kwantization.png}
+	\caption{Kwantisatie van twee floating piont variabelen die worden omgezet naar twee fixed point variabelen met een gemeenschappelijke exponent.}
 	\label{fig:kwantizatie}
+	\cite{liu2018artificial}
 \end{figure}
 
 \subsection{Weight Clustering}
@@ -515,9 +519,10 @@ Een kleinere set van waardes zorgt ook voor een verlaagde accuratie.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{fig/clus.jpg}
-	\caption{Weight clustering: links zien we verschillende gewichten en na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen naar een set van vier vaste waarden.}
+	\includegraphics[width=0.65\linewidth]{fig/clus.jpg}
+	\caption{Weight clustering: links zien we verschillende gewichten, na het het uitvoeren van weight clustering zijn er in de matrix pointers terug te vinden die wijzen naar een set van vier vaste waarden.}
 	\label{fig:clus}
+	\cite{han_deep_2016}
 \end{figure}
 
 %\subsection{Convolutionele filter compressie en matrix factorisatie}

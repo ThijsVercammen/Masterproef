@@ -47,6 +47,7 @@ Figuur \ref{fig:cnn} is een voorbeeld van een CNN en zijn verschillende onderdel
  	\includegraphics[width=0.85\linewidth]{fig/cnn_2.png}
  	\caption{CNN met twee convolutie lagen en twee pooling lagen en \'e\'en fully-connected laag}
  	\label{fig:cnn}
+	 \cite{s19143127}
 \end{figure}
  
 Het belangrijkste deel van een CNN zijn de convolutielagen (figuur \ref{fig:conv_laag}). 
@@ -70,6 +71,7 @@ Hoe meer convolutielagen een netwerk telt hoe meer features er uit de input word
 	\includegraphics[width=0.35\linewidth]{fig/convolution layer.png}
 	\caption{Convolutielaag waarbij de input vermenigvuldigd wordt met een kernel. De vermenigvuldigde inputwaardes worden vervolgens herleid tot een enkele waarde. Vervolgens zal de filter opschuiven en opnieuw deze actie uitvoeren.}
 	\label{fig:conv_laag}
+	\cite{brownlee_convolutional_2017}
 \end{figure}
 
 Na elke convolutielaag komt een niet lineaire activatie functie.
@@ -85,6 +87,7 @@ Max(0,x) is de ReLu bewerking, dus er wordt verdergegaan met 0 of de input waard
  	\includegraphics[width=0.35\linewidth]{fig/ReLu.png}
  	\caption{ReLu, waarbij het maximum wordt genomen van 0 en de input waarde.}
  	\label{fig:relu}
+	\cite{Kanchan_activation_2018}
 \end{figure}
 
 Een volgende bouwsteen is de poolinglaag.
@@ -163,6 +166,7 @@ De ResNet50 architectuur bestaat uit 50 convoluties en is opgebouwd uit ResNet b
 	\includegraphics[width=1.0\linewidth]{fig/resnet50.png}
 	\caption{ResNet50 architectuur met de al de operaties. Ook zijn er 2 verschillende ResNet blokken terug te vinden het convolutieblok en het ID-blok.}
 	\label{fig:resnet}
+	\cite{Raghunandepu_resnet_2019}
 \end{figure}
 
 In figuur \ref{fig:resnet} is het standaard ResNet50 netwerk te zien.
@@ -178,6 +182,7 @@ Deze twee extra operaties zijn nodig als de input en output dimensies van het Re
 	\includegraphics[width=1.0\linewidth]{fig/resnet_blokken.jpg}
 	\caption{De bovenste blok is de ID blok van de ResNet50 architectuur. De onderste is de Convolutieblok van de ResNet50 architectuur}
 	\label{fig:resnet_b}
+	\cite{Raghunandepu_resnet_2019}
 \end{figure}
 
 \section{Deep learning-gebaseerde detector}
@@ -220,6 +225,7 @@ Een softmax laag die de klasse voorspelt en een bounding box regressie laag die 
  	\includegraphics[width=0.35\linewidth]{fig/Faster-R-CNN.png}
  	\caption{Faster R-CNN}
  	\label{fig:faster-r-cnn}
+	\cite{ren_faster_2016}
 \end{figure}
 
 \subsection{One-stage detector}
@@ -236,6 +242,7 @@ Twee veel gebruikte technieken van one-stage detectie zijn: You Only Look Once (
 	\caption{YOLO waarbij de input is opgedeeld in een S x S rooster. 
 	En waarbij bounding box voorspellingen zijn gedaan.}
 	\label{fig:yolo}
+	\cite{redmon_you_2016}
 \end{figure}
 
 YOLO \cite{redmon_you_2016} verdeelt de afbeelding in een S x S rooster zoals in figuur \ref{fig:yolo} te zien is. 
@@ -272,7 +279,7 @@ Op deze manier blijft enkel de optimale bounding box over.
 %	\label{fig:ssd}
 %\end{figure}
 \subsection{Mean avarage precision (mAP)} \label{map}
-Mean average precision is een evaluatie eenheid die gebruikt wordt om object detectoren te evalueren.
+Mean average precision besproken door \cite{Yohanandan_map_2020} is een evaluatie eenheid die gebruikt wordt om object detectoren te evalueren.
 Bij deze evaluatiemethode gaan we de voorspelde bounding boxes en de classificatie evalueren.
 Hierbij gaan we de precision en de recall bereken op basis van de Intersection of Union (IoU).
 Bij de IoU bereken we de overlap tussen de voorspelde bounding box en de ground truth bounding box.
@@ -284,6 +291,7 @@ In figuur: \ref{fig:iou} wordt weergegeven hoe we de IoU berekenen.
 	\includegraphics[width=0.80\linewidth]{fig/iou.png}
 	\caption{In deze afbeelding kunnen we zien hoe de overlap/IoU wordt berekend}
 	\label{fig:iou}
+	\cite{Yohanandan_map_2020}
 \end{figure}
 
 Via de volgende formules kunnen we dan de precision en recall gaan berekenen.

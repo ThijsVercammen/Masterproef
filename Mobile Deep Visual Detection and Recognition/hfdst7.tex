@@ -310,7 +310,7 @@ Bij het TensorFlow model zal de TFLiteConverter de groottes van de input en outp
 Om deze reden moeten we eerst de inputgrootte defini\"eren met onderstaande Python code voordat we het model converteren.
 Door de cast operatie toe te voegen is het model ook compatibel voor de ONNX implementatie in Android studio.
 Want de ONNX API voor Android studio ondersteunt het datatype Uint8 niet.
-
+\newpage
 \begin{python}
 layer = hub.KerasLayer(hub_model) 
 inputs = tf.keras.Input(shape=[160,160,3], dtype=tf.float32)
@@ -392,7 +392,7 @@ Maar omdat het ONNX model een bestandsgrootte heeft 236.28 MB wat groter is dan 
 Voor het defini\"eren van het Yolo model en het inladen van de voorgetrainde gewichten gebruiken we een script uit de Github repository van \cite{kathuria_pytorch_2022} .
 Aan de hand van dit script kunnen we op een eenvoudige manier het model inladen.
 De volgende Python code zal het model laden en converteren voor mobiel gebruik.
-
+\newpage
 \begin{python}
 model = Darknet("/content/YOLO_v3_tutorial_from_scratch/cfg/yolov3.cfg")
 model.load_weights("/content/yolov3.weights")
@@ -446,3 +446,4 @@ model = tf.keras.Model(inputs, output)
 
 Zoals bij Faster-RCNN kunnen we dit model op de standaard manier converteren naar TFLite.
 Vervolgens kunnen we dit model implementeren via de TensorFlow Lite Interpreter API.
+Wel levert dit model al de mogelijke bounding boxes, waardoor we nog een Non-Maxima supression stap moeten toevoegen in Android studio.

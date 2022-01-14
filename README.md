@@ -1,7 +1,7 @@
 # Masterproef
 Masterproef - Mobile Deep Visual Detection and Recognition
 
-Deze repository bevat al de code waarnaar verwezen is in de masterproef. In de folder code is alles opgedeeld met dezelfde structuur als de hoofdstukken in de tekst. Elk deel bevat een Android applicatie en een Google Colab Notebook. Ook is in de naam van de folder dezelfde hoofdstuknummering terug te vinden als de tekst.
+Deze repository bevat al de code waarnaar verwezen is in de masterproef. In de folder code is alles opgedeeld met dezelfde structuur als de hoofdstukken in de tekst. Elk deel bevat een Android applicatie en een bijhorende Google Colab Notebook. Ook is in de naam van de folder dezelfde hoofdstuknummering terug te vinden als de tekst.
 
 Om de Android applicaties uit te voeren moet eerst het model gegenereerd worden met de bijhorende Google Colab notebook.
 
@@ -33,10 +33,10 @@ Code/Herkenningssystemen/Faster_RCNN/ONNX:
 - Het genereerde model moet aan de res/raw folder van het Android project worden toegevoegd.
 
 Code/Detectiesystemen/YOLO/PyTorch:
-- Bevat de PyTorch code van de YOLO implementatie
+- Bevat de PyTorch code van de YOLO implementatie.
 
 Code/Detectiesystemen/YOLO/TensorFlow:
-- Bevat de TensorFlow code van de YOLO implementatie
+- Bevat de TensorFlow code van de YOLO implementatie.
 
 ## Documenten folder
 Onder de folder documenten zijn de volgende items terug te vinden:
@@ -45,6 +45,6 @@ Onder de folder documenten zijn de volgende items terug te vinden:
 - Tussentijdse presentatie
 - Titelblad
 - Opstartverslag
-- abstract (EN)
-- abstract (NL)
-- samenvatting
+- Abstract (EN)
+- Abstract (NL)
+- Samenvatting

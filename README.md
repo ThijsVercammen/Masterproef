@@ -24,11 +24,11 @@ Code/Detectiesystemen/YOLO/TensorFlow:
 
 ## Documenten folder
 Onder de folder documenten zijn de volgende items terug te vinden:
-    - Masterproef_tekst
-    - Litratuurstudie
-    - Tussentijdse presentatie
-    - Titelblad
-    - Opstartverslag
-    - abstract (EN)
-    - abstract (NL)
-    - samenvatting
+- Masterproef_tekst
+- Litratuurstudie
+- Tussentijdse presentatie
+- Titelblad
+- Opstartverslag
+- abstract (EN)
+- abstract (NL)
+- samenvatting

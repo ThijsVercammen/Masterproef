@@ -15,7 +15,7 @@ public class Yolov3Classifier extends Classifier {
         };
 
         mMasks = new int[][]{{6,7,8},{3,4,5},{0,1,2}};
-        mOutWidth = new int[]{13,52,26};
+        mOutWidth = new int[]{52,26,13};
         mObjThresh = 0.6f;
     }
 

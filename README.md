@@ -3,7 +3,7 @@ Masterproef - Mobile Deep Visual Detection and Recognition
 
 Deze repository bevat al de code waarnaar verwezen is in de masterproef. In de folder code is alles opgedeeld met dezelfde structuur als de hoofdstukken in de tekst. Elk deel bevat een Android applicatie en een Google Colab Notebook. Ook is in de naam van de folder dezelfde hoofdstuknummering terug te vinden als de tekst.
 
-Om de android applicaties uit te voeren moet eerst het model gegenereerd worden met de bijhorende Google Colab notebook.
+Om de Android applicaties uit te voeren moet eerst het model gegenereerd worden met de bijhorende Google Colab notebook.
 
 ## Opdeling code
 Code/Herkenningssystemen/ResNet50/PyTorch:
